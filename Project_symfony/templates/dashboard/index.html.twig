@@ -1,0 +1,454 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Match{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/dashboard.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- DEBUT CHATBOX --> 
+<div id="container">
+  <div class="chat">
+    <div class="headerTitle">Messages</div>
+    <div id="zoneTxt" class="text">
+      
+    </div>
+        <div id="new-message" class=" row align-items-center">
+          <div class="d-flex flex-row justify-content-between my-3">
+            <input class="w-100 px-3 py-3" type="text" id='messenger_text' placeholder="Nouveau message...">
+             <button class="d-flex align-items-center justify-content-center" id='btnSendMsg'> <img src="/img/icones/fleche.png" alt=""> </button>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+{% set i = 0 %}
+
+<!-- DEBUT NAV -->
+<nav class="navbar navbar-expand-lg">
+        
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="{{path('app_match')}}"> <img src="img/logo-buddies_1.svg" alt=""> </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" aria-current="page" href="{{path('app_home')}}"><img src="img/icones/icones-nav/commu.svg"></a>
+        </li>
+
+        <li class="nav-item">
+          <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" 
+          data-bs-toggle="offcanvas" href="#offcanvasAmis" role="button" aria-controls="offcanvasExample"><img src="/img/icones/icones-nav/amis.svg">
+          </a>
+        </li>
+
+        <li id="notif" class="nav-item dropdown">
+          <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="img/icones/icones-nav/cloche.svg">
+          </a>
+          <ul class="dropdown-menu">
+            <li class="my-3 mx-4">
+              <div class="card">
+                <div class="card-body d-flex flex-row align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="p-2">
+                      <img id="profil-notif" src="/img/profil/alice.jpg" alt="">
+                    </div>
+                    <div class="p-2">
+                      <h4 class="card-text">Alice Parker</h4>
+                    </div>
+                    <div class="ms-auto p-2">
+                      <img id="icon-notif" src="/img/icones/heart-orange.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="my-3 mx-4">
+              <div class="card">
+                <div class="card-body d-flex flex-row align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="p-2">
+                      <img id="profil-notif" src="/img/profil/alice.jpg" alt="">
+                    </div>
+                    <div class="p-2">
+                      <h4 class="card-text">Alice Parker</h4>
+                    </div>
+                    <div class="ms-auto p-2">
+                      <img id="icon-notif" src="/img/icones/langue.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="my-3 mx-4">
+              <div class="card">
+                <div class="card-body d-flex flex-row align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="p-2">
+                      <img id="profil-notif" src="/img/profil/alice.jpg" alt="">
+                    </div>
+                    <div class="p-2">
+                      <h4 class="card-text">Alice Parker</h4>
+                    </div>
+                    <div class="ms-auto p-2">
+                      <img id="icon-notif" src="/img/icones/icones-menu-amis/message.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <li class="nav-item dropdown">
+            <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="img/icones/icones-nav/profil.svg">
+            </a>
+            <ul class="dropdown-menu">
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_user_show')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/smile.svg" alt="">
+                Mon profil
+                </a>
+              </li>
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_faq')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/aide.svg" alt="">
+                Aide
+                </a>
+              </li>
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_charte')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/charte.svg" alt=""> 
+                  Charte BUDDIES
+                </a>
+              </li>
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_mentions_legales')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/mentions-legales.svg" alt=""> 
+                  Mentions légales
+                </a>
+              </li>
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_logout')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/deconnexion.svg" alt=""> 
+                  Déconnexion
+                </a>
+              </li>
+            
+            </ul>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- FIN NAV -->
+
+<main class="container">
+
+<section id="match-dash" class="col-6 offset-3 d-flex flex-column align-items-center">
+
+    <i class="sticker sticker-left sticker-good-day"></i>
+
+    <i class="sticker sticker-left sticker-smiley"></i>
+
+{#     <h1 class="text-center">Ça Match !</h1> #}
+
+    {# Condition pour apparetre les amis #}
+            {% if showButtonFriend %}
+                   <h1 class="text-center">Ça Match !</h1>
+            {% else %}
+                  <h1 class="text-center">En attende de Match...</h1>
+            {% endif %}
+
+            {% if showButtonFriend %}
+               {% for userUser in amis %}
+{#                    <h1 class="text-center">Ça Match !</h1> #}
+                <div class="d-flex flex-row">
+                  <img src="/data/{{ app.user.Picture }}" alt="Image user connect">
+                  <img src="/data/{{ userUser.Picture }}" alt="Image user match">
+                </div>
+                    <button class="px-3 py-3" onclick="loadMsg('{{ app.user.id }}', '{{ userUser.id }}')"> Envoyer un message</button>
+            {% endfor %}
+            {% else %}
+{#                   <h1 class="text-center">En attende de Match...</h1> #}
+                <div class="d-flex flex-row">
+                  <img src="/data/{{app.user.Picture}}" alt="Image user connect">
+                </div>
+            {% endif %}
+
+</section>
+
+<section id="profils">
+
+    <i class="sticker sticker-right sticker-good-luck"></i>
+
+    <h2>Profils qui pourraient vous plaire</h2>
+    
+    <!-- -->
+{#     {% for match in usermatch %} #}
+
+    
+    <div class="d-flex flex-row justify-content-between">
+    {% for match in infoMatch%}
+      {% if match.id not in tabFriendId %}
+      {% if match.id not in app.user.isValid %}
+        {% if i  <= 2 %}
+          <a data-bs-toggle="modal" data-bs-target="#modal-dashboard{{match.id}}" >
+            <div id="card-profil" class="card d-flex flex-column mb-3 col-4">
+              <div class="d-flex flex-column align-items-center mt-3">
+                <img src="/data/{{match.Picture}}" class="card-img" alt="camille">
+                <p class="pencentage text-white text-center">{{match.pourcent|round}}%</p>
+              </div>
+            
+              <div class="card-body">
+                <h2 class="card-title d-flex justify-content-center mb-4">{{match.firstName}}</h2>
+                <div class="d-flex justify-content-center align-items-center mb-4">
+                  <img class="card-icon" src="/img/icones/location.svg" alt="location">
+                  <p class="card-text">{{match.city}}</p>
+                </div>
+                <div class="d-flex justify-content-center align-items-center mb-4">
+                  <img class="card-icon" src="/img/icones/flag.svg" alt="flag">
+                  <p class="card-text">{{match.country}}</p>
+                </div>
+            
+                <div class="d-flex justify-content-center align-items-center mb-4">
+                  <img class="card-icon" src="/img/icones/langue.svg" alt="commentaire">
+                  <p class="card-text">{{match.language}} {{match.language2}}</p>
+                </div>
+            
+                <div  class="d-flex justify-content-center my-5">
+                  <a href="{{ path('app_messenger_save_unmatch', {'id':match.id}) }}" class="btn"><img src="/img/icones/non.svg" alt="non"></a>
+                  <a href="{{path('app_add_friends2', {'id':match.id})}}" class="btn"><img src="/img/icones/oui.svg" alt="oui"></a>
+                </div>
+              </div>
+            </div>
+          </a>
+        {% set i = i + 1 %}
+      {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    </div>
+</section>
+
+<section id="mes-commu">
+
+    <i class="sticker sticker-left sticker-wow"></i>
+
+    <h2>Mes communautés</h2>
+
+      <div class="d-flex flex-row justify-content-between">
+          {% for groupe in app.user.groupe %}
+            <div id="card-commu" class="card col-3">
+                <a href="{{path('app_home')}}">
+
+                <div class="thumbnail d-flex justify-content-center align-items-center">
+
+                  <img class="img-fluid" src="{{ groupe.image }}" alt="">
+
+                  <h5 class="card-title">{{ groupe.name }}</h5>
+                </div>
+                <div class="card-body d-flex flex-column align-items-end px-4">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  
+                  <div class="d-flex flex-row align-items-center">
+                    <img src="/img/icones/people.svg" alt="">
+                    <p class="mb-0 ms-3">4864 membres</p> 
+                  </div>
+                </div>
+                </a>
+            </div>
+          {% endfor %}
+</section>
+{% for match in infoMatch %}
+  <div class="modal fade" id="modal-dashboard{{match.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+    
+          <div class="cardModal">
+            
+            <div class="card-header card-headerTeste d-flex flex-column">
+              <button type="button" class="btn-close align-self-end mt-2" data-bs-dismiss="modal" aria-label="Close"></button> 
+    
+    <div class="d-flex flex-row  justify-content-center ms-5 mb-5">
+    
+                <div class="d-flex justify-content-center me-5">
+                  <div id="percentage">
+                      <p class="text-black">{{match.pourcent|round}}%</p>
+                  </div> 
+                    <img src="/data/{{match.Picture}}" class="card-imgModal" alt="Image profile match"> 
+                </div>
+    
+                <div class="card-info d-flex flex-column justify-content-center">
+    
+                      <div class="d-flex flex-row mb-3">
+                        <img class="card-icon me-2" src="/img/icones/location-white.svg" alt="location">
+                        <p class="card-text mb-0 me-" style="margin-bottom: 0px">{{match.city}}</p>
+                      </div>
+                      <div class="d-flex flex-row mb-3">
+                        <img class="card-icon me-2" src="/img/icones/flag-white.svg" alt="flag">
+                        <p class="card-text mb-0 me-3" style="margin-bottom: 0px">{{match.country}}</p>
+                      </div>
+                      <div class="d-flex flex-row mb-3">
+                        <img class="card-icon me-2" src="/img/icones/langue-white.svg" alt="commentaire">
+                        <p class="card-text">{{match.language}} {{match.language2}}</p>
+                      </div>
+
+                </div>
+              </div>
+            </div>
+            
+            <div class="d-flex flex-column my-5 mx-5">
+
+              <h3 class="mb-5">{{match.firstName}}<h3>
+                
+              <p class="mb-5">{{match.Biography}}</p>
+    
+                <div class="">
+                    <h4 class="text-dark my-4">Centres d'intérêts</h4>
+                    <div class="badge badgeModal d-flex mb-5">
+                        <img class="me-4" src="/img/badges-interets/ci-cuisine.svg" alt="ci-cuisine">
+                        <img class="me-4" src="/img/badges-interets/ci-cinema.svg" alt="ci-art">
+                        <img class="me-4" src="/img/badges-interets/ci-musique.svg" alt="ci-musique">
+                    </div>
+    
+                    <h4 class="text-dark mb-4">Les activités que {{match.firstName}} aimerais faire</h4>
+                    <div class="badgeModal d-flex">
+                        <img class="me-4" src="/img/badges-activite/activite-expo.svg" alt="activite-expo">
+                        <img class="me-4" src="/img/badges-activite/activite-devouverte.svg" alt="activite-devouverte">
+                        <img class="me-4" src="/img/badges-activite/activite-randonnee.svg" alt="activite-randonnee">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="d-flex justify-content-center py-4 mt-4">
+                <a href="{{path('app_remove_friends', {'id':match.id})}}" class="btn"><img src="/img/icones/non.svg" style="height:8rem" alt="non"></a>
+                <a href="{{path('app_add_friends', {'id':match.id})}}" class="btn"><img src="/img/icones/oui.svg" style="height:8rem" alt="oui"></a>
+
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</main>
+
+<!--OFFCANVAS LISTE AMIS -->
+  
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasAmis" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas-header">  
+  
+<input class="px-3 py-3" type="text" placeholder="Rechercher un ami">
+
+</div>
+
+<div class="offcanvas-body">
+
+  <!-- -->
+  {% for userUser in amis %}
+    <div class="card">
+      <div class="card-body d-flex flex-row align-items-center">
+
+        <div class="d-flex align-items-center">
+          <div class="p-2">
+            <img src="/data/{{userUser.Picture}}" alt="">
+          </div>
+          <div class="p-2">
+            <h4 class="card-text">{{userUser.firstName}}</h4>
+          </div>
+          <div class="ms-auto p-2">
+            <div class="dropdown">
+              <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/img/icones/icones-menu-amis/see-more.svg" alt="">
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{path('app_user_details', {'id':userUser.id})}}">
+                  <img src="/img/icones/icones-menu-amis/profil-noir.svg" alt=""> Voir le profil</a></li>
+                  <li><a class="dropdown-item" onclick="loadMsg('{{ app.user.id }}', '{{ userUser.id }}')" href="#">
+                <img src="/img/icones/icones-menu-amis/message.svg" alt=""> Envoyer un message</a></li>
+                <li><a class="dropdown-item" href="{{path('app_remove_friends', {'id':userUser.id})}}">
+                <img src="/img/icones/icones-menu-amis/retirer-ami.svg" alt=""> Retirer de la liste d'amis</a></li>
+                <li><a class="dropdown-item" href="{{path('app_remove_friends', {'id':userUser.id})}}">
+                <img src="/img/icones/icones-menu-amis/bloquer.svg" alt=""> Bloquer</a></li>
+                <li><a class="dropdown-item" href="#">
+                <img src="/img/icones/icones-menu-amis/signaler.svg" alt=""> Signaler</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+</div>
+
+<!--FIN OFFCANVAS LISTE AMIS -->
+
+{% endblock %}
+{% block javascripts %}
+<script>
+
+let globalIdReceiver;
+let globalIdSender;
+
+function loadMsg(idSender, idReceiver){
+
+globalIdSender = idSender;
+globalIdReceiver = idReceiver;
+
+  let messages = document.getElementById("zoneTxt");
+
+  fetch('/messenger/listmessage/'+idSender+'/'+idReceiver)
+  .then(response=> response.text())
+  .then(text=> messages.innerHTML = text);
+
+  setTimeout(function(){
+      loadMsg(globalIdSender, globalIdReceiver);
+  }, 20000);
+
+}
+
+let btnSendMsg = document.getElementById('btnSendMsg');
+btnSendMsg.addEventListener('click', function(){
+  let textarea = document.getElementById('messenger_text');
+  let content = textarea.value;
+
+  fetch('/messenger/save/1',  {
+      method: 'POST',
+      body: JSON.stringify({message:content, idReceiver:globalIdReceiver})
+      }
+  )
+  .then(function(headers){
+      return headers;
+  })
+  .then(function(data){
+      loadMsg(globalIdSender, globalIdReceiver);
+      textarea.value = "";
+  })
+
+});
+
+
+let headerTitle = document.querySelector('.headerTitle');
+let zoneTxt = document.getElementById('zoneTxt');
+let newMessage = document.getElementById('new-message');
+headerTitle.addEventListener('click', function(e){
+
+zoneTxt.classList.toggle('text-close');
+newMessage.classList.toggle('messageClose');
+
+})
+
+</script>
+{% endblock %}

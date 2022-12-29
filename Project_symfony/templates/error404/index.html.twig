@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Error404Controller!{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/404.css">
+{% endblock %}
+
+
+{% block body %}
+<!-- DEBUT NAV -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+                
+                <a class="navbar-brand" href="../public/index.html"> <img src="img/logo-buddies_1.svg" alt=""> </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                </div>
+        </div>
+      </nav>
+    <!-- FIN NAV -->
+
+    <main>
+        <section>
+            <article id="hero" class="col-6 d-flex align-items-center">
+            <div>   
+            <h1>404</h1>
+
+            <p class="mb-5">La page que vous recherchez <br> semble introuvable.</p>
+
+            <p>Pour retourner à l'accueil <br>
+            <a href="{{path('app_landing')}}">c'est par ici ! </a>
+            </p>
+        </div>
+
+            
+
+        
+            </article>
+            
+        </section>
+
+
+    </main>
+{% endblock %}

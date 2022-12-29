@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messenger index{% endblock %}
+
+{% block body %}
+    <h1>Messenger index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>SentAt</th>
+                <th>ReceivedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for messenger in messengers %}
+            <tr>
+                <td>{{ messenger.id }}</td>
+                <td>{{ messenger.text }}</td>
+                <td>{{ messenger.sentAt ? messenger.sentAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ messenger.receivedAt ? messenger.receivedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+
+                    <a href="{{ path('app_messenger_show', {'id': messenger.id}) }}">afficher</a>
+                    <a href="{{ path('app_messenger_edit', {'id': messenger.id}) }}">modifier</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_messenger_new', {'id':12}) }}">Nouveau message</a>
+{% endblock %}

@@ -1,0 +1,28 @@
+/*************** BODY *******************/ 
+
+main section{
+    border: 3px solid black;
+    margin-top: 4.8rem;
+    margin-bottom: 11rem;
+    padding: 4.8rem;
+    background-color: #F1F0E6;
+}
+
+
+/*************** TITRES ET TEXTES *******************/ 
+
+p{
+    margin-bottom: 2rem;
+}
+
+h2{
+    margin-bottom: 5.4rem;
+}
+
+
+
+i.sticker-austin::before{
+/*     background-image: url(../img/stickers/Tampon-austin.svg); */
+    top: 0.4rem;
+    margin-bottom: 1rem;
+}

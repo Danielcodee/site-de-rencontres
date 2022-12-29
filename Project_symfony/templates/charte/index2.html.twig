@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Charte{% endblock %}
+
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/charte.css">
+{% endblock %}
+
+{% block body %}
+    
+    <!-- DEBUT NAV -->
+    <nav class="navbar navbar-expand-lg">
+        
+        <div class="container-fluid">
+      
+          <a class="navbar-brand" href="{{path('app_charte')}}"> <img src="img/logo-buddies_1.svg" alt=""> </a>
+      
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+      
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+      
+              <li class="nav-item">
+                <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" aria-current="page" href="#"><img src="img/icones/icones-nav/aide.svg"></a>
+              </li>
+      
+              <li class="nav-item">
+                <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" href="{{path('app_login')}}"><img src="img/icones/icones-nav/profil.svg"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- FIN NAV -->
+
+    <main>
+        <section class="container">
+            <article class="col-10 offset-1 text-center">
+  
+            <h2>Charte BUDDIES</h2>
+
+            <i class="sticker sticker-left sticker-flower"></i>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed praesentium incidunt cum a quisquam atque, optio accusamus voluptate fugiat.</p>
+
+            <h3>Règle n°1 :</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolorem possimus repellendus. Officia, odio facilis quasi nulla repellat officiis praesentium accusamus sed dolorem quos natus, repudiandae, ipsa architecto voluptatibus quia.</p>
+
+
+            <h3>Règle n°2 :</h3>
+
+            <i class="sticker sticker-right sticker-smiley"></i>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolorem possimus repellendus. Officia, odio facilis quasi nulla repellat officiis praesentium accusamus sed dolorem quos natus, repudiandae, ipsa architecto voluptatibus quia.</p>
+
+            <h3>Règle n°3 :</h3>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolorem possimus repellendus. Officia, odio facilis quasi nulla repellat officiis praesentium accusamus sed dolorem quos natus, repudiandae, ipsa architecto voluptatibus quia.</p>
+            
+
+            <h3>Règle n°4 :</h3>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolorem possimus repellendus. Officia, odio facilis quasi nulla repellat officiis praesentium accusamus sed dolorem quos natus, repudiandae, ipsa architecto voluptatibus quia.</p>
+            
+            <i class="sticker sticker-center-left sticker-austin"></i>
+        </section>
+        
+      </article>
+    </main>
+
+    
+{% endblock %}

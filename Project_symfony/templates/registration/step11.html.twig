@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/test-formulaire2.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- DEBUT NAV --> 
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container-fluid">
+    
+        <a class="navbar-brand" href="{{path('app_landing')}}"> <img src="img/logo-buddies_1.svg" alt=""> </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    </div>
+</nav>
+<!-- FIN NAV -->
+    <main>
+        {{ form_start(registrationForm) }}
+        {% set i = 0 %}
+
+            {% for test in registrationForm.match_genre %}
+            {% if i < 2 %}
+                <div class="show">
+            {% else %}
+                <div class="hide">
+            {% endif %}
+            {{ form_label(test) }}
+            {{ form_widget(test) }}
+            </div>
+            {% set i = i + 1 %}
+        {% endfor %}
+                    <button type="submit" class="btn">Register</button>
+        {{ form_end(registrationForm) }} 
+    </main>
+{% endblock %}
+

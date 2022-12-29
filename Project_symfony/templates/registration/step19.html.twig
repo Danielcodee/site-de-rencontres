@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/test-formulaire12avatar.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- DEBUT NAV --> 
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container-fluid">
+    
+        <a class="navbar-brand" href="{{path('app_landing')}}"> <img src="img/logo-buddies_1.svg" alt=""> </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    </div>
+    </nav>
+<!-- FIN NAV -->
+
+  <!-- FIN NAV -->
+    <main>
+        <section class="container-fluid">
+            <div id="centrage-ecran" class="d-flex flex-column justify-content-center">
+
+                <h2 class="text-center">Choissez une photo de profil ou un avatar.</h2>
+                <div class="d-flex justify-content-center mt-5">
+                    <div class="profil d-flex flex-column justify-content-center mx-5">
+                        <img id="profil-avatar" src="/img/profil-avatar/avatar-principal.png" alt="avatar-principal">
+                        <button class="my-4 text-black align-self-center" id="btn" type="button">Choisir une
+                            photo</button>
+                    </div>
+                    <div class="d-flex flex-column align-items-end">
+                    <div class="ms-5">
+                        <div class="profil-avatar d-flex justify-content-evenly">
+                            <img src="/img/profil-avatar/avatar1.png" alt="avatar1">
+                            <img src="/img/profil-avatar/avatar2.png" alt="avatar2">
+                            <img src="/img/profil-avatar/avatar3.png" alt="avartar3">
+                            <img src="/img/profil-avatar/avatar4.png" alt="avartar4">
+                            <img src="/img/profil-avatar/avatar5.png" alt="avartar5">
+                        </div>
+                        <div class="profil-avatar d-flex justify-content-evenly">
+                            <img src="/img/profil-avatar/avatar6.png" alt="avatar6">
+                            <img src="/img/profil-avatar/avatar7.png" alt="avatar7">
+                            <img src="/img/profil-avatar/avatar8.png" alt="avartar8">
+                            <img src="/img/profil-avatar/avatar9.png" alt="avartar9">
+                            <img src="/img/profil-avatar/avatar10.png" alt="avartar10">
+                        </div>
+                        <div class="profil-avatar d-flex justify-content-evenly">
+                            <img src="/img/profil-avatar/avatar11.png" alt="avatar11">
+                            <img src="/img/profil-avatar/avatar12.png" alt="avatar12">
+                            <img src="/img/profil-avatar/avatar13.png" alt="avartar13">
+                            <img src="/img/profil-avatar/avatar14.png" alt="avartar14">
+                            <img src="/img/profil-avatar/avatar15.png" alt="avartar15">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                    <a href="{{path('app_register_step19')}}"><button class="my-4 text-black" id="btn" type="button">Retour</button></a>
+                    <a href="{{path('app_register_step20')}}"><button class="my-4 ms-4 text-black" id="btn" type="button">Suivant</button></a>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+

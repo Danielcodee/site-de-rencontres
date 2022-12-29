@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="/css/test-formulaire2.css">
+{% endblock %}
+
+{% block body %}
+    <!-- DEBUT NAV --> 
+    <nav class="navbar navbar-expand-lg">
+    
+        <div class="container-fluid">
+        
+            <a class="navbar-brand" href="{{path('app_landing')}}"> <img src="img/logo-buddies_1.svg" alt=""> </a>
+        
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        </div>
+        </nav>
+    <!-- FIN NAV -->
+	{{ form_start(registrationForm) }}
+	<!-- DEBUT NAV -->
+	<nav class="navbar navbar-expand-lg">
+
+		<div class="container-fluid">
+
+			<a class="navbar-brand" href="../public/index.html">
+				<img src="img/logo-buddies_1.svg" alt="">
+			</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+	</nav>
+	<!-- FIN NAV -->
+	<main>
+		<section class="container-fluid">
+			<div id="centrage-ecran" class="d-flex flex-column justify-content-center">
+				<h3 class="text-center mt-5">Votre date de naissance</h3>
+				<div class="d-flex justify-content-center mt-5">
+					<div class="d-flex flex-column align-items-end col-4">
+						<div
+							class="card-formulaire d-flex align-items-center w-100 px-3">
+							{#                                     <form action="/action_page.php" class="d-flex flex-column justify-content-center align-items-end w-100">
+							                                        <label for="birthday"></label>
+							                                        <input class="p-3" type="date" id="birthday" name="birthday">
+							                                        <input class="text-black mt-3" id="btn" type="submit">
+							                                    </form>    #}
+								<div class="p-3">
+									{{ form_row(registrationForm.birthDate, { 'label': ' '}) }}
+							</div>
+						</div>
+						<div class="d-flex justify-content-end">
+							<button class="my-4 mx-3 text-black" id="btn" type="button">Retour</button>
+							{# <button class="my-4 ms-2 text-black" id="btn" type="button">Suivant</button> #}
+                            <button type="submit" id="btn" class="my-4 ms-2 text-black" >Register</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	{{ form_end(registrationForm) }}
+ <!-- DEBUT FOOTER -->
+{% endblock %}

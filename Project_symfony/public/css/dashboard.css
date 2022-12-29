@@ -1,0 +1,282 @@
+/*************** IMPORT DE POLICES *******************/ 
+
+
+/*************** VARIABLES *******************/ 
+
+:root{
+    --bg-primary: #FD8D04;
+    --bg-secondary: #2C7DA0;
+}
+
+
+/*************** RÈGLES GÉNÉRALES *******************/
+
+
+/*************** GRILLES *******************/ 
+
+
+/*************** TITRES ET TEXTES *******************/ 
+
+
+
+/*************** BOUTONS *******************/ 
+
+/*************** FORMULAIRES *******************/ 
+
+
+/*************** ICONOGRAPHIE *******************/ 
+
+
+/*************** NAV *******************/ 
+
+
+/*************** HEADER *******************/ 
+
+
+/*************** FOOTER *******************/
+main{
+    margin-top: 8.8rem ;
+    margin-bottom: 9.4rem;
+}
+
+
+
+#card-commu{
+    max-width: 31.2rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #F1F0E6;
+    box-shadow: -1px 1px rgba(0,0,0,0), -2px 2px rgba(0,0,0,0), -3px 3px rgba(0,0,0,0), -4px 4px rgba(0,0,0,0), -5px 5px rgba(0,0,0,0);
+    border: solid 2px  rgba(0,0,0,0);
+}
+
+#card-commu:hover{
+    scale: 1.02;
+    box-shadow:  -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000, -5px 5px #000;
+    border: solid 2px #000; 
+}
+
+#card-profil:hover{
+    scale: 1.02;
+    box-shadow:  -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000, -5px 5px #000;
+    border: solid 2px #000;
+}
+
+
+a{
+    text-decoration: none;
+    border: none;
+}
+
+
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail img{
+    height: 18rem;
+    width: 31rem;
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+
+
+.thumbnail h5 {
+    position: absolute;
+    top: calc(50% - 1.5rem);
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+.thumbnail::before{
+    display: block;
+    position: absolute;
+    content: '';
+    top:0;
+    bottom:0;
+    left: 0rem;
+    right: 0rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+
+
+
+
+/*************** card profil *******************/
+
+#card-profil{
+    width: 42rem;
+    margin-left: 0;
+    background-color: rgb(241, 240,230);
+    padding-top: 2.4rem;
+    border-radius: 2rem;
+    border: solid 2px rgba(0,0,0,0);
+   
+}
+
+.pencentage{
+    background-color: #FD9904;
+    border-radius: 180px;
+    height: 8rem;
+    width:  8rem;
+    padding-top: 2.6rem;
+    margin-left: -13rem;
+    margin-top: -7rem;
+    z-index: 1000;
+}
+
+.card-img{
+    height: 20rem;
+    width:  20rem;
+    border-radius: 180px;
+    border: solid 1rem #FD9904;
+}
+
+
+
+
+#profils{
+    margin-top: 8.8rem;
+}
+
+#mes-commu{
+    margin-top: 8.8rem;
+}
+
+
+
+#match-dash img{
+    height: 30rem;
+    border-radius: 100%;
+
+}
+
+#match-dash button {
+    margin-top: 4.8rem;
+    width: 20rem ;
+    border-radius: 20rem;
+}
+
+
+
+
+i.sticker-smiley::before{
+    top: 3rem;
+    left: -35rem;
+    width: 15rem;
+    height: 15rem;
+    rotate: 20deg;
+
+}
+
+i.sticker-good-day::before{
+    rotate: -20deg;
+    width: 30rem;
+    height: 30rem;
+    top: -18rem;
+    left: -30rem;
+}
+
+
+i.sticker-good-luck::before{
+    rotate: 15deg;
+    width: 20rem;
+    height: 20rem;
+    top: -10rem;
+
+}
+
+i.sticker-wow::before{
+    rotate: -20deg;
+    width: 20rem;
+    height: 20rem;
+    left: -25rem;
+}
+
+
+i.sticker-smile::before{
+    rotate: 15deg;
+    width: 20rem;
+    height: 20rem;
+    top: 0rem;
+}
+
+
+
+
+
+
+#modal-dashboard button{
+    box-shadow: -1px 1px rgba(0,0,0,0), -2px 2px rgba(0,0,0,0), -3px 3px rgba(0,0,0,0), -4px 4px rgba(0,0,0,0);
+    border: solid 2px rgba(0,0,0,0);
+
+}
+
+#modal-dashboard button:hover{
+    scale: 1;
+    box-shadow: -1px 1px rgba(0,0,0,0), -2px 2px rgba(0,0,0,0), -3px 3px rgba(0,0,0,0), -4px 4px rgba(0,0,0,0);
+    border: solid 2px rgba(0,0,0,0);
+
+}
+
+
+.modal-content{
+    border-radius: 2rem;
+    border: none;
+}
+
+
+.cardModal{
+    background-color: #F1F0E6;
+    margin: 0;
+    border-radius: 2rem;
+
+}
+
+.card-headerTeste {
+    background-color: #FD9904;
+    border-radius: 2rem 2rem 0rem 0rem;
+}
+
+
+.card-headerTeste p{
+    color: white;
+}
+
+.card-imgModal{
+    height: 20rem;
+    width:  20rem;
+    border-radius: 180px;
+    border: solid 1rem #F1F0E6;
+    margin-left: -5rem;
+}
+
+#percentage{
+    margin-left: -5rem;
+    margin-top: 12rem;
+    background-color:#F1F0E6;
+    border-radius: 100px;
+    height: 8rem;
+    width:  8rem;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    font-family: 'Calistoga', cursive;
+    z-index: 100;
+}
+
+.badgeModal{
+    height: 10rem;
+    width: 10rem;
+    padding: 0rem;
+}
+
+.badgeModala img {
+    height: 7rem;
+    width: 7rem;
+}
+
+#modal-dashboard h2{
+    margin-bottom: 1rem;
+}
+

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messenger{% endblock %}
+
+{% block body %}
+    <h1>Messenger</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ messenger.id }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ messenger.text }}</td>
+            </tr>
+            <tr>
+                <th>SentAt</th>
+                <td>{{ messenger.sentAt ? messenger.sentAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ReceivedAt</th>
+                <td>{{ messenger.receivedAt ? messenger.receivedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_messenger_index') }}">back to list</a>
+
+    <a href="{{ path('app_messenger_edit', {'id': messenger.id}) }}">edit</a>
+
+    {{ include('messenger/_delete_form.html.twig') }}
+{% endblock %}

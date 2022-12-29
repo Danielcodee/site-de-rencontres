@@ -1,0 +1,671 @@
+/*************** IMPORT DE POLICES *******************/ 
+
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+/*************** VARIABLES *******************/ 
+
+:root{
+    --bg-primary: #FD8D04;
+    --bg-secondary: #2C7DA0;
+}
+
+/*************** RÈGLES GÉNÉRALES *******************/
+
+html{ font-size: 10px;
+}
+/*************** GRILLES *******************/ 
+
+
+/*************** TITRES ET TEXTES *******************/ 
+
+h1{
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 5.5rem;
+    color: white;
+    text-shadow:
+    -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000, -5px 5px #000, -6px 6px #000, -7px 7px #000, -8px 8px #000;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #000;
+    padding-bottom: 7.2rem;
+}
+
+h2{
+    font-family: 'Calistoga', cursive;
+    font-size: 5rem;
+    color: black;
+    margin-bottom: 4.8rem;
+}
+
+h3{
+    font-family: 'Calistoga', cursive;
+    font-size: 4rem;
+    color: black;
+}
+
+h4{
+    font-family: 'Calistoga', cursive;
+    font-size: 2rem;
+    color: black;
+}
+
+h5{
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #000;
+}
+
+p{
+    font-family: 'Nunito Sans', sans-serif; ;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: black;
+}
+
+::placeholder{
+    font-family: 'Nunito Sans', sans-serif; ;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #606263;
+}
+
+
+/*************** BOUTONS *******************/ 
+
+button{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    background-color: #F1F0E6;
+    box-shadow: -1px 1px rgba(0,0,0,0), -2px 2px rgba(0,0,0,0), -3px 3px rgba(0,0,0,0), -4px 4px rgba(0,0,0,0);
+    border: solid 2px  rgba(0,0,0,0);
+}
+
+button:hover{
+    scale: 1.03;
+    box-shadow: -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000;
+    border: solid 2px black;
+}
+
+.accordion-button:hover{
+    scale: 1;
+}
+
+/*************** FORMULAIRES *******************/ 
+
+
+/*************** ICONOGRAPHIE *******************/ 
+
+/*************** CARDS *******************/ 
+
+.card{
+    margin-bottom: 2.4rem;
+}
+
+/*************** NAV *******************/ 
+
+.navbar {
+    background-color: var(--bg-primary);
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    padding-left: 10.9rem;
+    padding-right: 10.9rem;
+}
+
+.navbar-brand{
+    height: 80px;
+    width: 240px;
+}
+
+#icon{
+    background-color: #FD8D04;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 100%;
+}
+
+#icon:hover{
+    transform: scale(1.2);   
+}
+
+#icon-active{
+    background-color:#F1F0E6;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 100%;
+}
+
+
+.dropdown-menu{
+    width: auto;
+    height: auto;
+    background-color: #FD8D04;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    --bs-dropdown-border-radius: 0rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 125%;
+}
+
+li a{
+    font-size: 1.6rem;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.dropdown-menu a{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+
+#icon-notif{
+    width: 3rem;
+}
+
+#profil-notif{
+    border-radius: 100%;
+    height: 6rem;
+    width: 6rem;
+}
+
+#notif .card{
+    margin-bottom: 0;
+    border-radius: 1rem;
+    border: none;
+}
+
+/*************** HEADER *******************/ 
+
+header{
+    background-size: cover;
+    background-position: center;
+    padding-top: 17rem;
+    padding-bottom: 17rem;
+}
+
+/*************** FOOTER *******************/ 
+
+footer {
+    background-color: #F1F0E6;
+}
+
+footer div{
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+}
+
+.nav-link{
+    font-size: 2rem;
+    color: black;
+
+}
+
+.nav :hover{
+    color: var(--bg-primary);
+}
+
+
+footer p{
+    font-size: 3rem;
+}
+
+footer .vr{
+    width: 0.2rem;
+    color: black;
+    opacity: 1;
+}
+
+footer a img{
+    height: 5rem;
+    width: 5rem;
+}
+
+#sous-footer{
+    background-color: var(--bg-primary);
+}
+
+#sous-footer p {
+    color: white;
+    font-size: 1.8rem;
+}
+
+/*************** CHATBOX *******************/
+
+#chatbox{
+    position: sticky;
+    bottom: 0;
+    left: 70%;
+    height: 7rem;
+    width: 42rem;
+    background-color: #2C7DA0;
+    z-index: 1000;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+
+}
+
+#chatbox .accordion .accordion-button{
+    height: 7rem;
+    box-shadow: none;
+    background-color: #2C7DA0;
+    color: white;
+    border: solid 2px black;
+    font-size: 1.8rem;
+}
+
+#chatbox .accordion .accordion-button:not(.collapsed) {
+    background-color: #2C7DA0;
+    color: white;
+    border: solid 2px black;
+} 
+
+
+#chatbox img{
+    border-radius: 100%;
+    height: 6rem;
+    width: 6rem;
+}
+
+#chatbox .card{
+    border: none;
+
+}
+
+#chatbox .accordion-collapse{
+    border-right: solid 2px black;
+    border-left: solid 2px black;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+}
+
+#chatbox #message-date p{
+    font-size: 1rem;
+    color: grey;
+}
+
+#their-message p {
+    border-radius: 1rem 1rem 1rem 0rem;
+    background-color:#F1F0E6;
+}
+
+#my-message p {
+    border-radius: 1rem 1rem 0rem 1rem;
+    background-color: #C3DFEB;
+}
+
+
+#new-message input{
+   border-radius: 2rem;
+   border: solid 1px grey;
+   width: 70%;
+   margin-left: 1rem;
+   margin-right: 1rem;
+}
+
+
+/*************** STICKERS *******************/
+
+
+i.sticker{
+    position: relative;
+    width: 100%;
+    display: block;
+}
+i.sticker::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: -5rem;
+    z-index: 1000;
+}
+
+
+/**** stickers positions *****/
+
+i.sticker-right::before{
+    right: -20rem;
+    
+}
+i.sticker-left::before{
+    left: -20rem;
+}
+
+i.sticker-center-left::before{
+    left: 20rem;
+}
+
+
+i.sticker-center-right::before{
+    right: 20rem;
+}
+
+/******** bibliothèque stickers *********/
+
+
+i.sticker-smiley::before{
+    background-image: url(../img/stickers/smiley.png);
+}
+
+
+i.sticker-goodbye::before{
+    background-image: url(../img/stickers/goodbye.png);
+}
+
+
+i.sticker-flower::before{
+    background-image: url(../img/stickers/flower.png);
+}
+
+i.sticker-goodvibes1::before{
+    background-image: url(../img/stickers/goodvibes.png);
+}
+
+i.sticker-airplaine::before{
+    background-image: url(../img/stickers/airplaine.png);
+}
+
+
+i.sticker-flowervan::before{
+    background-image: url(../img/stickers/van-flower.png);
+}
+
+i.sticker-van1::before{
+    background-image: url(../img/stickers/van.png);
+}
+
+i.sticker-van2::before{
+    background-image: url(../img/stickers/van2.png);
+}
+
+i.sticker-chillout::before{
+    background-image: url(../img/stickers/chillout.png);
+}
+
+i.sticker-cat::before{
+    background-image: url(../img/stickers/cat.png);
+}
+
+i.sticker-gameboy::before{
+    background-image: url(../img/stickers/gameboy.png);
+}
+
+i.sticker-phone::before{
+    background-image: url(../img/stickers/phone.png);
+}
+
+i.sticker-guitare1::before{
+    background-image: url(../img/stickers/guitare.png);
+}
+
+i.sticker-guitare2::before{
+    background-image: url(../img/stickers/guitare2.png);
+}
+
+i.sticker-good-day::before{
+    background-image: url(../img/stickers/good-day.svg);
+}
+
+i.sticker-good-day2::before{
+    background-image: url(../img/stickers/good-day2.svg);
+}
+
+i.sticker-hello::before{
+    background-image: url(../img/stickers/hello.svg);
+}
+
+i.sticker-smile::before{
+    background-image: url(../img/stickers/smile.svg);
+}
+
+
+i.sticker-dream::before{
+    background-image: url(../img/stickers/dream.svg);
+}
+
+i.sticker-good-luck::before{
+    background-image: url(../img/stickers/good-luck.svg);
+}
+
+i.sticker-win::before{
+    background-image: url(../img/stickers/win.svg);
+}
+
+i.sticker-wow::before{
+    background-image: url(../img/stickers/wow.svg);
+}
+
+
+i.sticker-film-club::before{
+    background-image: url(../img/stickers/film-club.png);
+}
+
+
+i.sticker-paris::before{
+    background-image: url(../img/stickers/paris.svg);
+}
+
+
+i.sticker-tampon-espagne::before{
+    background-image: url(../img/stickers/espagne.svg);
+}
+
+i.sticker-tampon-avion::before{
+    background-image: url(../img/stickers/tampon-avion.svg);
+}
+
+
+i.sticker-tampon-prague::before{
+    background-image: url(../img/stickers/prague.svg);
+}
+
+i.sticker-tampon-grece::before{
+    background-image: url(../img/stickers/grece.svg);
+}
+
+i.sticker-tampon-london::before{
+    background-image: url(../img/stickers/londres.svg);
+}
+
+
+/************ CARD POST ***************/
+
+#card-post {
+    background-color: rgb(241, 240,230);
+    border: none;
+    border-radius: 1rem;
+}
+
+#card-post .card-img{
+    height: 6rem;
+    width:  6rem;
+    border-radius: 100px;
+}
+
+#card-post #photo-content img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+#card-post .card-content img{
+    height: 2rem;
+    width: 2rem;
+}
+
+#card-post .card-content{
+    margin: 1,6rem;
+}
+
+#card-post input{
+    background-color: #DEDED9;
+    width: 100%;
+}
+
+#card-post p{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/************** OFFCANVAS LISTE AMIS ********************/
+
+.offcanvas-body .card img{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 100%;
+    margin-right: 2rem;
+}
+
+.offcanvas-body .card h4{
+    margin-right: 8rem;
+}
+
+.offcanvas-body .card .dropdown button img{
+    height: 2.8rem;
+    width: 2.8rem;
+}
+
+.offcanvas-body .card .dropdown a img{
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.offcanvas-body .card .dropdown button{
+    border-radius: 2rem;
+  
+    border: none;
+    height: 4rem;
+    width: 4rem;
+}
+
+.offcanvas-body .card .dropdown button:hover{
+    border-radius: 100%;
+    background-color: #FD8D04;
+    border: none;
+    box-shadow: none;
+}
+
+.offcanvas-body .card .dropdown-menu{
+    background-color: #FD8D04;
+    padding: 0.5rem;
+}
+
+.offcanvas-body .card .dropdown-item{
+    border-radius: 0rem;
+  
+}
+
+.offcanvas input{
+    width: 100%;
+    border-radius: 2rem;
+    border: solid 2px black;
+}
+
+.offcanvas-body .card{
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: -1px 1px rgba(0, 0, 0, 0), -2px 2px rgba(0, 0, 0, 0), -3px 3px rgba(0, 0, 0, 0);
+    border: solid 2px rgba(0, 0, 0, 0);
+}
+
+
+.offcanvas-body .card .card-body{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.offcanvas{
+    background-color: #F1F0E6;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+}
+
+.under {
+    position: absolute;
+    bottom: 200px;
+    right: 200px;
+  }
+  #container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 10000;
+  }
+  .chat {
+    border: 1px solid #999;
+    display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+    margin: 0 5px;
+    pointer-events: auto;
+    width: 42rem;
+    background-color: white;
+  }
+
+  
+  .headerTitle {
+    height: 7rem;
+    box-shadow: none;
+    background-color: #2C7DA0;
+    color: white;
+    border: solid 2px black;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding-left: 1rem;
+    padding-top: 2rem;
+  }
+
+  #btnSendMsg{
+
+    margin-right: 1rem;
+    height: 43px;
+    border-radius: 3rem;
+   padding: 1rem;
+  }
+
+  #btnSendMsg img{
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .text {
+    height: 250px;
+    padding: 10px;
+    
+  }
+  .text-close {
+    display: none;
+  }
+  .chatImg{
+    border-radius: 100%;
+    height: 6rem;
+    width: 6rem;
+  }
+  #zoneTxt{
+    background-color: white;
+    overflow: scroll;
+  }
+  #container .card{
+    border: none;
+}
+#new-message{
+    border-top: none;
+}
+.messageClose{
+    display: none;
+}

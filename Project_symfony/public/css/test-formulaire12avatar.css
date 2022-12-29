@@ -1,0 +1,28 @@
+#centrage-ecran{
+    background-color: #FFFEFB;
+    height: 900px;
+    width: 1920;
+}
+    
+#btn{
+    color: #F1F0E6;
+    min-width: 10rem;
+    height:3rem ;
+    border-radius: 15px;
+    font-family: 'Nunito';
+    font-size: 1.4rem; 
+}
+
+#profil-avatar{
+    height:15rem;
+    width: auto;
+    }
+    
+.profil-avatar img{
+    width:5rem;
+    margin: 1rem;
+    }
+
+img:hover{
+    scale: 1.1;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+         <title>{% block title %}Welcome!{% endblock %}</title> 
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+        <link rel="stylesheet" href="/css/general.css">
+        <link rel="stylesheet" href="/css/connexion.css">
+        <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,700,400,600,300,500&display=swap" rel="stylesheet">
+        <!-- Fichier CSS -->
+        {% block stylesheets %}
+             
+        {% endblock %}
+    
+    </head>
+
+
+{% block body %}
+
+    <main>
+        <div id="heroshot">
+            <img src="/img/logo-buddies_1.svg" alt="">
+        </div>
+
+        <div id="form">
+
+           <form method="post">
+
+           {# Code pour faire logout sur la page login #}
+{#             {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            {% endif %} #}
+
+                <i class="sticker sticker-right sticker-hello"></i>
+
+                <h2 class="text-center">Bienvenue !</h2>
+
+
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control px-2 py-2 mb-3" autocomplete="email" required autofocus aria-describedby="emailHelp" placeholder="Nom d'utilisateur">
+                
+
+                <input type="password" name="password" id="inputPassword" class="form-control px-2 py-2" autocomplete="current-password" placeholder="Mot de passe" required>
+
+                 <input type="hidden" name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}">
+
+               
+                <div class="d-flex flex-row justify-content-between">
+                    <button  class="px-3 py-3">Mot de passe oublié ?</button>
+
+                    <button type="submit" class="px-3 py-3">Se connecter</button>
+                </div>
+                    <hr>
+
+                    {# il faut regle le button pour cree le compte #}
+                    <button  id="creation" class=" px-3 py-3"><a class="nav-link" href="{{path('app_register')}}">Crée un compte</a></button>
+
+
+                    <i class="sticker sticker-left sticker-win"></i>
+
+                </form>
+            </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+{% endblock %}

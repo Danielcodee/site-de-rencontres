@@ -1,0 +1,213 @@
+/*************** IMPORT DE POLICES *******************/ 
+
+
+/*************** VARIABLES *******************/ 
+
+:root{
+    --bg-primary: #FD8D04;
+    --bg-secondary: #2C7DA0;
+}
+
+
+/*************** RÈGLES GÉNÉRALES *******************/
+
+
+/*************** GRILLES *******************/ 
+
+
+/*************** TITRES ET TEXTES *******************/ 
+
+
+
+/*************** BOUTONS *******************/ 
+
+header button{
+    width: 302px;
+    height: 64px;
+    background-color: white;
+    border-style: 2px solid black;
+    border-radius: 8px;
+    font-size: 2.4rem;
+    box-shadow: -1px 1px rgba(0,0,0,0), -2px 2px rgba(0,0,0,0) , -3px 3px rgba(0,0,0,0), -4px 4px rgba(0,0,0,0);
+    border: solid 2px rgba(0,0,0,0);}
+/*************** FORMULAIRES *******************/ 
+
+
+/*************** ICONOGRAPHIE *******************/ 
+
+
+/*************** NAV *******************/ 
+
+
+/*************** HEADER *******************/ 
+
+header{
+    background-image: url(../img/landing/heroshot.jpg);
+}
+
+/*************** SECTION PRESENTATION *******************/ 
+
+#presentation{
+    padding-top: 8.8rem;
+    padding-bottom: 8.8rem;
+}
+
+#presentation article{
+    padding-top: 7.2rem;
+    padding-bottom: 7.2rem;
+}
+
+#presentation h2 {
+    padding-bottom: 3.3rem;
+}
+
+#presentation img{
+    box-shadow: 4px 4px 10px grey;
+    padding: 0rem;
+    border-radius: 1rem;
+}
+
+/*************** SECTION GALLERY *******************/ 
+
+#gallery {
+    padding-top: 8.8rem;
+    padding-bottom: 8.8rem;
+    background-color: var(--bg-primary);
+}
+
+#gallery h1{
+    padding-bottom: 8.8rem;
+}
+
+#gallery img{
+    border: 1rem solid white;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #000, 6px 6px #000, 7px 7px #000, 8px 8px #000;
+}
+
+.carousel-inner{
+    padding-bottom: 1rem;
+}
+
+.bg-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+    background-color: black ;
+
+}
+
+/* .caroussel-control-prev:hover{
+    box-shadow: none !important;
+    border: none !important;
+ } */
+
+/*************** SECTION FAQ *******************/ 
+
+#faq {
+    padding-top: 8.8rem;
+    padding-bottom: 8.8rem;
+}
+
+.accordion{
+    --bs-accordion-active-bg:#FD8D04; 
+    --bs-accordion-active-color: white;
+    border-radius: 2rem;
+    --bs-accordion-btn-icon-width: 2rem;
+    --bs-accordion-border-color: black;
+    --bs-accordion-border-width: 3px;
+    --bs-accordion-border-radius: 1rem;
+    --bs-accordion-inner-border-radius: 0.7rem;
+}
+
+.accordion-item{
+    border-width: 3px;
+    
+}
+
+.accordion-header button{
+    font-family: 'Nunito Sans', sans-serif; ;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: black;
+    border: 3px;
+    padding: 2rem;
+
+}
+
+.accordion-body{
+    font-family: 'Nunito Sans', sans-serif; ;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: black;
+}
+
+
+/*************** FOOTER *******************/ 
+
+
+i.sticker-tampon-avion::before{
+    background-image: url(../img/stickers/tampon-avion.svg);
+    left: 30rem;
+    top: 9rem;
+}
+
+i.sticker-flower::before{
+    background-image: url(../img/stickers/flower.png);
+
+    right: -7rem;
+}
+
+
+i.sticker-smiley::before{
+    background-image: url(../img/stickers/smiley.png);
+    left: 5rem;
+    top: -8rem;
+}
+
+
+i.sticker-airplaine::before{
+    background-image: url(../img/stickers/airplaine.png);
+    top: -14rem;
+    width: 25rem;
+    height: 25rem;
+    right: 30rem;
+}
+
+
+
+i.sticker-van1::before{
+    background-image: url(../img/stickers/van.png);
+    top: -27rem;
+    left: 40rem;
+    width: 30rem;
+    height: 30rem;
+}
+
+
+i.sticker-tampon-london::before{
+    background-image: url(../img/stickers/londres.svg);
+    top: 2rem;
+    rotate: -25deg;
+}
+
+i.sticker-guitare2::before{
+    background-image: url(../img/stickers/guitare2.png);
+    width: 30rem;
+    height: 30rem;
+    top: -3rem;
+    rotate: 45deg;
+}
+
+
+i.sticker-cat::before{
+    background-image: url(../img/stickers/cat.png);
+    width: 20rem;
+    height: 20rem;
+    top: -12rem;
+}
+
+

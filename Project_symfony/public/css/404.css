@@ -1,0 +1,27 @@
+h1{
+    font-size: 20rem;
+    padding-bottom: 2rem;
+
+}
+
+main a{
+   color: white;
+}
+
+main p{
+    font-family: 'Calistoga';
+    font-size: 4rem;
+    color: white;
+}
+
+#hero{
+    background-image: url(../img/heroshots/hero-404.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 84rem;
+    width: 100%;
+}
+
+#hero div{
+    padding-left: 20rem;
+}

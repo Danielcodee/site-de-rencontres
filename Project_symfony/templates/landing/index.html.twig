@@ -1,0 +1,187 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BUDDIES!{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/landing.css">
+{% endblock %}
+
+{% block body %}
+    <!-- DEBUT NAV --> 
+<nav class="navbar navbar-expand-lg">
+        
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="{{path('app_landing')}}"> <img src="img/logo-buddies_1.svg" alt=""> </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" aria-current="page" href="#faq"><img src="img/icones/icones-nav/aide.svg"></a>
+        </li>
+
+        <li class="nav-item">
+          <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" href="{{path('app_login')}}"><img src="img/icones/icones-nav/profil.svg"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- FIN NAV -->
+
+    <!-- DEBUT HEADER -->
+    <header class="container-fluid text-center">
+      
+        <h1> A local friend to help you discover your new world !</h1>
+        <a href="{{path('app_register')}}"><button> Créer mon compte ! </button></a>
+
+        <i class="sticker sticker-center-left sticker-tampon-avion"></i>
+    </header>
+    
+    <!-- FIN HEADER -->
+    
+    <main>
+        <!-- DEBUT -->
+        <section id="presentation">
+            <div class="container">
+
+                <article class="row">
+                    <div class="col-7">
+
+                        <h2>Lorem, ipsum dolor.</h3>
+
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laborum repellat iste necessitatibus exercitationem consequatur dicta vel, in earum expedita vero quos corrupti amet voluptates ipsum? Maiores similique praesentium suscipit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laborum repellat iste necessitatibus exercitationem consequatur dicta vel, in earum expedita vero quos corrupti amet voluptates ipsum? Maiores similique praesentium suscipit.</p>
+                    </div>
+                    
+                    <img src="/img/landing/pola1.jpg" alt="" class="col-4 offset-1">
+
+                    <i class="sticker sticker-right sticker-flower"></i>
+
+                </article>
+
+                <article class="row">
+
+                  <i class="sticker sticker-center-left sticker-smiley"></i>
+
+                    <img src="/img/landing/pola2.jpg" alt="" class="col-4">
+                    <div class="col-7 offset-1 text-end">
+
+                        <h2>Lorem, ipsum dolor.</h3>
+                        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam culpa in error porro. Culpa nam sapiente inventore quasi repellat dolores unde fuga cupiditate, est temporibus animi corrupti illo cum distinctio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laborum repellat iste necessitatibus exercitationem consequatur dicta vel, in earum expedita vero quos corrupti amet voluptates ipsum? Maiores similique praesentium suscipit.</p>
+                    </div>
+                </article>
+
+                <article class="row">
+                    <div class="col-7">
+                        <h2>Lorem, ipsum dolor.</h3>
+                        <p> 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt alias excepturi officia similique reprehenderit fugit, atque obcaecati laboriosam sequi a. Minima quis dolor cupiditate est sit nisi adipisci nemo sunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laborum repellat iste necessitatibus exercitationem consequatur dicta vel, in earum expedita vero quos corrupti amet voluptates ipsum? Maiores similique praesentium suscipit.
+                        </p>
+                      </div>
+
+                    <img src="/img/landing/pola3.jpg" alt="" class="col-4 offset-1">
+
+                    <i class="sticker sticker-center-right sticker-airplaine"></i>
+
+
+                </article>
+                
+            </div>            
+        </section>
+        <!-- FIN  -->
+
+        <!-- DEBUT -->
+        <section id="gallery" class="container-fluid text-center">
+
+          <i class="sticker sticker-center-left sticker-van1"></i>
+
+            <h1> Galerie Instagram</h1>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="../img/publi-insta/insta1.jpg" class="col-2" alt="...">
+                    <img src="../img/publi-insta/insta2.jpg" class="col-2 offset-1" alt="...">
+                    <img src="../img/publi-insta/insta3.jpg" class="col-2 offset-1" alt="...">
+                    <img src="../img/publi-insta/insta4.jpg" class="col-2 offset-1" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../img/publi-insta/insta1.jpg" class="col-2" alt="...">
+                    <img src="../img/publi-insta/insta2.jpg" class="col-2 offset-1" alt="...">
+                    <img src="../img/publi-insta/insta3.jpg" class="col-2 offset-1" alt="...">
+                    <img src="../img/publi-insta/insta4.jpg" class="col-2 offset-1" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <div class="bg-button">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </div>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <div class="bg-button">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </div>
+                </button>
+
+                <i class="sticker sticker-center-left sticker-tampon-london"></i>
+
+                <i class="sticker sticker-center-right sticker-guitare2"></i>
+
+              </div> 
+        </section>
+        <!-- FIN  -->
+
+        <!-- DEBUT -->
+        <section id="faq" class="container">
+                <h2>FAQ</h2>
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem soluta quaerat, libero dolorum obcaecati tempora ?
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, hic magnam ratione sint omnis placeat. Beatae maiores accusantium expedita adipisci dignissimos voluptates aperiam, quos quaerat, ut quo voluptatum corporis cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, hic magnam ratione sint omnis placeat. Beatae maiores accusantium expedita adipisci dignissimos voluptates aperiam, quos quaerat, ut quo voluptatum corporis cupiditate.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem soluta quaerat, libero dolorum obcaecati tempora ?
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, hic magnam ratione sint omnis placeat. Beatae maiores accusantium expedita adipisci dignissimos voluptates aperiam, quos quaerat, ut quo voluptatum corporis cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, hic magnam ratione sint omnis placeat. Beatae maiores accusantium expedita adipisci dignissimos voluptates aperiam, quos quaerat, ut quo voluptatum corporis cupiditate.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem soluta quaerat, libero dolorum obcaecati tempora ?
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, hic magnam ratione sint omnis placeat. Beatae maiores accusantium expedita adipisci dignissimos voluptates aperiam, quos quaerat, ut quo voluptatum corporis cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, hic magnam ratione sint omnis placeat. Beatae maiores accusantium expedita adipisci dignissimos voluptates aperiam, quos quaerat, ut quo voluptatum corporis cupiditate.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        </section>
+        <!-- FIN  -->
+
+    </main>
+
+    
+{% endblock %}

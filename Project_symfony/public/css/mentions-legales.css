@@ -1,0 +1,27 @@
+/*************** BODY *******************/ 
+
+main section{
+    border: 3px solid black;
+    margin-top: 4.8rem;
+    margin-bottom: 11rem;
+    padding: 4.8rem;
+    background-color: #F1F0E6;
+}
+
+
+/*************** TITRES ET TEXTES *******************/ 
+
+p{
+    margin-bottom: 2rem;
+}
+
+h2{
+    margin-bottom: 5.4rem;
+}
+
+
+
+i.sticker-goodbye::before{
+    background-image: url(../img/stickers/goodbye.png);
+    top: 0.5rem;
+}

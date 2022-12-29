@@ -1,0 +1,360 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions legales{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/mentions-legales.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- DEBUT CHATBOX --> 
+<div id="container">
+  <div class="chat">
+    <div class="headerTitle">Messages</div>
+    <div id="zoneTxt" class="text">
+      
+    </div>
+        <div id="new-message" class=" row align-items-center">
+          <div class="d-flex flex-row justify-content-between my-3">
+            <input class="w-100 px-3 py-3" type="text" id='messenger_text' placeholder="Nouveau message...">
+             <button class="d-flex align-items-center justify-content-center" id='btnSendMsg'> <img src="/img/icones/fleche.png" alt=""> </button>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+<!-- DEBUT NAV -->
+<nav class="navbar navbar-expand-lg">
+        
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="{{path('app_match')}}"> <img src="/img/logo-buddies_1.svg" alt=""> </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" aria-current="page" href="{{path('app_home')}}"><img src="/img/icones/icones-nav/commu.svg"></a>
+        </li>
+
+        <li class="nav-item">
+          <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" 
+          data-bs-toggle="offcanvas" href="#offcanvasAmis" role="button" aria-controls="offcanvasExample"><img src="/img/icones/icones-nav/amis.svg">
+          </a>
+        </li>
+
+        <li id="notif" class="nav-item dropdown">
+          <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="/img/icones/icones-nav/cloche.svg">
+          </a>
+          <ul class="dropdown-menu">
+            <li class="my-3 mx-4">
+              <div class="card">
+                <div class="card-body d-flex flex-row align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="p-2">
+                      <img id="profil-notif" src="/img/profil/alice.jpg" alt="">
+                    </div>
+                    <div class="p-2">
+                      <h4 class="card-text">Alice Parker</h4>
+                    </div>
+                    <div class="ms-auto p-2">
+                      <img id="icon-notif" src="/img/icones/heart-orange.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="my-3 mx-4">
+              <div class="card">
+                <div class="card-body d-flex flex-row align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="p-2">
+                      <img id="profil-notif" src="/img/profil/alice.jpg" alt="">
+                    </div>
+                    <div class="p-2">
+                      <h4 class="card-text">Alice Parker</h4>
+                    </div>
+                    <div class="ms-auto p-2">
+                      <img id="icon-notif" src="/img/icones/langue.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="my-3 mx-4">
+              <div class="card">
+                <div class="card-body d-flex flex-row align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="p-2">
+                      <img id="profil-notif" src="/img/profil/alice.jpg" alt="">
+                    </div>
+                    <div class="p-2">
+                      <h4 class="card-text">Alice Parker</h4>
+                    </div>
+                    <div class="ms-auto p-2">
+                      <img id="icon-notif" src="/img/icones/icones-menu-amis/message.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <li class="nav-item dropdown">
+            <a id="icon" class="nav-link d-flex align-items-center justify-content-center me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/img/icones/icones-nav/profil.svg">
+            </a>
+            <ul class="dropdown-menu">
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_user_show')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/smile.svg" alt="">
+                Mon profil
+                </a>
+              </li>
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_faq')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/aide.svg" alt="">
+                Aide
+                </a>
+              </li>
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_charte')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/charte.svg" alt=""> 
+                  Charte BUDDIES
+                </a>
+              </li>
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_mentions_legales')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/mentions-legales.svg" alt=""> 
+                  Mentions légales
+                </a>
+              </li>
+              <li class="my-3 mx-4">
+                <a class="dropdown-item" href="{{path('app_logout')}}">
+                  <img class="me-2" src="/img/icones/icones-menu-profil/deconnexion.svg" alt=""> 
+                  Déconnexion
+                </a>
+              </li>
+            
+            </ul>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- FIN NAV -->
+
+    <main>
+        <section class="container">
+            <article class="col-10 offset-1">
+            <h2 class="text-center">Mentions légales</h2>
+
+            <i class="sticker sticker-left sticker-van1"></i>
+
+            <p>Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’y parcourir ses pages. En vous connectant sur ce site, vous acceptez, sans réserves, les présentes modalités.</p>
+
+            <p>Aussi, conformément à l’article n°6 de la Loi n°2004-575 du 21 Juin 2004 pour la confiance dans l’économie numérique, les responsables du présent site internet www.anthedesign.fr sont :</p>
+
+            <h3>Éditeur du Site :</h3>
+
+            <p>SARL ANTHEDESIGN Numéro de SIRET : 75221735600027 </p>
+
+            <p>Responsable éditorial : Hugo ESSIQUE </p>
+                
+            <p>12 Rue du Huit Mai 1945, 60350 ATTICHY </p>
+                
+            <p>Téléphone : 09 72 21 25 07 </p>
+
+            <i class="sticker sticker-right sticker-goodvibes1"></i>
+                
+                
+            <p>Email : contact@anthedesign.fr </p>
+                
+            <p>Site Web : www.anthedesign.fr</p>
+
+            <h3>Hébergement :</h3>
+            <p>Hébergeur : SARL ANTHEDESIGN <br>
+                    12 Rue du Huit Mai 1945, 60350 ATTICHY <br>
+                    Site Web : www.anthedesign.fr</p>
+
+            <h3>Développement :</h3>
+            <p>SARL ANTHEDESIGN</p>
+            <p>Adresse : 12 Rue du Huit Mai 1945, 60350 ATTICHY</p>
+            <p>Site Web : www.anthedesign.fr</p>
+
+
+            <h3>Conditions d'utilisations :</h3>
+            <p>Ce site (www.anthedesign.fr) est proposé en différents langages web (HTML, HTML5, Javascript, CSS, etc…) pour un meilleur confort d’utilisation et un graphisme plus agréable.</p>
+            <p>Nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer, Safari, Firefox, Google Chrome, etc…</p>
+            <p>L’agence web AntheDesign met en œuvre tous les moyens dont elle dispose, pour assurer une information fiable et une mise à jour fiable de ses sites internet.</p>
+
+            <i class="sticker sticker-left sticker-van"></i>
+
+            <p>Toutefois, des erreurs ou omissions peuvent survenir. L’internaute devra donc s’assurer de l’exactitude des informations auprès de AntheDesign , et signaler toutes modifications du site qu’il jugerait utile. AntheDesign n’est en aucun cas responsable de l’utilisation faite de ces informations, et de tout préjudice direct ou indirect pouvant en découler.</p>
+            <p>Cookies : Le site www.anthedesign.fr peut-être amené à vous demander l’acceptation des cookies pour des besoins de statistiques et d’affichage. Un cookie est une information déposée sur votre disque dur par le serveur du site que vous visitez.</p>
+            <p>Il contient plusieurs données qui sont stockées sur votre ordinateur dans un simple fichier texte auquel un serveur accède pour lire et enregistrer des informations . Certaines parties de ce site ne peuvent être fonctionnelles sans l’acceptation de cookies.</p>
+            <p>Liens hypertextes : Les sites internet de peuvent offrir des liens vers d’autres sites internet ou d’autres ressources disponibles sur Internet. SARL ANTHEDESIGN ne dispose d’aucun moyen pour contrôler les sites en connexion avec ses sites internet.</p>
+            <p>AntheDesign ne répond pas de la disponibilité de tels sites et sources externes, ni ne la garantit. Elle ne peut être tenue pour responsable de tout dommage, de quelque nature que ce soit, résultant du contenu de ces sites ou sources externes, et notamment des informations, produits ou services qu’ils proposent, ou de tout usage qui peut être fait de ces éléments. Les risques liés à cette utilisation incombent pleinement à l’internaute, qui doit se conformer à leurs conditions d’utilisation.</p>
+            <p>Les utilisateurs, les abonnés et les visiteurs des sites internet  ne peuvent pas mettre en place un hyperlien en direction de ce site sans l’autorisation expresse et préalable de SARL ANTHEDESIGN.</p>
+            <p>Dans l’hypothèse où un utilisateur ou visiteur souhaiterait mettre en place un hyperlien en direction d’un des sites internet de SARL ANTHEDESIGN, il lui appartiendra d’adresser un email accessible sur le site afin de formuler sa demande de mise en place d’un hyperlien.</p>
+            <p>La SARL ANTHEDESIGN se réserve le droit d’accepter ou de refuser un hyperlien sans avoir à en justifier sa décision.</p>
+
+            <h3>Services fournis :</h3>
+
+            <p>L’ensemble des activités de la société ainsi que ses informations sont présentés sur notre site www.anthedesign.fr.</p>
+
+            <i class="sticker sticker-left sticker-smiley"></i>
+
+            <p>SARL ANTHEDESIGN s’efforce de fournir sur le site www.anthedesign.fr des informations aussi précises que possible. Les renseignements figurant sur le site www.anthedesign.fr ne sont pas exhaustifs et les photos non contractuelles.</p>
+            <p>Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne. Par ailleurs, tous les informations indiquées sur le site www.anthedesign.fr sont données à titre indicatif, et sont susceptibles de changer ou d’évoluer sans préavis.</p>
+
+            <h3>Limitations contractuelles sur les données :</h3>
+
+            <p>Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à différentes périodes de l’année, mais peut toutefois contenir des inexactitudes ou des omissions.</p>
+            <p>Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par courriel, à l’adresse contact@anthedesign.fr, en décrivant le problème de la manière la plus précise possible (page posant problème, type d’ordinateur et de navigateur utilisé, …).</p>
+            <p>Tout contenu téléchargé se fait aux risques et périls de l’utilisateur et sous sa seule responsabilité. En conséquence, ne saurait être tenu responsable d’un quelconque dommage subi par l’ordinateur de l’utilisateur ou d’une quelconque perte de données consécutives au téléchargement.</p>
+            <p>De plus, l’utilisateur du site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis-à-jour.</p>
+            <p>Les liens hypertextes mis en place dans le cadre du présent site internet en direction d’autres ressources présentes sur le réseau Internet ne sauraient engager la responsabilité de SARL ANTHEDESIGN.</p>
+
+            <h3>Propriété intellectuelle :</h3>
+            <p>Tout le contenu du présent site www.anthedesign.fr, incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de la société à l’exception des marques, logos ou contenus appartenant à d’autres sociétés partenaires ou auteurs.</p>
+            <p>Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l’accord exprès par écrit de SARL ANTHEDESIGN. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. En outre, les propriétaires des Contenus copiés pourraient intenter une action en justice à votre encontre.</p>
+
+            <h3>Déclaration à la CNIL :</h3>
+            <p>Conformément à la loi 78-17 du 6 janvier 1978 (modifiée par la loi 2004-801 du 6 août 2004 relative à la protection des personnes physiques à l’égard des traitements de données à caractère personnel) relative à l’informatique, aux fichiers et aux libertés, ce site a fait l’objet d’une déclaration 1656629 auprès de la Commission nationale de l’informatique et des libertés (www.cnil.fr).</p>
+
+            <i class="sticker sticker-right sticker-chillout"></i>
+
+            <h3>Litiges :</h3>
+            <p>Les présentes conditions du site www.anthedesign.fr sont régies par les lois françaises et toute contestation ou litiges qui pourraient naître de l’interprétation ou de l’exécution de celles-ci seront de la compétence exclusive des tribunaux dont dépend le siège social de la société. La langue de référence, pour le règlement de contentieux éventuels, est le français.</p>
+
+            <h3>Données personnelles :</h3>
+            <p>De manière générale, vous n’êtes pas tenu de nous communiquer vos données personnelles lorsque vous visitez notre site Internet www.anthedesign.fr.</p>
+            <p>Cependant, ce principe comporte certaines exceptions. En effet, pour certains services proposés par notre site, vous pouvez être amenés à nous communiquer certaines données telles que : votre nom, votre fonction, le nom de votre société, votre adresse électronique, et votre numéro de téléphone. Tel est le cas lorsque vous remplissez le formulaire qui vous est proposé en ligne, dans la rubrique « contact ».</p>
+            <p>Dans tous les cas, vous pouvez refuser de fournir vos données personnelles. Dans ce cas, vous ne pourrez pas utiliser les services du site, notamment celui de solliciter des renseignements sur notre société, ou de recevoir les lettres d’information.</p>
+            <p>Enfin, nous pouvons collecter de manière automatique certaines informations vous concernant lors d’une simple navigation sur notre site internet, notamment : des informations concernant l’utilisation de notre site, comme les zones que vous visitez et les services auxquels vous accédez, votre adresse IP, le type de votre navigateur, vos temps d’accès.</p>
+            <p>De telles informations sont utilisées exclusivement à des fins de statistiques internes, de manière à améliorer la qualité des services qui vous sont proposés. Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.</p>
+
+            <i class="sticker sticker-center-left sticker-goodbye"></i>
+            
+            </article>
+            
+        </section>
+    </main>
+<!--OFFCANVAS LISTE AMIS -->
+  
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasAmis" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas-header">  
+  
+<input class="px-3 py-3" type="text" placeholder="Rechercher un ami">
+
+</div>
+
+<div class="offcanvas-body">
+
+  <!-- -->
+  {% for userUser in amis %}
+    <div class="card">
+      <div class="card-body d-flex flex-row align-items-center">
+
+        <div class="d-flex align-items-center">
+          <div class="p-2">
+            <img src="/data/{{userUser.Picture}}" alt="">
+          </div>
+          <div class="p-2">
+            <h4 class="card-text">{{userUser.firstName}}</h4>
+          </div>
+          <div class="ms-auto p-2">
+            <div class="dropdown">
+              <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/img/icones/icones-menu-amis/see-more.svg" alt="">
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{path('app_user_details', {'id':userUser.id})}}">
+                  <img src="/img/icones/icones-menu-amis/profil-noir.svg" alt=""> Voir le profil</a></li>
+                  <li><a class="dropdown-item" onclick="loadMsg('{{ app.user.id }}', '{{ userUser.id }}')" href="#">
+                <img src="/img/icones/icones-menu-amis/message.svg" alt=""> Envoyer un message</a></li>
+                <li><a class="dropdown-item" href="{{path('app_remove_friends', {'id':userUser.id})}}">
+                <img src="/img/icones/icones-menu-amis/retirer-ami.svg" alt=""> Retirer de la liste d'amis</a></li>
+                <li><a class="dropdown-item" href="{{path('app_remove_friends', {'id':userUser.id})}}">
+                <img src="/img/icones/icones-menu-amis/bloquer.svg" alt=""> Bloquer</a></li>
+                <li><a class="dropdown-item" href="#">
+                <img src="/img/icones/icones-menu-amis/signaler.svg" alt=""> Signaler</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+</div>
+
+<!--FIN OFFCANVAS LISTE AMIS -->
+   
+{% endblock %}
+
+{% block javascripts %}
+<script>
+
+let globalIdReceiver;
+let globalIdSender;
+
+function loadMsg(idSender, idReceiver){
+
+globalIdSender = idSender;
+globalIdReceiver = idReceiver;
+
+  let messages = document.getElementById("zoneTxt");
+
+  fetch('/messenger/listmessage/'+idSender+'/'+idReceiver)
+  .then(response=> response.text())
+  .then(text=> messages.innerHTML = text);
+
+  setTimeout(function(){
+      loadMsg(globalIdSender, globalIdReceiver);
+  }, 20000);
+
+}
+
+let btnSendMsg = document.getElementById('btnSendMsg');
+btnSendMsg.addEventListener('click', function(){
+  let textarea = document.getElementById('messenger_text');
+  let content = textarea.value;
+
+  fetch('/messenger/save/1',  {
+      method: 'POST',
+      body: JSON.stringify({message:content, idReceiver:globalIdReceiver})
+      }
+  )
+  .then(function(headers){
+      return headers;
+  })
+  .then(function(data){
+      loadMsg(globalIdSender, globalIdReceiver);
+      textarea.value = "";
+  })
+
+});
+
+
+let headerTitle = document.querySelector('.headerTitle');
+let zoneTxt = document.getElementById('zoneTxt');
+let newMessage = document.getElementById('new-message');
+headerTitle.addEventListener('click', function(e){
+
+zoneTxt.classList.toggle('text-close');
+newMessage.classList.toggle('messageClose');
+
+})
+
+</script>
+{% endblock %}

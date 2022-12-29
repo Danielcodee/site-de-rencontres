@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EditionActivitiesController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+
+        {% for editUser in  edit_activities %}
+    <div> <input type="checkbox" class="checkActivity" data-id="{{editUser.id}}"> {{ editUser.name }} </input></div>
+        {% endfor %}
+{% endblock %}

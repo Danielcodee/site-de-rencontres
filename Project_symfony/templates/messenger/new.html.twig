@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau message{% endblock %}
+
+{% block body %}
+    <div id="liste_messages">
+    
+        
+    </div>
+
+    {# pour ajouter le bouton parcourir #}
+    {# <input type="file" id="input"> #}
+
+    {{ form_widget(form) }}
+
+    <button class="btn" id="btnSendMsg">{{ button_label|default('Envoyer') }}</button>
+
+    {# <a href="{{ path('app_messenger_index') }}">back to list</a> #}
+{% endblock %}
+
+{% block javascripts %}
+<script>
+
+// Ici, nous avons developpé une function qui rafraichit automatiquement les messages (entrants et sortants) tous les 2 secondes
+
+let idSender = {{myId}};
+let idReceiver = {{id}};
+
+function loadMsg(){
+    let messages = document.getElementById("liste_messages");
+
+    fetch('/messenger/listmessage/'+idSender+'/'+idReceiver)
+    .then(response=> response.text())
+    .then(text=> messages.innerHTML = text);
+
+    setTimeout(function(){
+        loadMsg();
+    }, 2000);
+
+}
+
+loadMsg();
+
+let btnSendMsg = document.getElementById('btnSendMsg');
+btnSendMsg.addEventListener('click', function(){
+    let textarea = document.getElementById('messenger_text');
+    let content = textarea.value;
+
+    fetch('/messenger/save/1',  {
+        method: 'POST',
+        body: JSON.stringify({message: content, idReceiver:idReceiver})
+        }
+    )
+    .then(function(headers){
+        return headers;
+    })
+    .then(function(data){
+        loadMsg();
+    })
+});
+
+</script>
+{% endblock %}

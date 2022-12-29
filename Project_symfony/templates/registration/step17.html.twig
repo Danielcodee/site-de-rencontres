@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/test-formulaire10ci.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- DEBUT NAV --> 
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container-fluid">
+    
+        <a class="navbar-brand" href="{{path('app_landing')}}"> <img src="img/logo-buddies_1.svg" alt=""> </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    </div>
+    </nav>
+<!-- FIN NAV -->
+
+    <main>
+        <section class="container-fluid">
+            <div id="centrage-ecran" class="d-flex flex-column justify-content-center">
+                <h2 class="text-center mt-5">Quelles sont vos centres d’intérêts</h2>
+                <div class="d-flex justify-content-center mt-5">
+                    <div class="d-flex flex-column align-items-end col-6">
+                        <div class="card-formulaire align-self-center w-100 px-3 py-3">
+                            <div class="d-flex justify-content-around my-4">
+                                <div class="form-check d-flex align-items-center justify-content-evenly">
+                                    <input class="form-check-input" type="checkbox" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Cinéma
+                                    </label>
+                                    <img src="/img/icones/icones-centre-interets/cinema.svg" alt="cinema">
+                                </div>
+                                <div class="form-check d-flex align-items-center justify-content-evenly">
+                                    <input class="form-check-input" type="checkbox" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                       Musique
+                                    </label>
+                                    <img src="/img/icones/icones-centre-interets/musique.svg" alt="cinema">
+                                </div>
+                                <div class="form-check d-flex align-items-center justify-content-evenly">
+                                    <input class="form-check-input" type="checkbox" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Sport
+                                    </label>
+                                    <img src="/img/icones/icones-centre-interets/sport.svg" alt="cinema">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-around my-4">
+                                <div class="form-check d-flex align-items-center justify-content-evenly">
+                                    <input class="form-check-input" type="checkbox" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Cuisine
+                                    </label>
+                                    <img src="/img/icones/icones-centre-interets/cuisine.svg" alt="cuisine">
+                                </div>
+                                <div class="form-check d-flex align-items-center justify-content-evenly">
+                                    <input class="form-check-input" type="checkbox" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                       Art
+                                    </label>
+                                    <img src="/img/icones/icones-centre-interets/art.svg" alt="art">
+                                </div>
+                                <div class="form-check d-flex align-items-center justify-content-evenly">
+                                    <input class="form-check-input" type="checkbox" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Lecture
+                                    </label>
+                                    <img src="/img/icones/icones-centre-interets/lecture.svg" alt="lecture">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-around my-4">
+                                <div class="form-check d-flex align-items-center justify-content-evenly">
+                                    <input class="form-check-input" type="checkbox" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Photo
+                                    </label>
+                                    <img src="/img/icones/icones-centre-interets/photo.svg" alt="Photo">
+                                </div>
+                                <div class="form-check d-flex align-items-center justify-content-evenly">
+                                    <input class="form-check-input" type="checkbox" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                       Jeux
+                                    </label>
+                                    <img src="/img/icones/icones-centre-interets/jeux.svg" alt="Jeux">
+                                </div>
+                                <div class="form-check d-flex align-items-center justify-content-evenly">
+                                    <input class="form-check-input" type="checkbox" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Visites
+                                    </label>
+                                    <img src="/img/icones/icones-centre-interets/visites.svg" alt="Visites">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <a href="{{path('app_register_step7')}}"><button class="my-4 text-black" id="btn" type="button">Retour</button></a>
+                                <a href="{{path('app_register_step18')}}"><button class="my-4 ms-2 text-black" id="btn" type="button">Suivant</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+{% endblock %}
+

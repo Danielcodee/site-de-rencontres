@@ -1,0 +1,49 @@
+.ecran{
+    background-color: #FFFEFB;
+    }
+    
+    .card-formulaire{
+        background-color:#FD8D04;
+        border-radius: 15px;
+        height:20rem;
+    }
+    
+    .card-formulaire input{
+        border-radius: 15px; 
+    }
+    
+    #btn{
+        color: #F1F0E6;
+        width: 10rem;
+        height:3rem ;
+        border-radius: 15px;
+        font-family: 'Nunito';
+        font-size: 1.4rem; 
+    }
+    
+    input{
+        width: 100%;
+    }
+    
+    #centrage-ecran{
+        height: 900px;
+        width: 1920;
+    }
+
+    .form-check{
+        background-color: white;
+        border-radius: 10px; 
+        width: 11rem;
+        height: 4rem;
+    }
+
+    .form-check img{
+       height: 2.5rem;
+       width: auto;
+    }
+
+    label{
+        font-family: 'Nunito';
+        font-size: 1.2rem;
+
+    }

@@ -1,0 +1,71 @@
+/*************** TITRES ET TEXTES *******************/ 
+
+h1{
+    margin-top: 8.8rem;
+}
+
+
+/*************** FAQ *******************/
+
+#faq {
+    margin-top: 4.8rem;
+    margin-bottom: 11em;
+}
+
+.accordion{
+    --bs-accordion-active-bg:#FD8D04; 
+    --bs-accordion-active-color: white;
+    border-radius: 2rem;
+    --bs-accordion-btn-icon-width: 2rem;
+    --bs-accordion-border-color: black;
+    --bs-accordion-border-width: 3px;
+    --bs-accordion-border-radius: 1rem;
+    --bs-accordion-inner-border-radius: 0.7rem;
+}
+
+.accordion-item{
+    border-width: 3px;
+    
+}
+
+.accordion-header button{
+    font-family: 'Nunito Sans', sans-serif; ;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color:white;
+    border: 3px;
+    padding: 2rem;
+    background-color: #FD8D04;
+
+}
+
+.accordion-body{
+    font-family: 'Nunito Sans', sans-serif; ;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: black;
+}
+
+
+
+/*************** STICKERS *******************/
+
+i.sticker-gameboy::before{
+    background-image: url(../img/stickers/gameboy.png);
+    rotate: -20deg;
+    left: -10rem;
+}
+
+
+
+i.sticker-flowervan::before{
+    background-image: url(../img/stickers/van-flower.png);
+    right: 6rem;
+}
+
+i.sticker-phone::before{
+    background-image: url(../img/stickers/phone.png);
+    left: 65rem;
+    top: 7rem;
+
+}

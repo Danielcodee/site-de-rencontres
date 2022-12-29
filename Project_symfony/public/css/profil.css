@@ -1,0 +1,240 @@
+/*************** IMPORT DE POLICES *******************/ 
+
+
+/*************** VARIABLES *******************/ 
+
+:root{
+    --bg-primary: #FD8D04;
+    --bg-secondary: #2C7DA0;
+}
+
+
+/*************** RÈGLES GÉNÉRALES *******************/
+
+
+/*************** GRILLES *******************/ 
+
+
+/*************** TITRES ET TEXTES *******************/ 
+
+
+
+/*************** BOUTONS *******************/ 
+
+button{
+border-radius: 3rem;
+padding: 1rem;
+padding-left: 2rem;
+padding-right: 2rem;
+}
+
+/*************** FORMULAIRES *******************/ 
+
+
+/*************** ICONOGRAPHIE *******************/ 
+
+
+/*************** NAV *******************/ 
+
+
+/*************** HEADER *******************/ 
+
+
+/*************** MAIN *******************/
+main{
+
+    margin-top: 4.8rem;
+    margin-bottom: 9.6rem;
+}
+
+main section{
+    margin-bottom: 9.6rem; 
+}
+
+/*************** CHATBOX *******************/ 
+
+.accordion-button{
+    height: 7rem;
+    box-shadow: none;
+    background-color: #2C7DA0;
+    color: white;
+    border: solid 2px black;
+    font-size: 1.8rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #2C7DA0;
+    color: white;
+    border: solid 2px black;
+} 
+
+
+/*************** FOOTER *******************/
+
+
+
+
+/*************** Card profil *******************/
+
+#profil {
+    background-color: #F1F0E6;
+    border: none;
+    border-radius: 1rem;
+}
+
+
+#profil img {
+    height: 2.8rem;
+    width: 2.8rem;
+}
+
+#profil img#img-profil {
+    border-radius: 100%;
+    width: 16.9rem;
+    height: 16.9rem;
+    margin-right: 1.2rem;
+    border: solid 0.5rem #FD8D04;
+}
+
+#profil-card .card-body{
+    background-color: #2C7DA0;
+    border-radius: 4rem 4rem 1rem 1rem;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#profil-card .card-body p{
+    color: white;
+}
+
+#profil a{
+    background-color: #FD8D04;
+    border-radius: 1.5rem;
+    box-shadow: 4px 4px px rgba(0, 0, 0, 0.2);
+}
+
+
+/************* CENTRES INTERETS ET ACTIVITES ***********/
+
+#interests img{
+    height: 13rem;
+    width: 13rem;
+}
+
+#activities img{
+    height: 13rem;
+    width: 13rem;
+}
+
+
+
+/************* MES COMMU ***********/
+
+#my-communities p{
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: white;
+    text-shadow: -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #000;
+}
+
+
+/** filtre image et alignement titre **/
+
+.community {
+    position: relative;
+}
+
+
+.community p {
+    position: absolute;
+    top: calc(50% - 1.5rem);
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+.community::before{
+    display: block;
+    position: absolute;
+    content: '';
+    top:0;
+    bottom:0;
+    left: .75rem;
+    right: .75rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+
+
+/************ CARD Avis ***************/
+
+#avis1{
+    background-color: #2C7DA0;
+    border-radius: 2rem;
+    border: none;
+}
+
+#avis1 h4{
+    color: white;
+}
+
+#avis1 p{
+    color: white;
+}
+
+#avis1 img{
+    height: 6rem;
+    width:  6rem;
+    border-radius: 100px;
+}
+
+
+#avis2{
+    background-color: #F1F0E6;
+    border-radius: 2rem;
+    border: none;
+}
+
+#avis2 h4{
+    color: black;
+}
+
+#avis2 p{
+    color: black;
+}
+
+#avis2 img{
+    height: 6rem;
+    width:  6rem;
+    border-radius: 100px;
+}
+
+#avis3{
+    background-color: #FD8D04;
+    border-radius: 2rem;
+    border: none;
+}
+
+#avis3 h4{
+    color: white;
+}
+
+#avis3 p{
+    color: white;
+}
+
+#avis3 img{
+    height: 6rem;
+    width:  6rem;
+    border-radius: 100px;
+}
+
+
+/************ CARD Avis  Toggle Hide ***************/
+
+.hide {
+    display: none;
+}

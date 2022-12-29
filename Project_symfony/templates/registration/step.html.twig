@@ -1,0 +1,30 @@
+
+
+
+{% if step1 %}
+
+  <label class="text"> Quelles sont vos centres d'intérêrs </label>
+  <form action="{{ path('app_quiz_2') }}">
+       
+{% endif %} 
+
+{% if step2 %}
+
+  <label class="text"> Les activités que vous aimeriez faire </label>   
+  <form action="{{ path('app_register_step8') }}">
+       
+{% endif %} 
+
+
+{% for formprops in form %}
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="valueCheckbox[]" id="inlineCheckbox1" value="{{ formprops.id }}">
+  <label class="form-check-label" for="inlineCheckbox1">{{ formprops.name }}</label>
+</div>
+{% endfor %}
+
+<input type="submit"></input> 
+
+</form>
+    
+</body>

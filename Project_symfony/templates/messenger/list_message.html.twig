@@ -1,0 +1,19 @@
+{% 
+    for message in messengerData
+%}
+    {% if app.user.id == message.sender.id %}
+    <div id="their-message" class="card flex-row">
+        <img class="me-4 chatImg" src="/data/{{message.sender.picture}}" alt="">
+        <p class="px-4 py-4" >{{message.text}}</p>
+    </div>
+    {% else %}
+    <div id="my-message" class="card flex-row justify-content-end">
+        <p class="px-4 py-4" >{{message.text}}</p>
+        <img class="ms-4 chatImg" src="/data/{{message.sender.picture}}" alt="">
+    </div>
+    {% endif %}
+
+{% endfor %}
+
+
+

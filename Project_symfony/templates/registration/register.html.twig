@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/test-formulaire2.css">
+{% endblock %}
+
+{% block body %}
+        <!-- DEBUT NAV --> 
+        <nav class="navbar navbar-expand-lg">
+        
+            <div class="container-fluid">
+          
+              <a class="navbar-brand" href="{{path('app_landing')}}"> <img src="img/logo-buddies_1.svg" alt=""> </a>
+          
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            </div>
+          </nav>
+          <!-- FIN NAV -->
+
+    {{ form_start(registrationForm) }}
+        <section class="container-fluid">
+            <div id="centrage-ecran" class="d-flex flex-column justify-content-center">
+                <h2 class="text-center ">Bienvenue!</h2>
+                <h3 class="text-center">Veuillez renseigner votre adresse mail.</h3>
+                <div class="d-flex justify-content-center mt-5">
+                    <div class="d-flex flex-column align-items-end col-4">
+                        <div class="card-formulaire align-self-center w-100 px-3">
+                           {#  <p class="text-white mx-3 mt-3">Email</p> #}
+{#                             <input type="email" class="border-0 px-3 py-3 w-80 text-muted"
+                                placeholder="ex: jules.dupont@gmail.com"> #}
+                                <div class="border-0 px-3 py-3 w-80 text-white">{{ form_row(registrationForm.email) }}</div>
+                            <div class="form-check text-white m-3">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+                                <label class="form-check-label" for="defaultCheck1" required>
+                                    Accepter conditions générales.
+                                </label>
+                            </div>
+                        </div>
+                       {#  <button class="my-4 text-black" id="btn" type="button">Suivant</button> #}
+                        <button type="submit" class="my-4 text-black" id="btn">Suivant</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{ form_end(registrationForm) }}
+{% endblock %}
+
+
+{#   {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.firstName) }}
+        {{ form_row(registrationForm.lastName) }}
+        {{ form_row(registrationForm.agreeTerms) }} #}
