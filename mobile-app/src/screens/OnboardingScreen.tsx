@@ -6,6 +6,7 @@ import { useUser } from '../context/UserContext';
 import { colors, radius, spacing, typography } from '../theme/theme';
 import { SPORTS, LEVEL_LABEL } from '../data/sports';
 import { Level, SportId } from '../data/types';
+import SportIcon from '../components/icons/SportIcon';
 
 const LEVELS: Level[] = ['iniciante', 'intermedio', 'profissional'];
 
@@ -30,6 +31,12 @@ export default function OnboardingScreen() {
     <ScreenContainer>
       <Text style={styles.eyebrow}>BEM-VINDO</Text>
       <Text style={styles.title}>Vamos preparar o teu treino</Text>
+
+      <View style={styles.progressRow}>
+        {[0, 1, 2].map((i) => (
+          <View key={i} style={[styles.progressDot, i === step && styles.progressDotActive, i < step && styles.progressDotDone]} />
+        ))}
+      </View>
 
       {step === 0 && (
         <View style={styles.block}>
@@ -67,14 +74,18 @@ export default function OnboardingScreen() {
         <View style={styles.block}>
           <Text style={styles.question}>Que modalidades te interessam?</Text>
           <View style={styles.pillRow}>
-            {SPORTS.map((s) => (
-              <Pill
-                key={s.id}
-                label={`${s.emoji} ${s.name}`}
-                selected={profile.favoriteSports.includes(s.id as SportId)}
-                onPress={() => toggleSport(s.id as SportId)}
-              />
-            ))}
+            {SPORTS.map((s) => {
+              const isSelected = profile.favoriteSports.includes(s.id as SportId);
+              return (
+                <Pill
+                  key={s.id}
+                  label={s.name}
+                  selected={isSelected}
+                  onPress={() => toggleSport(s.id as SportId)}
+                  icon={<SportIcon sport={s.id} size={16} color={isSelected ? colors.text : colors.textMuted} />}
+                />
+              );
+            })}
           </View>
           <Text style={styles.hint}>Escolhe uma ou mais. Podes adicionar mais tarde.</Text>
         </View>
@@ -103,7 +114,11 @@ export default function OnboardingScreen() {
 
 const styles = StyleSheet.create({
   eyebrow: { ...typography.label, marginTop: spacing.lg },
-  title: { ...typography.title, marginTop: spacing.xs, marginBottom: spacing.xl },
+  title: { ...typography.title, marginTop: spacing.xs, marginBottom: spacing.lg },
+  progressRow: { flexDirection: 'row', gap: spacing.xs, marginBottom: spacing.xl },
+  progressDot: { flex: 1, height: 4, borderRadius: 2, backgroundColor: colors.surfaceAlt },
+  progressDotActive: { backgroundColor: colors.primary },
+  progressDotDone: { backgroundColor: colors.accent },
   block: { marginBottom: spacing.xl },
   question: { ...typography.subtitle, marginBottom: spacing.md },
   input: {

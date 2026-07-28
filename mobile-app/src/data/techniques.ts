@@ -18,6 +18,10 @@ export const TECHNIQUES: Technique[] = [
       { title: 'Shadow boxing – guarda e jab', duration: '3 x 3 min', instructions: 'Em frente ao espelho, pratica manter a guarda alta enquanto atiras jabs a andar para a frente, trás e lados.' },
       { title: 'Jab no saco', duration: '4 x 2 min', instructions: 'Jabs simples e duplos no saco, focando em voltar sempre à guarda depois de cada soco.' },
     ],
+    combos: [
+      { label: 'Jab simples', sequence: [{ number: '1', label: 'Jab' }] },
+      { label: 'Jab duplo', sequence: [{ number: '1', label: 'Jab' }, { number: '1', label: 'Jab' }] },
+    ],
   },
   {
     id: 'boxe-intermedio-combinacoes',
@@ -26,13 +30,18 @@ export const TECHNIQUES: Technique[] = [
     name: 'Combinações 1-2-3 e Esquiva',
     objective: 'Ligar socos em sequência e introduzir defesa ativa com esquiva de cabeça.',
     cues: [
-      'Jab-Direto-Cruzado (1-2-3): roda a anca no direto, mantém o queixo protegido.',
+      'Jab-Direto-Gancho (1-2-3): roda a anca no direto, mantém o queixo protegido no gancho.',
       'Esquiva com flexão de joelhos, não só do tronco.',
       'Depois de esquivar, responde imediatamente com um soco (slip and counter).',
     ],
     soloDrills: [
       { title: 'Combinações no saco', duration: '5 x 3 min', instructions: 'Alterna 1-2, 1-2-3 e 1-1-2, sempre a voltar à guarda entre séries.' },
       { title: 'Shadow com esquiva imaginária', duration: '4 x 2 min', instructions: 'Imagina um soco a chegar e pratica esquiva + contra-ataque em shadow boxing.' },
+    ],
+    combos: [
+      { label: '1-2 (Jab, Direto)', sequence: [{ number: '1', label: 'Jab' }, { number: '2', label: 'Direto' }] },
+      { label: '1-2-3 (Jab, Direto, Gancho)', sequence: [{ number: '1', label: 'Jab' }, { number: '2', label: 'Direto' }, { number: '3', label: 'Gancho' }] },
+      { label: '1-1-2 (Jab duplo, Direto)', sequence: [{ number: '1', label: 'Jab' }, { number: '1', label: 'Jab' }, { number: '2', label: 'Direto' }] },
     ],
   },
   {
@@ -49,6 +58,10 @@ export const TECHNIQUES: Technique[] = [
     soloDrills: [
       { title: 'Shadow com ângulos', duration: '6 x 3 min', instructions: 'A cada combinação, pivota e muda de ângulo antes de continuar, simulando um adversário à tua frente.' },
       { title: 'Saco pesado – feint e explosão', duration: '5 x 3 min', instructions: 'Finta um soco, recua meio passo, e explode com uma combinação de 3-4 golpes.' },
+    ],
+    combos: [
+      { label: '1-2-3-2', sequence: [{ number: '1', label: 'Jab' }, { number: '2', label: 'Direto' }, { number: '3', label: 'Gancho' }, { number: '2', label: 'Direto' }] },
+      { label: '3-2 (contra-ataque)', sequence: [{ number: '3', label: 'Gancho' }, { number: '2', label: 'Direto' }] },
     ],
   },
 
@@ -82,6 +95,12 @@ export const TECHNIQUES: Technique[] = [
     soloDrills: [
       { title: 'Saco – mãos + canelada', duration: '5 x 3 min', instructions: 'Combinação: 1-2 seguido de canelada com a perna de trás.' },
       { title: 'Shadow de cotovelos', duration: '4 x 2 min', instructions: 'Alterna cotovelo horizontal, vertical e ascendente devagar, controlando a trajetória.' },
+    ],
+    combos: [
+      {
+        label: '1-2 + Canelada',
+        sequence: [{ number: '1', label: 'Jab' }, { number: '2', label: 'Direto' }, { label: 'Canelada (perna trás)' }],
+      },
     ],
   },
   {
@@ -130,6 +149,12 @@ export const TECHNIQUES: Technique[] = [
     soloDrills: [
       { title: 'Saco – combo 1-2-chute', duration: '5 x 3 min', instructions: 'Jab, direto, chute circular com a perna de trás, recuperar guarda.' },
       { title: 'Shadow fluido', duration: '4 x 2 min', instructions: 'Alterna combinações de mãos puras com combinações mistas mão+perna.' },
+    ],
+    combos: [
+      {
+        label: '1-2 + Chute circular',
+        sequence: [{ number: '1', label: 'Jab' }, { number: '2', label: 'Direto' }, { label: 'Chute circular (perna trás)' }],
+      },
     ],
   },
   {

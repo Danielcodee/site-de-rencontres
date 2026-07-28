@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
 import ScreenContainer from '../components/ScreenContainer';
 import Card from '../components/Card';
+import IconBadge from '../components/IconBadge';
 import { useUser } from '../context/UserContext';
 import { colors, radius, spacing, typography } from '../theme/theme';
 import { LEVEL_LABEL, SPORTS } from '../data/sports';
@@ -19,11 +21,18 @@ export default function HomeScreen() {
 
   return (
     <ScreenContainer>
-      <Text style={styles.eyebrow}>OLÁ{profile.name ? `, ${profile.name.toUpperCase()}` : ''}</Text>
-      <Text style={styles.title}>Pronto para treinar?</Text>
-      <View style={styles.levelTag}>
-        <Text style={styles.levelTagText}>Nível: {LEVEL_LABEL[level]}</Text>
-      </View>
+      <LinearGradient
+        colors={[colors.primary, colors.primaryMuted]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.hero}
+      >
+        <Text style={styles.eyebrow}>OLÁ{profile.name ? `, ${profile.name.toUpperCase()}` : ''}</Text>
+        <Text style={styles.title}>Pronto para treinar?</Text>
+        <View style={styles.levelTag}>
+          <Text style={styles.levelTagText}>Nível: {LEVEL_LABEL[level]}</Text>
+        </View>
+      </LinearGradient>
 
       <TouchableOpacity onPress={() => navigation.navigate('Físico')}>
         <Card style={styles.card}>
@@ -36,7 +45,10 @@ export default function HomeScreen() {
       <TouchableOpacity onPress={() => navigation.navigate('Técnicas')}>
         <Card style={styles.card}>
           <Text style={styles.cardLabel}>TREINO SOLO SUGERIDO</Text>
-          <Text style={styles.cardTitle}>{firstSport.emoji} {firstSport.name}</Text>
+          <View style={styles.sportRow}>
+            <IconBadge sport={firstSport.id} size={36} />
+            <Text style={[styles.cardTitle, { marginLeft: spacing.sm, marginBottom: 0 }]}>{firstSport.name}</Text>
+          </View>
           <Text style={styles.cardBody}>{firstSport.description}</Text>
         </Card>
       </TouchableOpacity>
@@ -53,19 +65,25 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  eyebrow: { ...typography.label, marginTop: spacing.lg },
-  title: { ...typography.title, marginTop: spacing.xs },
+  hero: {
+    borderRadius: radius.lg,
+    padding: spacing.lg,
+    marginTop: spacing.md,
+    marginBottom: spacing.lg,
+  },
+  eyebrow: { ...typography.label, color: 'rgba(255,255,255,0.8)' },
+  title: { ...typography.title, marginTop: spacing.xs, color: colors.text },
   levelTag: {
     alignSelf: 'flex-start',
-    backgroundColor: colors.primaryMuted,
+    backgroundColor: 'rgba(0,0,0,0.25)',
     borderRadius: radius.pill,
     paddingVertical: spacing.xs,
     paddingHorizontal: spacing.md,
-    marginTop: spacing.sm,
-    marginBottom: spacing.lg,
+    marginTop: spacing.md,
   },
-  levelTagText: { color: colors.accent, fontWeight: '700', fontSize: 12 },
+  levelTagText: { color: colors.text, fontWeight: '700', fontSize: 12 },
   card: { marginBottom: spacing.md },
+  sportRow: { flexDirection: 'row', alignItems: 'center', marginBottom: spacing.xs },
   cardLabel: { ...typography.label, color: colors.accent, marginBottom: spacing.xs },
   cardTitle: { ...typography.subtitle, marginBottom: spacing.xs },
   cardBody: { ...typography.bodyMuted },

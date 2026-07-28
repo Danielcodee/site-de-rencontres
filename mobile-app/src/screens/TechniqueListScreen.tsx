@@ -4,6 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import ScreenContainer from '../components/ScreenContainer';
 import Card from '../components/Card';
 import Pill from '../components/Pill';
+import IconBadge from '../components/IconBadge';
 import { colors, spacing, typography } from '../theme/theme';
 import { SPORTS, LEVEL_LABEL } from '../data/sports';
 import { getTechniquesFor } from '../data/techniques';
@@ -24,7 +25,10 @@ export default function TechniqueListScreen() {
 
   return (
     <ScreenContainer>
-      <Text style={styles.eyebrow}>{sport.emoji} {sport.name.toUpperCase()}</Text>
+      <View style={styles.headerRow}>
+        <IconBadge sport={sport.id} size={36} />
+        <Text style={styles.eyebrowInline}>{sport.name.toUpperCase()}</Text>
+      </View>
       <Text style={styles.title}>Técnicas para treinares sozinho</Text>
 
       <View style={styles.pillRow}>
@@ -50,8 +54,9 @@ export default function TechniqueListScreen() {
 }
 
 const styles = StyleSheet.create({
-  eyebrow: { ...typography.label, color: colors.accent, marginTop: spacing.lg },
-  title: { ...typography.title, marginTop: spacing.xs, marginBottom: spacing.md },
+  headerRow: { flexDirection: 'row', alignItems: 'center', marginTop: spacing.lg, gap: spacing.sm },
+  eyebrowInline: { ...typography.label, color: colors.accent },
+  title: { ...typography.title, marginTop: spacing.sm, marginBottom: spacing.md },
   pillRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm, marginBottom: spacing.lg },
   card: { marginBottom: spacing.md },
   techName: { ...typography.subtitle, marginBottom: spacing.xs },

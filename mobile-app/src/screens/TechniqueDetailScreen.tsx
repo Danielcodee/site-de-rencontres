@@ -1,14 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import ScreenContainer from '../components/ScreenContainer';
 import Card from '../components/Card';
-import { colors, spacing, typography } from '../theme/theme';
+import ComboLegend from '../components/ComboLegend';
+import ComboDiagram from '../components/ComboDiagram';
+import { colors, radius, spacing, typography } from '../theme/theme';
 import { TECHNIQUES } from '../data/techniques';
 import { LEVEL_LABEL } from '../data/sports';
 
 export default function TechniqueDetailScreen() {
   const route = useRoute<any>();
+  const navigation = useNavigation<any>();
   const techniqueId = route.params.techniqueId as string;
   const technique = TECHNIQUES.find((t) => t.id === techniqueId)!;
 
@@ -27,6 +30,31 @@ export default function TechniqueDetailScreen() {
           </View>
         ))}
       </Card>
+
+      {technique.combos && technique.combos.length > 0 && (
+        <>
+          <Text style={styles.sectionTitle}>Combos explicados</Text>
+          <ComboLegend />
+          {technique.combos.map((combo, i) => (
+            <Card key={i} style={styles.card}>
+              <Text style={styles.comboLabel}>{combo.label}</Text>
+              <ComboDiagram combo={combo} />
+              <TouchableOpacity
+                style={styles.voiceButton}
+                onPress={() =>
+                  navigation.navigate('GuidedDrill', {
+                    comboLabel: combo.label,
+                    sequence: combo.sequence,
+                    techniqueName: technique.name,
+                  })
+                }
+              >
+                <Text style={styles.voiceButtonText}>🔊 Treinar com voz e temporizador</Text>
+              </TouchableOpacity>
+            </Card>
+          ))}
+        </>
+      )}
 
       <Text style={styles.sectionTitle}>Drills para treinares sozinho</Text>
       {technique.soloDrills.map((drill, i) => (
@@ -51,6 +79,15 @@ const styles = StyleSheet.create({
   cueRow: { flexDirection: 'row', marginBottom: spacing.xs },
   bullet: { color: colors.primary, marginRight: spacing.sm, fontWeight: '700' },
   cueText: { ...typography.body, flex: 1 },
+  comboLabel: { ...typography.body, fontWeight: '700', marginBottom: spacing.xs },
+  voiceButton: {
+    marginTop: spacing.sm,
+    backgroundColor: colors.primaryMuted,
+    borderRadius: radius.sm,
+    paddingVertical: spacing.sm,
+    alignItems: 'center',
+  },
+  voiceButtonText: { color: colors.accent, fontWeight: '700', fontSize: 13 },
   drillHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: spacing.xs },
   drillTitle: { ...typography.body, fontWeight: '700', flex: 1 },
   drillDuration: { ...typography.bodyMuted, fontWeight: '600' },

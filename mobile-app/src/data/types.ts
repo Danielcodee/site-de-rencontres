@@ -11,7 +11,6 @@ export type SportId =
 export interface Sport {
   id: SportId;
   name: string;
-  emoji: string;
   description: string;
 }
 
@@ -19,6 +18,17 @@ export interface Drill {
   title: string;
   duration: string;
   instructions: string;
+}
+
+export interface ComboStep {
+  /** Standard boxing/kickboxing number (1=jab, 2=direto...). Omitted for kicks/knees/elbows, which have no universal number. */
+  number?: string;
+  label: string;
+}
+
+export interface Combo {
+  label: string;
+  sequence: ComboStep[];
 }
 
 export interface Technique {
@@ -29,6 +39,7 @@ export interface Technique {
   objective: string;
   cues: string[];
   soloDrills: Drill[];
+  combos?: Combo[];
 }
 
 export interface Exercise {
