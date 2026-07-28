@@ -4,6 +4,7 @@ import { useRoute } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
 import ScreenContainer from '../components/ScreenContainer';
 import Pill from '../components/Pill';
+import FighterFigure from '../components/FighterFigure';
 import { colors, radius, spacing, typography } from '../theme/theme';
 import { Combo } from '../data/types';
 
@@ -84,15 +85,24 @@ export default function GuidedDrillScreen() {
       <Text style={styles.title}>{comboLabel}</Text>
 
       <View style={styles.stage}>
-        {currentStep ? (
-          <>
-            <Text style={styles.bigNumber}>{currentStep.number ?? '👟'}</Text>
-            <Text style={styles.bigLabel}>{currentStep.label}</Text>
-          </>
-        ) : (
-          <Text style={styles.idleText}>{playing ? 'A preparar…' : 'Pronto para começar'}</Text>
-        )}
-        {playing && <Text style={styles.repCounter}>Repetição {rep + 1} / {rounds}</Text>}
+        <View style={styles.figureBox}>
+          <FighterFigure
+            label={currentStep?.label ?? sequence[0].label}
+            trigger={`${stepIndex}-${rep}`}
+            active={!!currentStep}
+          />
+        </View>
+        <View style={styles.stageTextCol}>
+          {currentStep ? (
+            <>
+              <Text style={styles.bigNumber}>{currentStep.number ?? '👟'}</Text>
+              <Text style={styles.bigLabel}>{currentStep.label}</Text>
+            </>
+          ) : (
+            <Text style={styles.idleText}>{playing ? 'A preparar…' : 'Pronto para começar'}</Text>
+          )}
+          {playing && <Text style={styles.repCounter}>Repetição {rep + 1} / {rounds}</Text>}
+        </View>
       </View>
 
       <Text style={styles.sectionLabel}>Ritmo</Text>
@@ -135,14 +145,17 @@ const styles = StyleSheet.create({
     borderRadius: radius.lg,
     borderWidth: 1,
     borderColor: colors.border,
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
     paddingVertical: spacing.xl,
+    paddingHorizontal: spacing.md,
     marginBottom: spacing.lg,
     minHeight: 200,
   },
-  bigNumber: { fontSize: 64, fontWeight: '800', color: colors.primary },
-  bigLabel: { ...typography.title, marginTop: spacing.sm },
+  figureBox: { width: 120, height: 120, marginRight: spacing.sm },
+  stageTextCol: { flex: 1, alignItems: 'center' },
+  bigNumber: { fontSize: 56, fontWeight: '800', color: colors.primary },
+  bigLabel: { ...typography.title, marginTop: spacing.sm, textAlign: 'center' },
   idleText: { ...typography.bodyMuted, fontSize: 16 },
   repCounter: { ...typography.bodyMuted, marginTop: spacing.md },
   sectionLabel: { ...typography.label, marginBottom: spacing.sm },
