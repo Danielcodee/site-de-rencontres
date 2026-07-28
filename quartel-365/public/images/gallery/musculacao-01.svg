@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="SALA DE FORÇA">
+  <defs>
+    <linearGradient id="grad13" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08090a" />
+      <stop offset="0.55" stop-color="#1c1e21" />
+      <stop offset="1" stop-color="#08090a" />
+    </linearGradient>
+    <pattern id="grid13" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2a2c30" stroke-width="1" opacity="0.5" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#grad13)" />
+  <rect width="1200" height="900" fill="url(#grid13)" />
+  <g clip-path="url(#clip-13)"><rect x="241" y="0" width="119" height="900" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /><rect x="332" y="0" width="58" height="900" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /><rect x="423" y="0" width="87" height="900" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /><rect x="514" y="0" width="116" height="900" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /><rect x="605" y="0" width="55" height="900" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /></g>
+  <clipPath id="clip-13"><rect width="1200" height="900" /></clipPath>
+  <rect x="0" y="890" width="1200" height="10" fill="#e63a1f" opacity="0.9" />
+  <rect x="0.5" y="0.5" width="1199" height="899" fill="none" stroke="#2a2c30" stroke-width="1" />
+  <text x="50%" y="450" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="59" letter-spacing="2" fill="#f3f1ea" opacity="0.92">SALA DE FORÇA</text>
+  
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" role="img" aria-label="A NOSSA HISTÓRIA">
+  <defs>
+    <linearGradient id="grad3" x1="0" y1="0" x2="1400" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08090a" />
+      <stop offset="0.55" stop-color="#1c1e21" />
+      <stop offset="1" stop-color="#08090a" />
+    </linearGradient>
+    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2a2c30" stroke-width="1" opacity="0.5" />
+    </pattern>
+  </defs>
+  <rect width="1400" height="1000" fill="url(#grad3)" />
+  <rect width="1400" height="1000" fill="url(#grid3)" />
+  <g clip-path="url(#clip-3)"><rect x="-169" y="0" width="79" height="1000" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /><rect x="-78" y="0" width="108" height="1000" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /><rect x="13" y="0" width="47" height="1000" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /><rect x="104" y="0" width="76" height="1000" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /><rect x="195" y="0" width="105" height="1000" fill="#ff7a33" opacity="0.035" transform="skewX(-18)" /></g>
+  <clipPath id="clip-3"><rect width="1400" height="1000" /></clipPath>
+  <rect x="0" y="990" width="1400" height="10" fill="#e63a1f" opacity="0.9" />
+  <rect x="0.5" y="0.5" width="1399" height="999" fill="none" stroke="#2a2c30" stroke-width="1" />
+  <text x="50%" y="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="65" letter-spacing="2" fill="#f3f1ea" opacity="0.92">A NOSSA HISTÓRIA</text>
+  
+</svg>

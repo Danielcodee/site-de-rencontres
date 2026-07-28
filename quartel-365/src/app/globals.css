@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/*
+ * Paleta "Quartel 365": preto operacional, cinza-carvão e um vermelho-laranja
+ * de combate como cor de destaque única. Mantém-se sóbria de propósito —
+ * evitar cores extra para preservar a sensação premium/disciplinada.
+ */
+:root {
+  --color-ink: #08090a;
+  --color-charcoal: #131416;
+  --color-charcoal-2: #1c1e21;
+  --color-line: #2a2c30;
+  --color-bone: #f3f1ea;
+  --color-mist: #9a9c9f;
+  --color-flame: #e63a1f;
+  --color-flame-dark: #b32c17;
+  --color-ember: #ff7a33;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-charcoal: var(--color-charcoal);
+  --color-charcoal-2: var(--color-charcoal-2);
+  --color-line: var(--color-line);
+  --color-bone: var(--color-bone);
+  --color-mist: var(--color-mist);
+  --color-flame: var(--color-flame);
+  --color-flame-dark: var(--color-flame-dark);
+  --color-ember: var(--color-ember);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-oswald);
+
+  --animate-fade-up: fade-up 0.7s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-flame);
+  color: var(--color-bone);
+}
+
+.container-quartel {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-quartel {
+    padding-inline: 2rem;
+  }
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px var(--color-line);
+  color: transparent;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Acessibilidade: foco visível e consistente em toda a navegação por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-flame);
+  outline-offset: 3px;
+}
