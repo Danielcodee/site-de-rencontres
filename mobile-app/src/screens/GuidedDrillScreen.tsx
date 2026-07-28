@@ -3,10 +3,11 @@ import { StyleSheet, Text, TouchableOpacity, Vibration, View } from 'react-nativ
 import { useRoute } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
 import ScreenContainer from '../components/ScreenContainer';
+import Card from '../components/Card';
 import Pill from '../components/Pill';
-import FighterFigure from '../components/FighterFigure';
 import { colors, radius, spacing, typography } from '../theme/theme';
 import { Combo } from '../data/types';
+import { resolveMove, STRIKE_GUIDES } from '../data/strikeGuides';
 
 const PACES = [
   { label: 'Lento', ms: 1700 },
@@ -78,32 +79,35 @@ export default function GuidedDrillScreen() {
   };
 
   const currentStep = stepIndex >= 0 ? sequence[stepIndex] : null;
+  const previewLabel = currentStep?.label ?? sequence[0].label;
+  const guide = STRIKE_GUIDES[resolveMove(previewLabel)];
 
   return (
-    <ScreenContainer scroll={false}>
+    <ScreenContainer>
       <Text style={styles.eyebrow}>{techniqueName.toUpperCase()}</Text>
       <Text style={styles.title}>{comboLabel}</Text>
 
       <View style={styles.stage}>
-        <View style={styles.figureBox}>
-          <FighterFigure
-            label={currentStep?.label ?? sequence[0].label}
-            trigger={`${stepIndex}-${rep}`}
-            active={!!currentStep}
-          />
-        </View>
-        <View style={styles.stageTextCol}>
-          {currentStep ? (
-            <>
-              <Text style={styles.bigNumber}>{currentStep.number ?? '👟'}</Text>
-              <Text style={styles.bigLabel}>{currentStep.label}</Text>
-            </>
-          ) : (
-            <Text style={styles.idleText}>{playing ? 'A preparar…' : 'Pronto para começar'}</Text>
-          )}
-          {playing && <Text style={styles.repCounter}>Repetição {rep + 1} / {rounds}</Text>}
-        </View>
+        {currentStep ? (
+          <>
+            <Text style={styles.bigNumber}>{currentStep.number ?? '👟'}</Text>
+            <Text style={styles.bigLabel}>{currentStep.label}</Text>
+          </>
+        ) : (
+          <Text style={styles.idleText}>{playing ? 'A preparar…' : 'Pronto para começar'}</Text>
+        )}
+        {playing && <Text style={styles.repCounter}>Repetição {rep + 1} / {rounds}</Text>}
       </View>
+
+      <Text style={styles.sectionLabel}>Como fazer: {guide.name}</Text>
+      <Card style={styles.guideCard}>
+        {guide.cues.map((cue, i) => (
+          <View key={i} style={styles.cueRow}>
+            <Text style={styles.bullet}>•</Text>
+            <Text style={styles.cueText}>{cue}</Text>
+          </View>
+        ))}
+      </Card>
 
       <Text style={styles.sectionLabel}>Ritmo</Text>
       <View style={styles.pillRow}>
@@ -145,20 +149,21 @@ const styles = StyleSheet.create({
     borderRadius: radius.lg,
     borderWidth: 1,
     borderColor: colors.border,
-    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     paddingVertical: spacing.xl,
-    paddingHorizontal: spacing.md,
     marginBottom: spacing.lg,
-    minHeight: 200,
+    minHeight: 160,
   },
-  figureBox: { width: 130, height: 150, marginRight: spacing.sm },
-  stageTextCol: { flex: 1, alignItems: 'center' },
   bigNumber: { fontSize: 56, fontWeight: '800', color: colors.primary },
   bigLabel: { ...typography.title, marginTop: spacing.sm, textAlign: 'center' },
   idleText: { ...typography.bodyMuted, fontSize: 16 },
   repCounter: { ...typography.bodyMuted, marginTop: spacing.md },
   sectionLabel: { ...typography.label, marginBottom: spacing.sm },
+  guideCard: { marginBottom: spacing.lg },
+  cueRow: { flexDirection: 'row', marginBottom: spacing.xs },
+  bullet: { color: colors.primary, marginRight: spacing.sm, fontWeight: '700' },
+  cueText: { ...typography.body, flex: 1 },
   pillRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm, marginBottom: spacing.lg },
   controls: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm },
   primaryButton: {
