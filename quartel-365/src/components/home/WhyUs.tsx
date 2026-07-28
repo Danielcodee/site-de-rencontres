@@ -26,12 +26,22 @@ export function WhyUs() {
           {differentiators.map((item, index) => {
             const Icon = icons[item.icon];
             return (
-              <Reveal key={item.title} as="li" delay={index * 0.05} className="bg-charcoal p-8">
-                <Icon className="text-flame" size={28} aria-hidden />
-                <h3 className="mt-5 font-heading text-lg font-semibold uppercase tracking-wide text-bone">
+              <Reveal
+                key={item.title}
+                as="li"
+                delay={index * 0.05}
+                className="group relative bg-charcoal p-8 transition-colors duration-300 hover:bg-charcoal-2"
+              >
+                <span className="absolute left-8 top-8 h-10 w-10 rounded-full bg-flame/0 blur-xl transition-colors duration-300 group-hover:bg-flame/25" />
+                <Icon
+                  className="relative text-flame transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110"
+                  size={28}
+                  aria-hidden
+                />
+                <h3 className="relative mt-5 font-heading text-lg font-semibold uppercase tracking-wide text-bone">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-mist">{item.description}</p>
+                <p className="relative mt-3 text-sm leading-relaxed text-mist">{item.description}</p>
               </Reveal>
             );
           })}

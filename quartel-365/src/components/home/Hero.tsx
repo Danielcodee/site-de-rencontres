@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
+import { FighterCanvasLazy } from "@/components/three/FighterCanvasLazy";
 import { stats } from "@/lib/data";
 
 export function Hero() {
@@ -16,6 +17,8 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
       <div className="absolute inset-0 bg-grid opacity-40" />
+
+      <FighterCanvasLazy className="absolute inset-y-0 right-0 hidden w-[40%] xl:block" />
 
       <div className="container-quartel relative z-10 pb-16 pt-40 sm:pb-24">
         <p className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.35em] text-flame animate-fade-up">

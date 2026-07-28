@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
+import { TiltCard } from "@/components/ui/TiltCard";
 import { cn } from "@/lib/utils";
 import { plans, programs, weeklySchedule } from "@/lib/data";
 
@@ -80,42 +81,43 @@ export default function ProgramasPage() {
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {plans.map((plan) => (
-              <div
-                key={plan.name}
-                className={cn(
-                  "flex flex-col rounded-sm border p-7",
-                  plan.highlighted ? "border-flame bg-ink" : "border-line bg-ink",
-                )}
-              >
-                {plan.highlighted ? (
-                  <span className="mb-4 inline-block w-fit rounded-sm bg-flame px-3 py-1 font-heading text-xs font-semibold uppercase tracking-wider text-bone">
-                    Mais popular
-                  </span>
-                ) : null}
-                <h3 className="font-heading text-lg font-bold uppercase tracking-wide text-bone">
-                  {plan.name}
-                </h3>
-                <p className="mt-3 flex items-baseline gap-1">
-                  <span className="font-heading text-3xl font-bold text-bone">{plan.price}</span>
-                  <span className="text-sm text-mist">{plan.period}</span>
-                </p>
-                <p className="mt-3 text-sm text-mist">{plan.description}</p>
-                <ul className="mt-6 flex-1 space-y-2">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 text-sm text-mist">
-                      <Check className="mt-0.5 shrink-0 text-flame" size={15} aria-hidden />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <ButtonLink
-                  href="/contactos"
-                  variant={plan.highlighted ? "primary" : "outline"}
-                  className="mt-7 w-full"
+              <TiltCard key={plan.name} strength={6}>
+                <div
+                  className={cn(
+                    "flex h-full flex-col rounded-sm border p-7",
+                    plan.highlighted ? "border-flame bg-ink" : "border-line bg-ink",
+                  )}
                 >
-                  {plan.cta}
-                </ButtonLink>
-              </div>
+                  {plan.highlighted ? (
+                    <span className="mb-4 inline-block w-fit rounded-sm bg-flame px-3 py-1 font-heading text-xs font-semibold uppercase tracking-wider text-bone">
+                      Mais popular
+                    </span>
+                  ) : null}
+                  <h3 className="font-heading text-lg font-bold uppercase tracking-wide text-bone">
+                    {plan.name}
+                  </h3>
+                  <p className="mt-3 flex items-baseline gap-1">
+                    <span className="font-heading text-3xl font-bold text-bone">{plan.price}</span>
+                    <span className="text-sm text-mist">{plan.period}</span>
+                  </p>
+                  <p className="mt-3 text-sm text-mist">{plan.description}</p>
+                  <ul className="mt-6 flex-1 space-y-2">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2 text-sm text-mist">
+                        <Check className="mt-0.5 shrink-0 text-flame" size={15} aria-hidden />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <ButtonLink
+                    href="/contactos"
+                    variant={plan.highlighted ? "primary" : "outline"}
+                    className="mt-7 w-full"
+                  >
+                    {plan.cta}
+                  </ButtonLink>
+                </div>
+              </TiltCard>
             ))}
           </div>
         </div>
