@@ -65,7 +65,6 @@ function svg({ w, h, label: rawLabel, sub: rawSub, seed = 0, accent = true, wate
 }
 
 const images = [
-  { file: "hero.svg", w: 1920, h: 1080, label: "QUARTEL 365", sub: "MUAY THAI · FELGUEIRAS", seed: 1, watermark: true },
   { file: "og-cover.svg", w: 1200, h: 630, label: "QUARTEL 365", sub: "TREINA TODOS OS DIAS", seed: 2 },
 
   { file: "gallery/ringue-01.svg", w: 1200, h: 900, label: "RINGUE PRINCIPAL", seed: 10 },

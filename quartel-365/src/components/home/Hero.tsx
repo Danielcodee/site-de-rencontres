@@ -1,24 +1,22 @@
 import Image from "next/image";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
-import { FighterCanvasLazy } from "@/components/three/FighterCanvasLazy";
 import { stats } from "@/lib/data";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-ink">
       <Image
-        src="/images/hero.svg"
-        alt="Ringue de treino do Quartel 365 em Felgueiras"
+        src="/images/hero-fighter.jpg"
+        alt="Lutador de Muay Thai em posição de combate, ambiente do Quartel 365"
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-[70%_center]"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
-      <div className="absolute inset-0 bg-grid opacity-40" />
-
-      <FighterCanvasLazy className="absolute inset-y-0 right-0 hidden w-[40%] xl:block" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/40 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-grid opacity-20" />
 
       <div className="container-quartel relative z-10 pb-16 pt-40 sm:pb-24">
         <p className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.35em] text-flame animate-fade-up">

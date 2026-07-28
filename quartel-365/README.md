@@ -73,6 +73,17 @@ usar fotos reais:
 3. Depois de teres fotos reais, podes remover a opção `images.dangerouslyAllowSVG`
    em `next.config.ts` — só é necessária para os placeholders SVG.
 
+### Foto do hero (`public/images/hero-fighter.jpg`)
+
+Esta é uma fotografia **gerada por IA** (Artlist/Seedream), usada como imagem
+de fundo do hero na homepage. Não é uma foto real da academia nem dos
+instrutores. Antes de publicar:
+
+- Confirma que o teu plano Artlist cobre o uso comercial de imagens geradas
+  por IA (os termos variam entre plano gratuito e subscrições pagas).
+- O ideal, a prazo, é substituir por uma fotografia real do espaço/alunos do
+  Quartel 365 — mais autêntica do que uma imagem gerada.
+
 ## Formulário de contacto / newsletter
 
 O endpoint `src/app/api/contact/route.ts` valida os dados com Zod e, se
