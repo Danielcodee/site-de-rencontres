@@ -3,6 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import ScreenContainer from '../components/ScreenContainer';
 import Card from '../components/Card';
+import SpeakButton from '../components/SpeakButton';
 import { colors, radius, spacing, typography } from '../theme/theme';
 import { useUser } from '../context/UserContext';
 import { WORKOUT_PLANS } from '../data/workouts';
@@ -16,10 +17,18 @@ export default function SessionDetailScreen() {
   const session = plan.sessions.find((s) => s.id === sessionId)!;
   const done = isSessionComplete(session.id);
 
+  const fullText = [
+    `${session.day}. ${session.focus}.`,
+    `Aquecimento: ${session.warmup}`,
+    `Exercícios: ${session.exercises.map((ex) => `${ex.name}, ${ex.sets}${ex.notes ? '. ' + ex.notes : ''}`).join('. ')}`,
+    `Retorno à calma: ${session.cooldown}`,
+  ].join(' ');
+
   return (
     <ScreenContainer>
       <Text style={styles.eyebrow}>{session.day.toUpperCase()}</Text>
       <Text style={styles.title}>{session.focus}</Text>
+      <SpeakButton text={fullText} label="Ouvir sessão completa" style={styles.speakSpacing} />
 
       <Text style={styles.sectionTitle}>Aquecimento</Text>
       <Card style={styles.card}>
@@ -56,7 +65,8 @@ export default function SessionDetailScreen() {
 
 const styles = StyleSheet.create({
   eyebrow: { ...typography.label, color: colors.accent, marginTop: spacing.lg },
-  title: { ...typography.title, marginTop: spacing.xs, marginBottom: spacing.lg },
+  title: { ...typography.title, marginTop: spacing.xs, marginBottom: spacing.sm },
+  speakSpacing: { marginBottom: spacing.lg },
   sectionTitle: { ...typography.subtitle, marginBottom: spacing.sm },
   card: { marginBottom: spacing.md },
   body: { ...typography.body },

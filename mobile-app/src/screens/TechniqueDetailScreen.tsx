@@ -5,6 +5,7 @@ import ScreenContainer from '../components/ScreenContainer';
 import Card from '../components/Card';
 import ComboLegend from '../components/ComboLegend';
 import ComboDiagram from '../components/ComboDiagram';
+import SpeakButton from '../components/SpeakButton';
 import { colors, radius, spacing, typography } from '../theme/theme';
 import { TECHNIQUES } from '../data/techniques';
 import { LEVEL_LABEL } from '../data/sports';
@@ -20,6 +21,11 @@ export default function TechniqueDetailScreen() {
       <Text style={styles.eyebrow}>{LEVEL_LABEL[technique.level].toUpperCase()}</Text>
       <Text style={styles.title}>{technique.name}</Text>
       <Text style={styles.objective}>{technique.objective}</Text>
+      <SpeakButton
+        text={`${technique.name}. ${technique.objective} Pontos-chave: ${technique.cues.join('. ')}`}
+        label="Ouvir explicação"
+        style={styles.speakSpacing}
+      />
 
       <Text style={styles.sectionTitle}>Pontos-chave</Text>
       <Card style={styles.card}>
@@ -64,6 +70,11 @@ export default function TechniqueDetailScreen() {
             <Text style={styles.drillDuration}>{drill.duration}</Text>
           </View>
           <Text style={styles.drillInstructions}>{drill.instructions}</Text>
+          <SpeakButton
+            text={`${drill.title}. ${drill.instructions}`}
+            label="Ouvir"
+            style={styles.speakSpacing}
+          />
         </Card>
       ))}
     </ScreenContainer>
@@ -73,7 +84,8 @@ export default function TechniqueDetailScreen() {
 const styles = StyleSheet.create({
   eyebrow: { ...typography.label, color: colors.accent, marginTop: spacing.lg },
   title: { ...typography.title, marginTop: spacing.xs, marginBottom: spacing.xs },
-  objective: { ...typography.bodyMuted, marginBottom: spacing.lg },
+  objective: { ...typography.bodyMuted, marginBottom: spacing.sm },
+  speakSpacing: { marginBottom: spacing.lg, marginTop: spacing.xs },
   sectionTitle: { ...typography.subtitle, marginBottom: spacing.sm, marginTop: spacing.sm },
   card: { marginBottom: spacing.md },
   cueRow: { flexDirection: 'row', marginBottom: spacing.xs },

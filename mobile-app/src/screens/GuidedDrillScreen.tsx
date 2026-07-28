@@ -5,6 +5,7 @@ import * as Speech from 'expo-speech';
 import ScreenContainer from '../components/ScreenContainer';
 import Card from '../components/Card';
 import Pill from '../components/Pill';
+import SpeakButton from '../components/SpeakButton';
 import { colors, radius, spacing, typography } from '../theme/theme';
 import { Combo } from '../data/types';
 import { resolveMove, STRIKE_GUIDES } from '../data/strikeGuides';
@@ -99,7 +100,10 @@ export default function GuidedDrillScreen() {
         {playing && <Text style={styles.repCounter}>Repetição {rep + 1} / {rounds}</Text>}
       </View>
 
-      <Text style={styles.sectionLabel}>Como fazer: {guide.name}</Text>
+      <View style={styles.guideHeader}>
+        <Text style={styles.sectionLabel}>Como fazer: {guide.name}</Text>
+        {!playing && <SpeakButton text={`${guide.name}. ${guide.cues.join('. ')}`} label="Ouvir explicação" />}
+      </View>
       <Card style={styles.guideCard}>
         {guide.cues.map((cue, i) => (
           <View key={i} style={styles.cueRow}>
@@ -160,6 +164,7 @@ const styles = StyleSheet.create({
   idleText: { ...typography.bodyMuted, fontSize: 16 },
   repCounter: { ...typography.bodyMuted, marginTop: spacing.md },
   sectionLabel: { ...typography.label, marginBottom: spacing.sm },
+  guideHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: spacing.sm },
   guideCard: { marginBottom: spacing.lg },
   cueRow: { flexDirection: 'row', marginBottom: spacing.xs },
   bullet: { color: colors.primary, marginRight: spacing.sm, fontWeight: '700' },

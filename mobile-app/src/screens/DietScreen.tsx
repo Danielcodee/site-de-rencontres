@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import Card from '../components/Card';
+import SpeakButton from '../components/SpeakButton';
 import { colors, spacing, typography } from '../theme/theme';
 import { useUser } from '../context/UserContext';
 import { DIET_PLANS } from '../data/nutrition';
@@ -12,10 +13,19 @@ export default function DietScreen() {
   const level = profile.level ?? 'iniciante';
   const diet = DIET_PLANS[level];
 
+  const fullText = [
+    `Objetivo: ${diet.goal}`,
+    `Princípios: ${diet.principles.join('. ')}`,
+    `Hidratação: ${diet.hydration}`,
+    `Exemplo de dia alimentar: ${diet.sampleDay.map((m) => `${m.meal}: ${m.suggestion}`).join('. ')}`,
+    `Suplementação: ${diet.supplementNote}`,
+  ].join(' ');
+
   return (
     <ScreenContainer>
       <Text style={styles.eyebrow}>DIETA — {LEVEL_LABEL[level].toUpperCase()}</Text>
       <Text style={styles.title}>{diet.goal}</Text>
+      <SpeakButton text={fullText} label="Ouvir tudo" style={styles.speakSpacing} />
 
       <Text style={styles.sectionTitle}>Princípios</Text>
       <Card style={styles.card}>
@@ -56,7 +66,8 @@ export default function DietScreen() {
 
 const styles = StyleSheet.create({
   eyebrow: { ...typography.label, marginTop: spacing.lg },
-  title: { ...typography.title, marginTop: spacing.xs, marginBottom: spacing.lg },
+  title: { ...typography.title, marginTop: spacing.xs, marginBottom: spacing.sm },
+  speakSpacing: { marginBottom: spacing.lg },
   sectionTitle: { ...typography.subtitle, marginBottom: spacing.sm },
   card: { marginBottom: spacing.md },
   row: { flexDirection: 'row', marginBottom: spacing.xs },
