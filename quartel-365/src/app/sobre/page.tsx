@@ -101,10 +101,10 @@ export default function SobrePage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-line">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-line">
               <Image
-                src="/images/about-cover.svg"
-                alt="Treino no Quartel 365"
+                src="/images/illustrations/fighter-guard.svg"
+                alt="Ilustração de um lutador do Quartel 365 em posição de guarda"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"

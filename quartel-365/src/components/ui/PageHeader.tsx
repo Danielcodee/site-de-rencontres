@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -7,13 +8,32 @@ type PageHeaderProps = {
   description?: string;
   children?: ReactNode;
   className?: string;
+  /** Ilustração decorativa opcional, ancorada ao lado direito em ecrãs largos. */
+  illustration?: { src: string; alt: string };
 };
 
 /** Banner de topo para páginas internas — garante espaço para o header fixo. */
-export function PageHeader({ eyebrow, title, description, children, className }: PageHeaderProps) {
+export function PageHeader({
+  eyebrow,
+  title,
+  description,
+  children,
+  className,
+  illustration,
+}: PageHeaderProps) {
   return (
-    <section className={cn("border-b border-line bg-charcoal bg-grid pb-16 pt-36 sm:pb-20 sm:pt-44", className)}>
-      <div className="container-quartel">
+    <section
+      className={cn(
+        "relative overflow-hidden border-b border-line bg-charcoal bg-grid pb-16 pt-36 sm:pb-20 sm:pt-44",
+        className,
+      )}
+    >
+      {illustration ? (
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[30%] opacity-90 [mask-image:linear-gradient(to_left,black_60%,transparent)] lg:block">
+          <Image src={illustration.src} alt={illustration.alt} fill sizes="30vw" className="object-cover object-top" />
+        </div>
+      ) : null}
+      <div className="container-quartel relative z-10">
         <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.3em] text-flame">
           {eyebrow}
         </p>

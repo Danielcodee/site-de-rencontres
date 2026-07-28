@@ -67,9 +67,6 @@ function svg({ w, h, label: rawLabel, sub: rawSub, seed = 0, accent = true, wate
 const images = [
   { file: "hero.svg", w: 1920, h: 1080, label: "QUARTEL 365", sub: "MUAY THAI · FELGUEIRAS", seed: 1, watermark: true },
   { file: "og-cover.svg", w: 1200, h: 630, label: "QUARTEL 365", sub: "TREINA TODOS OS DIAS", seed: 2 },
-  { file: "about-cover.svg", w: 1400, h: 1000, label: "A NOSSA HISTÓRIA", seed: 3 },
-  { file: "cta-band.svg", w: 1920, h: 800, label: "A DISCIPLINA É DIÁRIA", seed: 4, watermark: true },
-  { file: "contact-cover.svg", w: 1400, h: 1000, label: "QUARTEL 365", sub: "FELGUEIRAS", seed: 5 },
 
   { file: "gallery/ringue-01.svg", w: 1200, h: 900, label: "RINGUE PRINCIPAL", seed: 10 },
   { file: "gallery/ringue-02.svg", w: 1200, h: 900, label: "RINGUE · SPARRING", seed: 11 },

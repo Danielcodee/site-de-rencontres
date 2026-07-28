@@ -23,6 +23,10 @@ export default function ProgramasPage() {
         eyebrow="Programas"
         title="Um programa para cada fase do teu caminho."
         description="Da primeira aula à competição federada. Escolhe onde estás e deixa a evolução acontecer com estrutura."
+        illustration={{
+          src: "/images/illustrations/fighter-kick.svg",
+          alt: "Ilustração de um lutador de Muay Thai a executar um pontapé circular",
+        }}
       />
 
       <section className="border-b border-line bg-ink py-24 sm:py-32">
