@@ -46,14 +46,14 @@ export default function GuidedDrillScreen() {
       playingRef.current = false;
       setStepIndex(-1);
       Vibration.vibrate([0, 100, 80, 100, 80, 200]);
-      Speech.speak('Treino concluído!', { language: 'pt-PT' });
+      Speech.speak('Treino concluído!', { language: 'pt-PT', volume: 1.0 });
       return;
     }
     const step = sequence[i];
     setStepIndex(i);
     setRep(r);
     Vibration.vibrate(35);
-    Speech.speak(step.label, { language: 'pt-PT', rate: 1.05 });
+    Speech.speak(step.label, { language: 'pt-PT', rate: 1.05, volume: 1.0 });
 
     const nextI = (i + 1) % sequence.length;
     const nextR = nextI === 0 ? r + 1 : r;

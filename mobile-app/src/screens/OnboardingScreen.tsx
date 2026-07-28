@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import ScreenContainer from '../components/ScreenContainer';
 import Pill from '../components/Pill';
+import { LogoBadge } from '../components/Logo';
 import { useUser } from '../context/UserContext';
 import { colors, radius, spacing, typography } from '../theme/theme';
 import { SPORTS, LEVEL_LABEL } from '../data/sports';
@@ -29,6 +31,17 @@ export default function OnboardingScreen() {
 
   return (
     <ScreenContainer>
+      <LinearGradient
+        colors={[colors.primary, colors.primaryMuted]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.hero}
+      >
+        <LogoBadge size={64} />
+        <Text style={styles.wordmark}>COMBAT READY</Text>
+        <Text style={styles.tagline}>Treina sozinho. Aprende a lutar. Fica pronto.</Text>
+      </LinearGradient>
+
       <Text style={styles.eyebrow}>BEM-VINDO</Text>
       <Text style={styles.title}>Vamos preparar o teu treino</Text>
 
@@ -113,6 +126,26 @@ export default function OnboardingScreen() {
 }
 
 const styles = StyleSheet.create({
+  hero: {
+    alignItems: 'center',
+    borderRadius: radius.lg,
+    paddingVertical: spacing.xl,
+    paddingHorizontal: spacing.lg,
+    marginTop: spacing.md,
+  },
+  wordmark: {
+    color: colors.text,
+    fontWeight: '900',
+    fontSize: 20,
+    letterSpacing: 2,
+    marginTop: spacing.md,
+  },
+  tagline: {
+    color: 'rgba(255,255,255,0.85)',
+    fontSize: 13,
+    marginTop: spacing.xs,
+    textAlign: 'center',
+  },
   eyebrow: { ...typography.label, marginTop: spacing.lg },
   title: { ...typography.title, marginTop: spacing.xs, marginBottom: spacing.lg },
   progressRow: { flexDirection: 'row', gap: spacing.xs, marginBottom: spacing.xl },

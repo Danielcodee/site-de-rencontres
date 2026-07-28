@@ -34,7 +34,7 @@ export default function RoundTimerScreen() {
 
   const announce = (text: string) => {
     Speech.stop();
-    Speech.speak(text, { language: 'pt-PT', rate: 1.05 });
+    Speech.speak(text, { language: 'pt-PT', rate: 1.05, volume: 1.0 });
   };
 
   const clearTimer = () => {

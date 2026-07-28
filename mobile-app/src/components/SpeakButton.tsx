@@ -29,6 +29,7 @@ export default function SpeakButton({ text, label = 'Ouvir', style }: Props) {
     Speech.speak(text, {
       language: 'pt-PT',
       rate: 1.0,
+      volume: 1.0,
       onDone: () => setSpeaking(false),
       onStopped: () => setSpeaking(false),
       onError: () => setSpeaking(false),

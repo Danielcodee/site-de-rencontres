@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import ScreenContainer from '../components/ScreenContainer';
 import Card from '../components/Card';
 import IconBadge from '../components/IconBadge';
+import { LogoGlove } from '../components/Logo';
 import { useUser } from '../context/UserContext';
 import { colors, radius, spacing, typography } from '../theme/theme';
 import { LEVEL_LABEL, SPORTS } from '../data/sports';
@@ -27,8 +28,15 @@ export default function HomeScreen() {
         end={{ x: 1, y: 1 }}
         style={styles.hero}
       >
-        <Text style={styles.eyebrow}>OLÁ{profile.name ? `, ${profile.name.toUpperCase()}` : ''}</Text>
-        <Text style={styles.title}>Pronto para treinar?</Text>
+        <View style={styles.heroTop}>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.eyebrow}>OLÁ{profile.name ? `, ${profile.name.toUpperCase()}` : ''}</Text>
+            <Text style={styles.title}>Pronto para treinar?</Text>
+          </View>
+          <View style={styles.logoCircle}>
+            <LogoGlove size={26} />
+          </View>
+        </View>
         <View style={styles.levelTag}>
           <Text style={styles.levelTagText}>Nível: {LEVEL_LABEL[level]}</Text>
         </View>
@@ -70,6 +78,15 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
     marginTop: spacing.md,
     marginBottom: spacing.lg,
+  },
+  heroTop: { flexDirection: 'row', alignItems: 'flex-start' },
+  logoCircle: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: 'rgba(255,255,255,0.15)',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   eyebrow: { ...typography.label, color: 'rgba(255,255,255,0.8)' },
   title: { ...typography.title, marginTop: spacing.xs, color: colors.text },
