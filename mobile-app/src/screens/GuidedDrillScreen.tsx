@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing.lg,
     minHeight: 200,
   },
-  figureBox: { width: 120, height: 120, marginRight: spacing.sm },
+  figureBox: { width: 130, height: 150, marginRight: spacing.sm },
   stageTextCol: { flex: 1, alignItems: 'center' },
   bigNumber: { fontSize: 56, fontWeight: '800', color: colors.primary },
   bigLabel: { ...typography.title, marginTop: spacing.sm, textAlign: 'center' },
