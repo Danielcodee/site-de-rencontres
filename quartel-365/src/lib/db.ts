@@ -44,12 +44,9 @@ export type BookableClass = {
 // Funcional até 5.
 //
 // Confirmado pelo Daniel: à terça/quinta, Treino Funcional são aulas de
-// 45min back-to-back das 07h00 às 11h00; a partir das 12h00 (aula já
-// confirmada, 12h00-13h30) são sempre aulas de Muay Thai de 1h30
-// back-to-back até às 21h30.
-//
-// PLACEHOLDER — a aula de sábado segue o mesmo padrão de 1h30 do Muay
-// Thai por coerência, mas ainda não foi confirmada pelo Daniel.
+// 45min back-to-back das 07h00 às 11h00; a partir das 12h00 são sempre
+// aulas de Muay Thai de 1h30 back-to-back até às 21h30. Ao sábado
+// (14h00-19h00) segue o mesmo padrão de blocos de 1h30 de Muay Thai.
 const CLASS_SEED: BookableClass[] = [
   // Terça
   { id: "terca-0700", name: "Treino Funcional", day: "Terça", dayOrder: 2, time: "07h00", trainer: "Daniel Coelho", capacity: 5 },
@@ -75,7 +72,7 @@ const CLASS_SEED: BookableClass[] = [
   { id: "quinta-1630", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "16h30", trainer: "Daniel Coelho", capacity: 15 },
   { id: "quinta-1800", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "18h00", trainer: "Daniel Coelho", capacity: 15 },
   { id: "quinta-1930", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "19h30", trainer: "Daniel Coelho", capacity: 15 },
-  // Sábado — PLACEHOLDER, ver nota acima
+  // Sábado
   { id: "sabado-1400", name: "Muay Thai", day: "Sábado", dayOrder: 6, time: "14h00", trainer: "Daniel Coelho", capacity: 15 },
   { id: "sabado-1530", name: "Muay Thai", day: "Sábado", dayOrder: 6, time: "15h30", trainer: "Daniel Coelho", capacity: 15 },
   { id: "sabado-1700", name: "Muay Thai", day: "Sábado", dayOrder: 6, time: "17h00", trainer: "Daniel Coelho", capacity: 15 },

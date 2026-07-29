@@ -49,8 +49,8 @@ export const siteConfig = {
     tiktok: "https://www.tiktok.com/@quartel.3.6.5",
   },
 
-  // Horário de terça/quinta confirmado pelo Daniel. A aula de sábado ainda
-  // é PLACEHOLDER (ver CLASS_SEED em src/lib/db.ts).
+  // Horário confirmado pelo Daniel (ver detalhe das turmas em CLASS_SEED,
+  // em src/lib/db.ts).
   hours: [
     { day: "Terça e Quinta", hours: "06h00 – 21h30" },
     { day: "Sábado", hours: "14h00 – 19h00" },
