@@ -26,14 +26,6 @@ export function InstagramIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function FacebookIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...base(props)}>
-      <path d="M14 9h3V6h-3c-1.66 0-3 1.34-3 3v2H9v3h2v6h3v-6h2.5l0.5-3H14V9.5c0-0.28 0.22-0.5 0.5-0.5H14z" />
-    </svg>
-  );
-}
-
 export function YoutubeIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base(props)}>

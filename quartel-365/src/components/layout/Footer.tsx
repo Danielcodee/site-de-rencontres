@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/components/ui/SocialIcons";
+import { InstagramIcon, YoutubeIcon } from "@/components/ui/SocialIcons";
 import { navLinks, siteConfig } from "@/lib/data";
 
 export function Footer() {
@@ -25,15 +25,6 @@ export function Footer() {
               className="text-mist transition-colors hover:text-gold"
             >
               <InstagramIcon />
-            </a>
-            <a
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="Facebook do Quartel 365"
-              className="text-mist transition-colors hover:text-gold"
-            >
-              <FacebookIcon />
             </a>
             <a
               href={siteConfig.social.youtube}

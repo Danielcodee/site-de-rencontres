@@ -71,19 +71,19 @@ const jsonLd = {
     postalCode: siteConfig.contact.postalCode,
     addressCountry: siteConfig.contact.country,
   },
-  sameAs: [siteConfig.social.instagram, siteConfig.social.facebook, siteConfig.social.youtube],
+  sameAs: [siteConfig.social.instagram, siteConfig.social.youtube],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "07:00",
-      closes: "22:00",
+      dayOfWeek: ["Tuesday", "Thursday"],
+      opens: "06:00",
+      closes: "21:30",
     },
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Saturday"],
-      opens: "09:00",
-      closes: "14:00",
+      opens: "14:00",
+      closes: "19:00",
     },
   ],
 };

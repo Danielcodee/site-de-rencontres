@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { FacebookIcon, InstagramIcon, TiktokIcon, YoutubeIcon } from "@/components/ui/SocialIcons";
+import { InstagramIcon, TiktokIcon, YoutubeIcon } from "@/components/ui/SocialIcons";
 import { MbWay } from "@/components/home/MbWay";
 import { faqs, siteConfig } from "@/lib/data";
 
@@ -99,9 +99,6 @@ export default function ContactosPage() {
             <div className="mt-8 flex gap-4">
               <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer noopener" aria-label="Instagram" className="text-mist hover:text-gold">
                 <InstagramIcon />
-              </a>
-              <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer noopener" aria-label="Facebook" className="text-mist hover:text-gold">
-                <FacebookIcon />
               </a>
               <a href={siteConfig.social.youtube} target="_blank" rel="noreferrer noopener" aria-label="YouTube" className="text-mist hover:text-gold">
                 <YoutubeIcon />
