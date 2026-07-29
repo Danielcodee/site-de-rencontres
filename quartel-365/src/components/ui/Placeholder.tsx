@@ -12,7 +12,7 @@ function initials(name: string) {
 
 /**
  * Placeholder visual claro para uma foto que ainda não existe — usado nos
- * cartões dos treinadores até haver fotos reais. Em vez de reutilizar uma
+ * cartão do treinador até haver uma foto real. Em vez de reutilizar uma
  * imagem genérica (que representaria erradamente uma pessoa concreta),
  * mostra as iniciais sobre um padrão discreto na paleta da marca.
  *

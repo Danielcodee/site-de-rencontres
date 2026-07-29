@@ -14,8 +14,8 @@ export function AboutPreview() {
             O Quartel 365 nasceu em {siteConfig.founded} em Felgueiras, fundado por Daniel Coelho e
             Maria Miranda com um objetivo claro: trazer técnica tailandesa autêntica e treino
             funcional a sério a quem exige mais do que um ginásio genérico. Quase uma década
-            depois, continuam a dar aulas todos os dias, lado a lado com a comunidade que ajudaram
-            a construir.
+            depois, o Daniel continua a dar todas as aulas pessoalmente, enquanto a Maria garante
+            que a academia funciona como deve ser, todos os dias.
           </p>
         </Reveal>
         <Reveal delay={0.1}>

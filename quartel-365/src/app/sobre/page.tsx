@@ -22,7 +22,7 @@ const values = [
   {
     icon: Handshake,
     title: "Respeito",
-    description: "Pelos treinadores, pelo colega de treino e pela arte marcial. Sem exceções.",
+    description: "Pelo treinador, pelo colega de treino e pela arte marcial. Sem exceções.",
   },
   {
     icon: Compass,
@@ -65,7 +65,7 @@ const timeline = [
     year: "Hoje",
     title: "Mais de 450 alunos ativos",
     description:
-      "Uma comunidade sólida, dois treinadores certificados e uma grelha de mais de 35 aulas por semana.",
+      "Uma comunidade sólida, um treinador certificado e uma grelha de mais de 35 aulas por semana.",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function SobrePage() {
               </p>
               <p>
                 Hoje, quase uma década depois, o Quartel 365 é uma referência local em Muay Thai e
-                Treino Funcional: instalações dedicadas, dois treinadores certificados e uma
+                Treino Funcional: instalações dedicadas, um treinador certificado e uma
                 comunidade que vai da iniciação absoluta à evolução técnica contínua.
               </p>
             </div>

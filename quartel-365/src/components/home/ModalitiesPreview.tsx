@@ -14,7 +14,7 @@ export function ModalitiesPreview() {
           <SectionHeading
             eyebrow="Modalidades"
             title="Duas modalidades, um único objetivo."
-            description="Muay Thai com o Daniel Coelho e Treino Funcional com a Maria Miranda — escolhe uma ou combina as duas."
+            description="Muay Thai e Treino Funcional, ambas dadas pelo Daniel Coelho — escolhe uma ou combina as duas."
           />
           <ButtonLink href="/modalidades" variant="outline" className="shrink-0">
             Ver modalidades e planos

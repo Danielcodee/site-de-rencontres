@@ -18,7 +18,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Modalidades e Planos",
   description:
-    "Conhece as modalidades do Quartel 365 — Muay Thai com o Daniel Coelho e Treino Funcional com a Maria Miranda — planos, preços e horário semanal.",
+    "Conhece as modalidades do Quartel 365 — Muay Thai e Treino Funcional, ambas dadas pelo treinador Daniel Coelho — planos, preços e horário semanal.",
   alternates: { canonical: "/modalidades" },
 };
 

@@ -3,14 +3,14 @@
 // mexer nos componentes, basta atualizar os valores abaixo.
 //
 // Os campos marcados com "PLACEHOLDER" têm de ser confirmados/substituídos
-// antes de publicar o site (morada exata, preços, fotos dos treinadores, etc.).
+// antes de publicar o site (morada exata, preços, foto do treinador, etc.).
 
 export const siteConfig = {
   name: "Quartel 365",
   shortName: "Q365",
   tagline: "Disciplina todos os dias do ano.",
   description:
-    "Academia premium de Muay Thai e Treino Funcional em Felgueiras. Técnica tailandesa autêntica, comunidade séria, treinadores certificados — 365 dias por ano.",
+    "Academia premium de Muay Thai e Treino Funcional em Felgueiras. Técnica tailandesa autêntica, comunidade séria, treinador certificado — 365 dias por ano.",
   url: "https://www.quartel365.pt", // PLACEHOLDER — domínio final
   locale: "pt_PT",
   founded: 2016,
@@ -56,7 +56,7 @@ export const navLinks = [
   { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre Nós" },
   { href: "/modalidades", label: "Modalidades" },
-  { href: "/treinadores", label: "Treinadores" },
+  { href: "/treinadores", label: "Equipa" },
   { href: "/instalacoes", label: "Instalações" },
   { href: "/blog", label: "Blog" },
   { href: "/contactos", label: "Contactos" },
@@ -65,7 +65,7 @@ export const navLinks = [
 export const stats = [
   { value: "9", suffix: "+", label: "Anos de existência" },
   { value: "450", suffix: "+", label: "Alunos ativos" },
-  { value: "2", suffix: "", label: "Treinadores certificados" },
+  { value: "2", suffix: "", label: "Fundadores" },
   { value: "35", suffix: "+", label: "Aulas por semana" },
 ];
 
@@ -78,9 +78,9 @@ export type Differentiator = {
 export const differentiators: Differentiator[] = [
   {
     icon: "shield",
-    title: "Treinadores certificados",
+    title: "Treinador certificado",
     description:
-      "Daniel Coelho e Maria Miranda acompanham de perto cada aluno, com certificação em Muay Thai e em treino funcional.",
+      "O Daniel Coelho acompanha de perto cada aluno, em todas as aulas, com certificação em Muay Thai e em treino funcional.",
   },
   {
     icon: "building",
@@ -153,7 +153,7 @@ export const modalities: Modality[] = [
       "Ideal para complementar o Muay Thai ou treinar de forma independente",
     ],
     image: "/images/hero-fighter.jpg",
-    trainer: "Maria Miranda",
+    trainer: "Daniel Coelho",
     level: "Todos os níveis",
   },
 ];
@@ -173,7 +173,7 @@ export const plans: Plan[] = [
     name: "Aula Experimental",
     price: "Grátis",
     period: "1 aula",
-    description: "Vem sentir o ambiente e conhecer os treinadores, sem compromisso.",
+    description: "Vem sentir o ambiente e conhecer o treinador, sem compromisso.",
     features: [
       "1 aula de Muay Thai à escolha",
       "Equipamento base emprestado",
@@ -212,39 +212,51 @@ export type Trainer = {
   slug: string;
   name: string;
   role: string;
-  specialty: "Muay Thai" | "Treino Funcional";
+  specialty: string;
   credentials: string[];
   bio: string;
   // PLACEHOLDER — sem foto real ainda. Quando existir, define aqui o
-  // caminho (ex: "/images/trainers/daniel-coelho.jpg") e os cartões passam
+  // caminho (ex: "/images/trainers/daniel-coelho.jpg") e o cartão passa
   // a mostrar a foto automaticamente em vez do placeholder com iniciais.
   photo?: string;
 };
 
+// O Daniel Coelho é o único treinador da academia — dá tanto as aulas de
+// Muay Thai como as de Treino Funcional. A Maria Miranda é cofundadora,
+// mas não dá aulas (ver `cofounders` abaixo).
 export const trainers: Trainer[] = [
   {
     slug: "daniel-coelho",
     name: "Daniel Coelho",
-    role: "Cofundador & Head Coach de Muay Thai",
-    specialty: "Muay Thai",
+    role: "Cofundador & Head Coach",
+    specialty: "Muay Thai & Treino Funcional",
     credentials: [
       "Instrutor certificado — Federação Portuguesa de Kickboxing e Muay Thai",
+      "Certificação em treino funcional e condição física",
       "Formação técnica na Tailândia, em campos de Muay Thai tradicionais",
       "+15 anos de prática e ensino de Muay Thai",
     ],
-    bio: "Cofundou o Quartel 365 em 2016 com a ideia de trazer a Felgueiras um Muay Thai técnico e autêntico, sem atalhos. Lidera todas as aulas de Muay Thai, do primeiro dia de um iniciante ao sparring mais exigente.",
+    bio: "Cofundou o Quartel 365 em 2016 com a ideia de trazer a Felgueiras um Muay Thai técnico e autêntico, sem atalhos. É o único treinador da academia — responsável por todas as aulas, tanto de Muay Thai como de Treino Funcional, do primeiro dia de um iniciante ao sparring mais exigente.",
   },
+];
+
+export type Cofounder = {
+  slug: string;
+  name: string;
+  role: string;
+  bio: string;
+  photo?: string;
+};
+
+// Cofundadora do Quartel 365, sem participação nas aulas — responsável
+// pela gestão da academia. Não usar `trainers` para ela, para não sugerir
+// que dá aulas.
+export const cofounders: Cofounder[] = [
   {
     slug: "maria-miranda",
     name: "Maria Miranda",
-    role: "Cofundadora & Treinadora de Treino Funcional",
-    specialty: "Treino Funcional",
-    credentials: [
-      "Certificação em treino funcional e condição física",
-      "Especialização em prevenção de lesões e mobilidade aplicada ao combate",
-      "+10 anos de experiência em preparação física",
-    ],
-    bio: "Cofundou o Quartel 365 ao lado do Daniel, trazendo a componente de força e condição física que complementa o Muay Thai. Desenha e lidera todas as sessões de Treino Funcional da academia.",
+    role: "Cofundadora",
+    bio: "Cofundou o Quartel 365 ao lado do Daniel em 2016. Não dá aulas — é responsável pela gestão da academia, do acompanhamento aos alunos fora do tatame à organização do dia a dia.",
   },
 ];
 
@@ -277,7 +289,7 @@ export const testimonials: Testimonial[] = [
     name: "Sofia Ramos",
     since: "Aluna desde 2022",
     quote:
-      "Comecei só pelo Treino Funcional com a Maria e acabei também a fazer Muay Thai. As duas modalidades juntas fizeram-me evoluir muito mais depressa.",
+      "Comecei só pelo Treino Funcional e acabei também a fazer Muay Thai com o Daniel. As duas modalidades juntas fizeram-me evoluir muito mais depressa.",
   },
 ];
 
@@ -336,7 +348,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Não precisas de ser atleta profissional para beneficiar de alguns ajustes simples na alimentação. Aqui ficam as prioridades que mais impacto têm no treino.",
     date: "2026-05-03",
-    author: "Maria Miranda",
+    author: "Daniel Coelho",
     cover: "/images/hero-fighter.jpg",
     tags: ["Nutrição", "Performance"],
     content: [
@@ -344,14 +356,14 @@ export const blogPosts: BlogPost[] = [
       "Antes do treino, prioriza hidratos de absorção moderada 60 a 90 minutos antes — dão energia sem pesar. Evita treinar em jejum prolongado se o treino for de alta intensidade.",
       "Depois do treino, a janela seguinte é a mais importante para recuperação: proteína de qualidade e hidratos para repor glicogénio. Não precisa de ser complicado — ovos, arroz e vegetais fazem o trabalho.",
       "Hidratação é frequentemente subestimada. Um aluno desidratado perde técnica muito antes de perder força — e é normalmente a primeira coisa que se nota num dia mais fraco.",
-      "Por fim, se precisas de gerir peso ou tens objetivos específicos, fala sempre com os treinadores antes de fazer alterações drásticas — nunca cortes feitos às cegas.",
+      "Por fim, se precisas de gerir peso ou tens objetivos específicos, fala sempre com o treinador antes de fazer alterações drásticas — nunca cortes feitos às cegas.",
     ],
   },
   {
     slug: "muay-thai-e-treino-funcional",
     title: "Porque é que Muay Thai e Treino Funcional se complementam tão bem",
     excerpt:
-      "Um não substitui o outro — mas juntos aceleram resultados. Percebe porque o Daniel e a Maria recomendam as duas modalidades a quem quer evoluir a sério.",
+      "Um não substitui o outro — mas juntos aceleram resultados. Percebe porque o Daniel recomenda as duas modalidades a quem quer evoluir a sério.",
     date: "2026-03-22",
     author: "Daniel Coelho",
     cover: "/images/hero-fighter.jpg",
@@ -359,7 +371,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       "É uma pergunta que ouço muitas vezes: \"só preciso de Muay Thai ou também devo fazer Treino Funcional?\" A resposta curta é que dependem um do outro mais do que parece.",
       "O Muay Thai exige técnica, mas também força explosiva, resistência cardiovascular e mobilidade nas ancas e ombros. Sem essa base física, a técnica satura mais depressa — cansas-te antes de conseguires aplicar o que treinaste.",
-      "É aí que entra o Treino Funcional da Maria: sessões pensadas para construir força e resistência de forma directamente aplicável ao Muay Thai, sem o desgaste técnico de mais uma aula de sparring.",
+      "É aí que entra o Treino Funcional: sessões pensadas para construir força e resistência de forma directamente aplicável ao Muay Thai, sem o desgaste técnico de mais uma aula de sparring.",
       "Ao mesmo tempo, o Treino Funcional sozinho também beneficia de alguma exposição ao Muay Thai — a coordenação, o trabalho de core rotacional e a disciplina mental que o Muay Thai exige tornam qualquer treino físico mais eficiente.",
       "Por isso, sempre que um aluno pergunta qual das duas modalidades escolher, a resposta honesta costuma ser: começa por uma, mas experimenta as duas antes de decidir ficar só com uma.",
     ],
@@ -380,7 +392,7 @@ export const faqs = [
   {
     question: "Qual a diferença entre Muay Thai e Treino Funcional?",
     answer:
-      "O Muay Thai foca-se em técnica de combate — socos, cotoveladas, joelhadas e pontapés, com o Daniel. O Treino Funcional foca-se em força, resistência e mobilidade, com a Maria. Podes escolher só uma ou combinar as duas.",
+      "O Muay Thai foca-se em técnica de combate — socos, cotoveladas, joelhadas e pontapés. O Treino Funcional foca-se em força, resistência e mobilidade, sem componente técnica de combate. As duas são dadas pelo Daniel Coelho — podes escolher só uma ou combinar as duas.",
   },
   {
     question: "Como faço para reservar uma aula?",

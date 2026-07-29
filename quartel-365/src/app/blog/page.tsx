@@ -8,7 +8,7 @@ import { blogPosts } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Artigos sobre Muay Thai, Treino Funcional e nutrição, escritos pelos treinadores do Quartel 365.",
+    "Artigos sobre Muay Thai, Treino Funcional e nutrição, escrito pelo treinador do Quartel 365.",
   alternates: { canonical: "/blog" },
 };
 
@@ -21,7 +21,7 @@ export default function BlogPage() {
     <>
       <PageHeader
         eyebrow="Blog"
-        title="Notas dos treinadores."
+        title="Notas do treinador."
         description="Técnica, nutrição e histórias de quem treina no Quartel 365 — escrito por quem ensina todos os dias."
       />
 

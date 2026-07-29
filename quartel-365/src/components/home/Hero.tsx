@@ -30,9 +30,9 @@ export function Hero() {
           className="mt-6 max-w-xl text-lg leading-relaxed text-mist animate-fade-up sm:text-xl"
           style={{ animationDelay: "0.1s" }}
         >
-          Técnica tailandesa autêntica e treino funcional a sério, com Daniel
-          Coelho e Maria Miranda. Um espaço pensado para quem quer evoluir com
-          disciplina — não apenas por fases.
+          Técnica tailandesa autêntica e treino funcional a sério, com o
+          treinador Daniel Coelho. Um espaço pensado para quem quer evoluir
+          com disciplina — não apenas por fases.
         </p>
 
         <div
