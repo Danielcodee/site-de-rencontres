@@ -14,7 +14,7 @@ export function TrainersPreview() {
           <SectionHeading
             eyebrow="Equipa"
             title="Quem lidera cada aula, todos os dias."
-            description="O Daniel Coelho fundou o Quartel 365 e dá pessoalmente todas as aulas de Muay Thai e Treino Funcional — sem delegar o acompanhamento a mais ninguém."
+            description="O Daniel Coelho está a fundar o Quartel 365 e vai dar pessoalmente todas as aulas de Muay Thai e Treino Funcional — sem delegar o acompanhamento a mais ninguém."
           />
           <ButtonLink href="/treinadores" variant="outline" className="shrink-0">
             Conhecer a equipa

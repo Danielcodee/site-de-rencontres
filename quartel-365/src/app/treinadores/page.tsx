@@ -18,7 +18,7 @@ export default function TreinadoresPage() {
       <PageHeader
         eyebrow="A equipa"
         title="Quem lidera cada aula no Quartel 365."
-        description="O Daniel Coelho é o único treinador da academia — dá pessoalmente todas as aulas de Muay Thai e Treino Funcional. A Maria Miranda, cofundadora, não dá aulas: garante que tudo o resto funciona."
+        description="O Daniel Coelho vai ser o único treinador da academia — vai dar pessoalmente todas as aulas de Muay Thai e Treino Funcional a partir da abertura. A Maria Miranda, cofundadora, não vai dar aulas: garante que tudo o resto funciona."
       />
 
       <section className="bg-ink py-24 sm:py-32">

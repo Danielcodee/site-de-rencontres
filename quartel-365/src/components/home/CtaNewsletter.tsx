@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
+import { siteConfig } from "@/lib/data";
 
 export function CtaNewsletter() {
   return (
@@ -18,8 +19,8 @@ export function CtaNewsletter() {
             A disciplina começa com uma aula.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base text-mist sm:text-lg lg:mx-0">
-            Reserva a tua aula experimental gratuita e vem sentir o ambiente do
-            Quartel 365. Sem compromisso, sem desculpas.
+            Garante já o teu lugar para a aula experimental gratuita, antes da
+            abertura em {siteConfig.openingDisplay}. Sem compromisso, sem desculpas.
           </p>
 
           <div className="mt-8 flex justify-center lg:justify-start">

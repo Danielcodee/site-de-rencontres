@@ -1,7 +1,7 @@
 import { ArrowRight, CalendarCheck } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { TiltImage } from "@/components/ui/TiltImage";
-import { stats } from "@/lib/data";
+import { siteConfig, stats } from "@/lib/data";
 
 export function Hero() {
   return (
@@ -21,7 +21,7 @@ export function Hero() {
 
       <div className="container-quartel relative z-10 pb-16 pt-40 sm:pb-24">
         <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.35em] text-gold animate-fade-up">
-          Muay Thai · Felgueiras
+          Abre em {siteConfig.openingDisplay} · Felgueiras
         </p>
         <h1 className="max-w-4xl font-heading text-5xl leading-[1.05] tracking-tight text-bone animate-fade-up sm:text-6xl lg:text-7xl">
           Disciplina <em className="italic">todos os dias</em> do ano.
@@ -31,8 +31,8 @@ export function Hero() {
           style={{ animationDelay: "0.1s" }}
         >
           Técnica tailandesa autêntica e treino funcional a sério, com o
-          treinador Daniel Coelho. Um espaço pensado para quem quer evoluir
-          com disciplina — não apenas por fases.
+          treinador Daniel Coelho. O Quartel 365 está a nascer em
+          Felgueiras — garante já o teu lugar antes da abertura.
         </p>
 
         <div
@@ -41,7 +41,7 @@ export function Hero() {
         >
           <ButtonLink href="/reservar">
             <CalendarCheck size={16} aria-hidden />
-            Reservar a tua aula
+            Garantir o meu lugar
           </ButtonLink>
           <ButtonLink href="/modalidades" variant="outline">
             Ver modalidades

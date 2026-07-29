@@ -5,6 +5,7 @@ import useSWR from "swr";
 import { CalendarCheck, Check, Loader2, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/data";
 import type { ClassAvailability } from "@/lib/db";
 
 const DAY_ORDER = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"];
@@ -159,8 +160,9 @@ export function BookingWidget() {
               <CalendarCheck className="text-oxblood" size={28} aria-hidden />
               <p className="mt-4 font-heading text-xl text-bone">Reserva confirmada!</p>
               <p className="mt-2 text-sm leading-relaxed text-mist">
-                Guardámos o teu lugar. Se tivermos email configurado, recebes também uma
-                confirmação por email com os detalhes de pagamento via MB WAY.
+                Guardámos o teu lugar para quando abrirmos, em {siteConfig.openingDisplay}. Se
+                tivermos email configurado, recebes também uma confirmação por email com os
+                detalhes de pagamento via MB WAY.
               </p>
               <button
                 type="button"

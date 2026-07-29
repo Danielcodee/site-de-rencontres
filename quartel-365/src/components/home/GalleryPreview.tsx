@@ -14,8 +14,8 @@ export function GalleryPreview() {
         <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
           <SectionHeading
             eyebrow="Instalações"
-            title="Um espaço para treinar a sério."
-            description="Ringue, zona de sacos, sala de força e balneários — tudo pensado para o teu treino diário."
+            title="Um espaço a ser preparado para treinar a sério."
+            description="Ringue, zona de sacos, sala de força e balneários — tudo a ser pensado para o teu treino diário, a partir da abertura."
           />
           <ButtonLink href="/instalacoes" variant="outline" className="shrink-0">
             Ver galeria completa

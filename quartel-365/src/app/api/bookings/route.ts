@@ -99,11 +99,12 @@ export async function POST(request: Request) {
         text: [
           `Olá ${data.name},`,
           "",
-          `A tua reserva está confirmada:`,
+          `O teu lugar está garantido, antes mesmo de abrirmos portas:`,
           `Turma: ${klass.name}`,
           `Dia: ${klass.day} às ${klass.time}`,
           `Treinador(a): ${klass.trainer}`,
           "",
+          `Abrimos em ${siteConfig.openingDisplay}, em Felgueiras.`,
           "O pagamento pode ser feito via MB WAY para o número " +
             `${siteConfig.contact.mbway.number}.`,
           "",

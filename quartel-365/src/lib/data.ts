@@ -10,10 +10,14 @@ export const siteConfig = {
   shortName: "Q365",
   tagline: "Disciplina todos os dias do ano.",
   description:
-    "Academia premium de Muay Thai e Treino Funcional em Felgueiras. Técnica tailandesa autêntica, comunidade séria, treinador certificado — 365 dias por ano.",
+    "Nova academia premium de Muay Thai e Treino Funcional em Felgueiras, a abrir em outubro de 2026. Técnica tailandesa autêntica, treinador certificado, vagas limitadas por turma.",
   url: "https://www.quartel365.pt", // PLACEHOLDER — domínio final
   locale: "pt_PT",
-  founded: 2016,
+  founded: 2026,
+  // Usados em toda a mensagem "pré-abertura" do site — o Quartel 365 ainda
+  // não abriu portas.
+  openingDate: "2026-10-01",
+  openingDisplay: "outubro de 2026",
 
   contact: {
     // PLACEHOLDER — confirmar morada exata antes de publicar
@@ -58,15 +62,14 @@ export const navLinks = [
   { href: "/modalidades", label: "Modalidades" },
   { href: "/treinadores", label: "Equipa" },
   { href: "/instalacoes", label: "Instalações" },
-  { href: "/blog", label: "Blog" },
   { href: "/contactos", label: "Contactos" },
 ];
 
 export const stats = [
-  { value: "9", suffix: "+", label: "Anos de existência" },
-  { value: "450", suffix: "+", label: "Alunos ativos" },
+  { value: "2026", suffix: "", label: "Ano de abertura" },
   { value: "2", suffix: "", label: "Fundadores" },
-  { value: "35", suffix: "+", label: "Aulas por semana" },
+  { value: "2", suffix: "", label: "Modalidades" },
+  { value: "15", suffix: "", label: "Vagas por turma" },
 ];
 
 export type Differentiator = {
@@ -80,19 +83,19 @@ export const differentiators: Differentiator[] = [
     icon: "shield",
     title: "Treinador certificado",
     description:
-      "O Daniel Coelho acompanha de perto cada aluno, em todas as aulas, com certificação em Muay Thai e em treino funcional.",
+      "O Daniel Coelho vai acompanhar de perto cada aluno, em todas as aulas, com certificação em Muay Thai e em treino funcional.",
   },
   {
     icon: "building",
     title: "Instalações premium",
     description:
-      "Ringue, zona de sacos pesados, sala de força e balneários cuidados — um espaço pensado para treinar a sério, todos os dias.",
+      "Ringue, zona de sacos pesados, sala de força e balneários — o espaço está a ser preparado agora, para abrir em outubro de 2026 já pronto para treinar a sério.",
   },
   {
     icon: "users",
     title: "Comunidade Quartel",
     description:
-      "Aqui não é só um ginásio: é um grupo que se apoia e exige mutuamente. Iniciantes e alunos mais avançados treinam lado a lado, com respeito.",
+      "Não queremos ser só mais um ginásio: queremos um grupo que se apoia e exige mutuamente, desde o primeiro dia. Sê um dos primeiros a fazer parte.",
   },
   {
     icon: "flame",
@@ -102,15 +105,15 @@ export const differentiators: Differentiator[] = [
   },
   {
     icon: "trophy",
-    title: "Foco em resultados",
+    title: "Foco em resultados desde o primeiro dia",
     description:
-      "Sem promessas vazias: alunos que treinam há anos continuam a evoluir, tecnicamente e fisicamente, aula após aula.",
+      "Sem promessas vazias: a estrutura, o método e o acompanhamento estão pensados para te fazerem evoluir desde a primeira aula, em outubro de 2026.",
   },
   {
     icon: "calendar",
     title: "365 dias de disciplina",
     description:
-      "O nome não é por acaso: acreditamos em constância, não em picos de motivação. Horários alargados para caber na tua rotina real.",
+      "O nome não é por acaso: acreditamos em constância, não em picos de motivação. Horários alargados para caber na tua rotina real, a partir da abertura.",
   },
 ];
 
@@ -173,7 +176,7 @@ export const plans: Plan[] = [
     name: "Aula Experimental",
     price: "Grátis",
     period: "1 aula",
-    description: "Vem sentir o ambiente e conhecer o treinador, sem compromisso.",
+    description: "Vem sentir o ambiente e conhecer o treinador, assim que abrirmos portas.",
     features: [
       "1 aula de Muay Thai à escolha",
       "Equipamento base emprestado",
@@ -236,7 +239,7 @@ export const trainers: Trainer[] = [
       "Formação técnica na Tailândia, em campos de Muay Thai tradicionais",
       "+15 anos de prática e ensino de Muay Thai",
     ],
-    bio: "Cofundou o Quartel 365 em 2016 com a ideia de trazer a Felgueiras um Muay Thai técnico e autêntico, sem atalhos. É o único treinador da academia — responsável por todas as aulas, tanto de Muay Thai como de Treino Funcional, do primeiro dia de um iniciante ao sparring mais exigente.",
+    bio: "Está a fundar o Quartel 365, com abertura prevista para outubro de 2026, com a ideia de trazer a Felgueiras um Muay Thai técnico e autêntico, sem atalhos. Vai ser o único treinador da academia — responsável por todas as aulas, tanto de Muay Thai como de Treino Funcional, do primeiro dia de um iniciante ao sparring mais exigente.",
   },
 ];
 
@@ -256,42 +259,13 @@ export const cofounders: Cofounder[] = [
     slug: "maria-miranda",
     name: "Maria Miranda",
     role: "Cofundadora",
-    bio: "Cofundou o Quartel 365 ao lado do Daniel em 2016. Não dá aulas — é responsável pela gestão da academia, do acompanhamento aos alunos fora do tatame à organização do dia a dia.",
+    bio: "Está a fundar o Quartel 365 ao lado do Daniel, com abertura prevista para outubro de 2026. Não vai dar aulas — é responsável pela gestão da academia, do acompanhamento aos alunos fora do tatame à organização do dia a dia.",
   },
 ];
 
-export type Testimonial = {
-  name: string;
-  since: string;
-  quote: string;
-};
-
-export const testimonials: Testimonial[] = [
-  {
-    name: "João Pinto",
-    since: "Aluno desde 2019",
-    quote:
-      "Entrei sem saber nada de Muay Thai e hoje treino 5x por semana. A exigência do Daniel fez toda a diferença — aqui ninguém finge que está a trabalhar.",
-  },
-  {
-    name: "Marta Silva",
-    since: "Aluna desde 2021",
-    quote:
-      "O que mais valorizo é o ambiente: exigente no treino, mas acolhedor fora dele. Nunca me senti julgada por ser iniciante.",
-  },
-  {
-    name: "André Costa",
-    since: "Aluno desde 2017",
-    quote:
-      "Já treinei em vários ginásios. O nível técnico do Quartel 365 está a outro patamar — nota-se a formação do Daniel diretamente na Tailândia.",
-  },
-  {
-    name: "Sofia Ramos",
-    since: "Aluna desde 2022",
-    quote:
-      "Comecei só pelo Treino Funcional e acabei também a fazer Muay Thai com o Daniel. As duas modalidades juntas fizeram-me evoluir muito mais depressa.",
-  },
-];
+// Nota: sem testemunhos de alunos — o Quartel 365 ainda não abriu portas,
+// por isso não existem (ainda) alunos reais para citar. Não inventar
+// testemunhos até haver alunos verdadeiros.
 
 export type GalleryImage = {
   src: string;
@@ -308,81 +282,22 @@ export const galleryImages: GalleryImage[] = [
   { src: "/images/hero-fighter.jpg", alt: "Sala de força e condição física", category: "Ginásio" },
   { src: "/images/hero-fighter.jpg", alt: "Balneários do Quartel 365", category: "Balneários" },
   { src: "/images/hero-fighter.jpg", alt: "Receção e área de convívio", category: "Comunidade" },
-  { src: "/images/hero-fighter.jpg", alt: "Aula em grupo de Muay Thai", category: "Comunidade" },
+  { src: "/images/hero-fighter.jpg", alt: "Zona de aulas em grupo", category: "Comunidade" },
 ];
 
-export type BlogPost = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string[];
-  date: string;
-  author: string;
-  cover: string;
-  tags: string[];
-};
-
-export const blogPosts: BlogPost[] = [
-  {
-    slug: "fundamentos-tecnica-de-base",
-    title: "5 fundamentos técnicos que todo o iniciante devia dominar primeiro",
-    excerpt:
-      "Antes de pensar em combinações vistosas, há uma base técnica que decide tudo o resto. Estes são os pontos que mais trabalhamos nas primeiras semanas de Muay Thai.",
-    date: "2026-06-12",
-    author: "Daniel Coelho",
-    cover: "/images/hero-fighter.jpg",
-    tags: ["Técnica", "Muay Thai"],
-    content: [
-      "Quando um aluno novo entra no tatame do Quartel 365, a tentação é sempre a mesma: querer aprender o pontapé mais espetacular ou a combinação que viu num vídeo. Mas a diferença entre um praticante sólido e um praticante frágil está quase sempre na base.",
-      "1. Guarda — a tua guarda é a tua primeira linha de defesa e o ponto de partida de qualquer ataque. Trabalhamos a posição das mãos, dos cotovelos e do queixo antes de qualquer coisa.",
-      "2. Deslocamento — mover-se bem no ringue não é opcional. Sem uma base de pés estável, nenhuma técnica funciona sob pressão.",
-      "3. Soco reto — parece simples, mas é a técnica que revela mais rapidamente erros de rotação de anca e de equilíbrio.",
-      "4. Joelhada frontal — uma das armas mais eficazes do Muay Thai e também uma das mais mal executadas quando a base não está trabalhada.",
-      "5. Respiração e ritmo — controlar a respiração durante o esforço é o que separa quem aguenta 3 minutos de round de quem se apaga ao segundo.",
-      "Nas primeiras semanas, o foco está sempre aqui. É repetitivo, sim — mas é essa repetição que constrói a confiança para tudo o que vem a seguir.",
-    ],
-  },
-  {
-    slug: "nutricao-para-quem-treina-combate",
-    title: "Nutrição para quem treina Muay Thai a sério",
-    excerpt:
-      "Não precisas de ser atleta profissional para beneficiar de alguns ajustes simples na alimentação. Aqui ficam as prioridades que mais impacto têm no treino.",
-    date: "2026-05-03",
-    author: "Daniel Coelho",
-    cover: "/images/hero-fighter.jpg",
-    tags: ["Nutrição", "Performance"],
-    content: [
-      "Muitos alunos perguntam-nos o que devem comer antes e depois do treino. A resposta curta: depende dos teus objetivos, mas há princípios que se aplicam a quase todos.",
-      "Antes do treino, prioriza hidratos de absorção moderada 60 a 90 minutos antes — dão energia sem pesar. Evita treinar em jejum prolongado se o treino for de alta intensidade.",
-      "Depois do treino, a janela seguinte é a mais importante para recuperação: proteína de qualidade e hidratos para repor glicogénio. Não precisa de ser complicado — ovos, arroz e vegetais fazem o trabalho.",
-      "Hidratação é frequentemente subestimada. Um aluno desidratado perde técnica muito antes de perder força — e é normalmente a primeira coisa que se nota num dia mais fraco.",
-      "Por fim, se precisas de gerir peso ou tens objetivos específicos, fala sempre com o treinador antes de fazer alterações drásticas — nunca cortes feitos às cegas.",
-    ],
-  },
-  {
-    slug: "muay-thai-e-treino-funcional",
-    title: "Porque é que Muay Thai e Treino Funcional se complementam tão bem",
-    excerpt:
-      "Um não substitui o outro — mas juntos aceleram resultados. Percebe porque o Daniel recomenda as duas modalidades a quem quer evoluir a sério.",
-    date: "2026-03-22",
-    author: "Daniel Coelho",
-    cover: "/images/hero-fighter.jpg",
-    tags: ["Treino Funcional", "Muay Thai"],
-    content: [
-      "É uma pergunta que ouço muitas vezes: \"só preciso de Muay Thai ou também devo fazer Treino Funcional?\" A resposta curta é que dependem um do outro mais do que parece.",
-      "O Muay Thai exige técnica, mas também força explosiva, resistência cardiovascular e mobilidade nas ancas e ombros. Sem essa base física, a técnica satura mais depressa — cansas-te antes de conseguires aplicar o que treinaste.",
-      "É aí que entra o Treino Funcional: sessões pensadas para construir força e resistência de forma directamente aplicável ao Muay Thai, sem o desgaste técnico de mais uma aula de sparring.",
-      "Ao mesmo tempo, o Treino Funcional sozinho também beneficia de alguma exposição ao Muay Thai — a coordenação, o trabalho de core rotacional e a disciplina mental que o Muay Thai exige tornam qualquer treino físico mais eficiente.",
-      "Por isso, sempre que um aluno pergunta qual das duas modalidades escolher, a resposta honesta costuma ser: começa por uma, mas experimenta as duas antes de decidir ficar só com uma.",
-    ],
-  },
-];
+// Nota: sem blog — o Quartel 365 ainda não abriu portas, por isso ainda não
+// há aulas dadas nem alunos reais sobre quem escrever. Faz sentido criar
+// esta secção depois da abertura, com conteúdo genuíno.
 
 export const faqs = [
   {
+    question: "Quando abre o Quartel 365?",
+    answer: `Abrimos em ${siteConfig.openingDisplay}, em Felgueiras. Já podes reservar o teu lugar nas turmas antes da abertura.`,
+  },
+  {
     question: "Preciso de experiência prévia para começar?",
     answer:
-      "Não. A maioria dos nossos alunos começou do zero. As turmas têm progressão gradual e segura, com acompanhamento próximo do treinador.",
+      "Não. As turmas têm progressão gradual e segura, pensadas tanto para quem nunca treinou como para quem já tem base técnica, sempre com acompanhamento próximo do treinador.",
   },
   {
     question: "Que equipamento preciso para a primeira aula?",
@@ -397,12 +312,12 @@ export const faqs = [
   {
     question: "Como faço para reservar uma aula?",
     answer:
-      "Na página \"Reservar aula\" escolhes a turma (dia e hora), vês as vagas disponíveis em tempo real e preenches o formulário. Cada turma tem um limite de 15 alunos — quando esgota, fica marcada como completa.",
+      "Na página \"Reservar aula\" escolhes a turma (dia e hora), vês as vagas disponíveis em tempo real e preenches o formulário. Cada turma tem um limite de 15 alunos — garante o teu lugar antes da abertura, em outubro de 2026.",
   },
   {
     question: "Como posso pagar a mensalidade?",
     answer:
-      `Aceitamos pagamento via MB WAY para o número ${siteConfig.contact.mbway.number}. Também podes pagar diretamente na receção.`,
+      `Aceitamos pagamento via MB WAY para o número ${siteConfig.contact.mbway.number}. Também podes pagar diretamente na receção, depois da abertura.`,
   },
   {
     question: "Posso experimentar antes de me inscrever?",

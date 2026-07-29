@@ -14,7 +14,7 @@ const GOOGLE_FONTS_HREF =
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Muay Thai e Treino Funcional em Felgueiras`,
+    default: `${siteConfig.name} — Muay Thai e Treino Funcional em Felgueiras (abre em Outubro 2026)`,
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,

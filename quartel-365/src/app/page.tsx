@@ -4,7 +4,6 @@ import { AboutPreview } from "@/components/home/AboutPreview";
 import { WhyUs } from "@/components/home/WhyUs";
 import { TrainersPreview } from "@/components/home/TrainersPreview";
 import { ModalitiesPreview } from "@/components/home/ModalitiesPreview";
-import { Testimonials } from "@/components/home/Testimonials";
 import { BookingSection } from "@/components/home/BookingSection";
 import { GalleryPreview } from "@/components/home/GalleryPreview";
 import { LocationSection } from "@/components/home/LocationSection";
@@ -16,7 +15,7 @@ import { CtaNewsletter } from "@/components/home/CtaNewsletter";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Muay Thai e Treino Funcional em Felgueiras",
+  title: "Muay Thai e Treino Funcional em Felgueiras — Abre em Outubro 2026",
   alternates: { canonical: "/" },
 };
 
@@ -28,7 +27,6 @@ export default function Home() {
       <WhyUs />
       <TrainersPreview />
       <ModalitiesPreview />
-      <Testimonials />
       <BookingSection />
       <GalleryPreview />
       <LocationSection />

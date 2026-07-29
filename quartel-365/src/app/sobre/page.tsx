@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Sobre Nós",
   description:
-    "A história do Quartel 365, a nossa missão e a filosofia por trás do nome: disciplina todos os dias do ano, em Felgueiras.",
+    "O Quartel 365 está a nascer em Felgueiras, com abertura prevista para outubro de 2026 — a nossa missão e a filosofia por trás do nome: disciplina todos os dias do ano.",
   alternates: { canonical: "/sobre" },
 };
 
@@ -36,36 +36,32 @@ const values = [
   },
 ];
 
+// Roteiro até à abertura — o Quartel 365 ainda não abriu portas, por isso
+// não há (ainda) uma década de história para contar, só o caminho até lá.
 const timeline = [
   {
-    year: "2016",
-    title: "Fundação do Quartel 365",
+    year: "2026",
+    title: "A ideia toma forma",
     description:
-      "Daniel Coelho e Maria Miranda abrem as portas de um pequeno espaço em Felgueiras, com uma ideia simples: treino de Muay Thai a sério, sem atalhos.",
+      "Daniel Coelho e Maria Miranda decidem fundar o Quartel 365 em Felgueiras, com uma ideia simples: treino de Muay Thai a sério, sem atalhos.",
   },
   {
-    year: "2018",
-    title: "Novas instalações",
+    year: "Verão de 2026",
+    title: "Preparação do espaço",
     description:
-      "O crescimento da comunidade exige mais espaço. Mudança para as instalações atuais, com ringue e sala de força dedicada.",
+      "Escolha e montagem do ringue, da zona de sacos, da sala de treino funcional e dos balneários — tudo pensado antes de a porta abrir.",
   },
   {
-    year: "2021",
-    title: "Chega o Treino Funcional",
+    year: "Antes da abertura",
+    title: "Pré-reservas abertas",
     description:
-      "Resposta ao pedido de alunos que queriam complementar o Muay Thai com treino de força, resistência e mobilidade.",
+      "A grelha semanal fica definida e as turmas abrem para reserva, com vagas limitadas a 15 alunos cada, antes mesmo do primeiro dia.",
   },
   {
-    year: "2023",
-    title: "Renovação do espaço",
+    year: "Outubro de 2026",
+    title: "Abertura oficial",
     description:
-      "Investimento em novo equipamento de treino funcional e manutenção completa do ringue e da sala de força.",
-  },
-  {
-    year: "Hoje",
-    title: "Mais de 450 alunos ativos",
-    description:
-      "Uma comunidade sólida, um treinador certificado e uma grelha de mais de 35 aulas por semana.",
+      "Primeiras aulas de Muay Thai e Treino Funcional, com o Daniel Coelho — o início da comunidade Quartel 365.",
   },
 ];
 
@@ -75,7 +71,7 @@ export default function SobrePage() {
       <PageHeader
         eyebrow="Sobre nós"
         title="Uma academia construída sobre disciplina."
-        description="O Quartel 365 nasceu em Felgueiras com um objetivo claro: dar a quem treina Muay Thai e Treino Funcional um espaço à altura da sua exigência."
+        description={`O Quartel 365 está a nascer em Felgueiras com um objetivo claro: dar a quem treina Muay Thai e Treino Funcional um espaço à altura da sua exigência. Abertura prevista para ${siteConfig.openingDisplay}.`}
       />
 
       <section className="border-b border-line bg-ink py-24 sm:py-32">
@@ -84,19 +80,20 @@ export default function SobrePage() {
             <SectionHeading eyebrow="A nossa história" title="Do primeiro tatame a Quartel 365." />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-mist">
               <p>
-                O Quartel 365 nasceu em {siteConfig.founded} de uma frustração comum a muitos
-                praticantes: a dificuldade em encontrar, em Felgueiras, um espaço que levasse o
-                Muay Thai tão a sério quanto os seus alunos.
+                O Quartel 365 está a nascer em Felgueiras de uma frustração comum a muitos
+                praticantes: a dificuldade em encontrar, na região, um espaço que leve o Muay
+                Thai tão a sério quanto quem o pratica.
               </p>
               <p>
-                Começámos pequenos — um espaço modesto, poucos alunos, mas uma metodologia
-                técnica rigorosa desde o primeiro dia. Essa exigência, mais do que qualquer
-                equipamento, foi o que fez a comunidade crescer por recomendação, aula após aula.
+                Não vamos começar com atalhos — mesmo antes de abrir portas, a prioridade é uma
+                metodologia técnica rigorosa desde a primeira aula. Essa exigência, mais do que
+                qualquer equipamento, é o que queremos que defina o Quartel 365 desde o primeiro
+                dia.
               </p>
               <p>
-                Hoje, quase uma década depois, o Quartel 365 é uma referência local em Muay Thai e
-                Treino Funcional: instalações dedicadas, um treinador certificado e uma
-                comunidade que vai da iniciação absoluta à evolução técnica contínua.
+                Abrimos em {siteConfig.openingDisplay}: instalações dedicadas, um treinador
+                certificado e o objetivo de construir, desde o início, uma comunidade que vai da
+                iniciação absoluta à evolução técnica contínua.
               </p>
             </div>
           </Reveal>
@@ -158,7 +155,7 @@ export default function SobrePage() {
 
       <section className="bg-charcoal py-24 sm:py-32">
         <div className="container-quartel">
-          <SectionHeading eyebrow="Percurso" title="Uma década a construir disciplina." />
+          <SectionHeading eyebrow="Roteiro" title="O caminho até à abertura." />
           <ol className="mt-14 space-y-10 border-l border-line pl-8">
             {timeline.map((item, index) => (
               <Reveal as="li" key={item.year} delay={index * 0.06} className="relative">

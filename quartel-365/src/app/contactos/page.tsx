@@ -11,7 +11,7 @@ import { faqs, siteConfig } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Contactos",
   description:
-    "Marca a tua aula experimental gratuita no Quartel 365. Morada em Felgueiras, telefone, email, horário de funcionamento e formulário de contacto.",
+    "Fala com o Quartel 365 antes da abertura em outubro de 2026. Morada em Felgueiras, telefone, email e formulário de contacto.",
   alternates: { canonical: "/contactos" },
 };
 
@@ -21,7 +21,7 @@ export default function ContactosPage() {
       <PageHeader
         eyebrow="Contactos"
         title="Fala connosco. O primeiro passo é uma mensagem."
-        description="Marca a tua aula experimental gratuita, tira dúvidas sobre planos ou vem simplesmente conhecer o espaço."
+        description="Garante o teu lugar para a aula experimental gratuita, tira dúvidas sobre planos ou pergunta-nos qualquer coisa antes da abertura."
       />
 
       <section className="bg-ink py-24 sm:py-32">

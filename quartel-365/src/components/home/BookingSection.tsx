@@ -1,6 +1,7 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { BookingWidget } from "@/components/booking/BookingWidget";
+import { siteConfig } from "@/lib/data";
 
 export function BookingSection() {
   return (
@@ -10,7 +11,7 @@ export function BookingSection() {
           <SectionHeading
             eyebrow="Reservar aula"
             title="Escolhe a tua turma. As vagas são limitadas."
-            description="Cada turma tem no máximo 15 alunos, com disponibilidade em tempo real. Escolhe o dia e a hora, confirma os teus dados e o lugar fica garantido."
+            description={`Cada turma tem no máximo 15 alunos. Escolhe o dia e a hora e garante já o teu lugar antes da abertura, em ${siteConfig.openingDisplay}.`}
           />
         </Reveal>
         <div className="mt-14">

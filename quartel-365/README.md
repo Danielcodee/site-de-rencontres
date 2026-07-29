@@ -42,7 +42,6 @@ src/
     reservar/               # Página dedicada de reserva de aulas
     instalacoes/            # Galeria de instalações
     contactos/               # Formulário + morada + mapa + MB WAY
-    blog/                   # Listagem + posts (blog/[slug])
     api/
       contact/               # Formulário de contacto e newsletter
       classes/                # GET — turmas com vagas disponíveis
@@ -64,9 +63,15 @@ src/
 ```
 
 Praticamente todo o conteúdo de "negócio" (textos, preços, morada, horários,
-redes sociais, treinadores, testemunhos, posts do blog) está centralizado em
-**`src/lib/data.ts`** — não é preciso mexer nos componentes para atualizar
-informação.
+redes sociais, treinadores) está centralizado em **`src/lib/data.ts`** — não
+é preciso mexer nos componentes para atualizar informação.
+
+**Nota importante**: o Quartel 365 ainda não abriu portas — a abertura está
+prevista para `siteConfig.openingDisplay` (outubro de 2026, à data desta
+versão). Por isso o site **não tem testemunhos de alunos nem blog**: não
+existem ainda alunos reais nem aulas dadas para gerar esse conteúdo
+genuinamente. Ambas as secções fazem sentido voltar a existir depois da
+abertura, com conteúdo real — não as reintroduzir com dados inventados.
 
 ## Sistema de reservas de aulas
 
@@ -179,6 +184,12 @@ e têm de ser confirmados/substituídos:
 - Domínio final (`siteConfig.url`) — usado em metadata, sitemap e JSON-LD
 - Preços dos planos (`plans`)
 - Fotos reais dos treinadores e das instalações (ver secção acima)
+- Data de abertura (`siteConfig.openingDate`/`openingDisplay`) — usada em
+  toda a mensagem "pré-abertura" do site (hero, sobre, reservas, FAQs).
+  Depois de o Quartel 365 abrir portas, esta é a maior mudança de conteúdo
+  a fazer: remover a linguagem de pré-abertura em toda a parte (não só
+  aqui), e nessa altura também faz sentido voltar a acrescentar testemunhos
+  reais e um blog.
 
 O número de telefone/MB WAY (933 796 669) já é real e está definido em
 `siteConfig.contact.phoneDisplay`/`mbway.number` — usado no cabeçalho, no
