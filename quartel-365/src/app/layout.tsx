@@ -71,7 +71,7 @@ const jsonLd = {
     postalCode: siteConfig.contact.postalCode,
     addressCountry: siteConfig.contact.country,
   },
-  sameAs: [siteConfig.social.instagram, siteConfig.social.youtube],
+  sameAs: [siteConfig.social.instagram, siteConfig.social.tiktok],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

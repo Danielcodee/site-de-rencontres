@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { InstagramIcon, YoutubeIcon } from "@/components/ui/SocialIcons";
+import { InstagramIcon, TiktokIcon } from "@/components/ui/SocialIcons";
 import { navLinks, siteConfig } from "@/lib/data";
 
 export function Footer() {
@@ -27,13 +27,13 @@ export function Footer() {
               <InstagramIcon />
             </a>
             <a
-              href={siteConfig.social.youtube}
+              href={siteConfig.social.tiktok}
               target="_blank"
               rel="noreferrer noopener"
-              aria-label="YouTube do Quartel 365"
+              aria-label="TikTok do Quartel 365"
               className="text-mist transition-colors hover:text-gold"
             >
-              <YoutubeIcon />
+              <TiktokIcon />
             </a>
           </div>
         </div>

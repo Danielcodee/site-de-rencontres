@@ -42,10 +42,10 @@ export const siteConfig = {
     mapsLinkHref: "https://www.google.com/maps/search/?api=1&query=Felgueiras+Portugal",
   },
 
-  // Sem Facebook nem LinkedIn — o Quartel 365 não tem presença nessas redes.
+  // Sem Facebook, LinkedIn nem YouTube — o Quartel 365 não tem (nem vai
+  // ter) presença nessas redes.
   social: {
     instagram: "https://www.instagram.com/qartel365/",
-    youtube: "https://www.youtube.com/@quartel365", // PLACEHOLDER
     tiktok: "https://www.tiktok.com/@quartel.3.6.5",
   },
 

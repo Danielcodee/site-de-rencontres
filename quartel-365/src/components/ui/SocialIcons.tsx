@@ -26,15 +26,6 @@ export function InstagramIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function YoutubeIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...base(props)}>
-      <rect x="2.5" y="6" width="19" height="12" rx="3.5" />
-      <path d="m10.5 9.5 4.5 2.5-4.5 2.5z" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
 export function TiktokIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base(props)}>
