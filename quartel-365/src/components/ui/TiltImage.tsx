@@ -12,7 +12,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const TILT_SPRING = { stiffness: 220, damping: 20, mass: 0.6 };
+const TILT_SPRING = { stiffness: 200, damping: 30, mass: 0.6 };
 
 type TiltFrameProps = {
   className?: string;
@@ -40,7 +40,7 @@ export function TiltFrame({
   className,
   children,
   overlay,
-  tiltStrength = 8,
+  tiltStrength = 5,
   parallaxRange = 24,
 }: TiltFrameProps) {
   const containerRef = useRef<HTMLDivElement>(null);

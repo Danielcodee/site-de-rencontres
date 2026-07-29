@@ -13,7 +13,7 @@ export function TrainerCard({ trainer, priority }: { trainer: Trainer; priority?
           className="aspect-[4/5] w-full"
           priority={priority}
           sizes="(min-width: 1024px) 50vw, 100vw"
-          tiltStrength={6}
+          tiltStrength={4}
           parallaxRange={16}
         >
           <span className="absolute left-4 top-4 rounded-sm bg-oxblood px-3 py-1 font-sans text-xs font-semibold uppercase tracking-wider text-bone">
@@ -23,7 +23,7 @@ export function TrainerCard({ trainer, priority }: { trainer: Trainer; priority?
       ) : (
         <TiltFrame
           className="aspect-[4/5] w-full"
-          tiltStrength={6}
+          tiltStrength={4}
           parallaxRange={16}
           overlay={
             <>

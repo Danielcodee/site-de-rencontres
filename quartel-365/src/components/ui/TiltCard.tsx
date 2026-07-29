@@ -4,7 +4,7 @@ import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-mot
 import type { MouseEvent, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-const TILT_SPRING = { stiffness: 260, damping: 20, mass: 0.5 };
+const TILT_SPRING = { stiffness: 220, damping: 30, mass: 0.5 };
 
 /**
  * Cartão com inclinação 3D subtil que segue o rato, mais um brilho radial
@@ -14,7 +14,7 @@ const TILT_SPRING = { stiffness: 260, damping: 20, mass: 0.5 };
 export function TiltCard({
   children,
   className,
-  strength = 8,
+  strength = 4,
 }: {
   children: ReactNode;
   className?: string;

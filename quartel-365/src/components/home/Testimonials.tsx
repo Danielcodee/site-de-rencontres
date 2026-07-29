@@ -28,7 +28,7 @@ export function Testimonials() {
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {testimonials.map((testimonial, index) => (
             <Reveal key={testimonial.name} delay={index * 0.08} className="h-full">
-              <TiltCard strength={5}>
+              <TiltCard strength={4}>
                 <figure className="h-full rounded-sm border border-line bg-ink p-8">
                   <Quote className="text-gold" size={28} aria-hidden />
                   <blockquote className="mt-4 font-heading text-lg leading-relaxed text-bone sm:text-xl">

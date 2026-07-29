@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 
 const MotionLink = motion.create(Link);
 
-const TILT_SPRING = { stiffness: 300, damping: 22, mass: 0.4 };
-const TILT_STRENGTH = 14;
+const TILT_SPRING = { stiffness: 260, damping: 32, mass: 0.4 };
+const TILT_STRENGTH = 6;
 
 const base =
   "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-sm px-6 py-3 font-sans text-sm font-semibold uppercase tracking-widest transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2";

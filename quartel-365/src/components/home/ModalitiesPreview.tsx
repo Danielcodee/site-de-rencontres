@@ -35,7 +35,7 @@ export function ModalitiesPreview() {
                   className="aspect-[4/5]"
                   sizes="(min-width: 640px) 50vw, 100vw"
                   imgClassName={index % 2 === 0 ? "object-[30%_center]" : "object-[70%_center]"}
-                  tiltStrength={6}
+                  tiltStrength={4}
                   parallaxRange={18}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />

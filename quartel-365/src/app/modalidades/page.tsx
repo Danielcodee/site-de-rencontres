@@ -59,7 +59,7 @@ export default function ModalidadesPage() {
                   className="aspect-[4/3] rounded-sm border border-line"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   imgClassName={index % 2 === 0 ? "object-[30%_center]" : "object-[70%_center]"}
-                  tiltStrength={6}
+                  tiltStrength={4}
                   parallaxRange={20}
                 />
                 <div>
@@ -103,7 +103,7 @@ export default function ModalidadesPage() {
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {plans.map((plan) => (
-              <TiltCard key={plan.name} strength={6}>
+              <TiltCard key={plan.name} strength={4}>
                 <div
                   className={cn(
                     "flex h-full flex-col rounded-sm border p-7",

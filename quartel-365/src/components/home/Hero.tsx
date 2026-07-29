@@ -11,7 +11,7 @@ export function Hero() {
         alt="Lutador de Muay Thai em posição de combate, ambiente do Quartel 365"
         className="absolute inset-0"
         priority
-        tiltStrength={3}
+        tiltStrength={2}
         parallaxRange={50}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
