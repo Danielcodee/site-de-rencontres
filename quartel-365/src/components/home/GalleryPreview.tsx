@@ -15,7 +15,7 @@ export function GalleryPreview() {
           <SectionHeading
             eyebrow="Instalações"
             title="Um espaço para treinar a sério."
-            description="Ringue de competição, zona de sacos, sala de força e balneários — tudo pensado para o teu treino diário."
+            description="Ringue, zona de sacos, sala de força e balneários — tudo pensado para o teu treino diário."
           />
           <ButtonLink href="/instalacoes" variant="outline" className="shrink-0">
             Ver galeria completa
@@ -26,7 +26,7 @@ export function GalleryPreview() {
         <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {images.map((image, index) => (
             <Reveal
-              key={image.src}
+              key={image.alt}
               delay={index * 0.05}
               className={index === 0 ? "col-span-2 row-span-2" : ""}
             >

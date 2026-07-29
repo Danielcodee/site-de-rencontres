@@ -14,7 +14,7 @@ export function CtaNewsletter() {
           <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.3em] text-flame">
             O próximo passo é teu
           </p>
-          <h2 className="mx-auto max-w-3xl font-heading text-4xl font-bold uppercase leading-tight tracking-tight text-bone sm:text-5xl lg:mx-0">
+          <h2 className="mx-auto max-w-3xl font-heading text-4xl uppercase leading-tight tracking-tight text-bone sm:text-5xl lg:mx-0">
             A disciplina começa com uma aula.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base text-mist sm:text-lg lg:mx-0">
@@ -41,14 +41,13 @@ export function CtaNewsletter() {
         </Reveal>
 
         <Reveal delay={0.1} className="hidden lg:block">
-          <div className="relative mx-auto aspect-[850/950] w-full max-w-md">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-sm border border-line">
             <Image
-              src="/images/illustrations/fighter-kick.svg"
-              alt=""
-              aria-hidden
+              src="/images/hero-fighter.jpg"
+              alt="Lutador do Quartel 365 em posição de combate"
               fill
               sizes="400px"
-              className="object-contain"
+              className="object-cover"
             />
           </div>
         </Reveal>

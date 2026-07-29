@@ -12,7 +12,7 @@ import { plans, programs, weeklySchedule } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Programas e Planos",
   description:
-    "Conhece os programas de Muay Thai do Quartel 365 — iniciação, avançado, cardio kickboxing, competição e Quartel Kids — planos, preços e horário semanal.",
+    "Conhece os programas do Quartel 365 — Muay Thai e Treino Funcional — planos, preços e horário semanal.",
   alternates: { canonical: "/programas" },
 };
 
@@ -21,11 +21,11 @@ export default function ProgramasPage() {
     <>
       <PageHeader
         eyebrow="Programas"
-        title="Um programa para cada fase do teu caminho."
-        description="Da primeira aula à competição federada. Escolhe onde estás e deixa a evolução acontecer com estrutura."
+        title="Duas modalidades. Um único instrutor."
+        description="Muay Thai e Treino Funcional — escolhe uma ou combina as duas, sempre com o mesmo acompanhamento próximo."
         illustration={{
-          src: "/images/illustrations/fighter-kick.svg",
-          alt: "Ilustração de um lutador de Muay Thai a executar um pontapé circular",
+          src: "/images/hero-fighter.jpg",
+          alt: "Lutador de Muay Thai em posição de combate",
         }}
       />
 
@@ -46,14 +46,17 @@ export default function ProgramasPage() {
                     alt={program.name}
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
+                    className={cn(
+                      "object-cover",
+                      index % 2 === 0 ? "object-[30%_center]" : "object-[70%_center]",
+                    )}
                   />
                 </div>
                 <div>
                   <span className="inline-block rounded-sm bg-flame px-3 py-1 font-heading text-xs font-semibold uppercase tracking-wider text-bone">
                     {program.level}
                   </span>
-                  <h2 className="mt-4 font-heading text-3xl font-bold uppercase tracking-tight text-bone sm:text-4xl">
+                  <h2 className="mt-4 font-heading text-3xl uppercase tracking-tight text-bone sm:text-4xl">
                     {program.name}
                   </h2>
                   <p className="mt-1 text-sm uppercase tracking-wide text-flame">{program.audience}</p>
@@ -79,7 +82,7 @@ export default function ProgramasPage() {
             align="center"
             eyebrow="Planos"
             title="Preçário simples, sem letra pequena."
-            description="Preços de referência — confirma sempre condições e promoções em vigor com a equipa do Quartel 365."
+            description="Preços de referência — confirma sempre condições e promoções em vigor com o Quartel 365."
             className="mx-auto"
           />
 
@@ -97,11 +100,11 @@ export default function ProgramasPage() {
                       Mais popular
                     </span>
                   ) : null}
-                  <h3 className="font-heading text-lg font-bold uppercase tracking-wide text-bone">
+                  <h3 className="font-heading text-lg uppercase tracking-wide text-bone">
                     {plan.name}
                   </h3>
                   <p className="mt-3 flex items-baseline gap-1">
-                    <span className="font-heading text-3xl font-bold text-bone">{plan.price}</span>
+                    <span className="font-heading text-3xl text-bone">{plan.price}</span>
                     <span className="text-sm text-mist">{plan.period}</span>
                   </p>
                   <p className="mt-3 text-sm text-mist">{plan.description}</p>
@@ -139,7 +142,7 @@ export default function ProgramasPage() {
             <div className="grid min-w-[820px] grid-cols-6 gap-3 sm:min-w-0">
               {weeklySchedule.map((day) => (
                 <div key={day.day} className="rounded-sm border border-line bg-charcoal p-4">
-                  <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-flame">
+                  <h3 className="font-heading text-sm uppercase tracking-wider text-flame">
                     {day.day}
                   </h3>
                   <ul className="mt-3 space-y-3">

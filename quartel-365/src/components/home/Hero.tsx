@@ -22,16 +22,16 @@ export function Hero() {
         <p className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.35em] text-flame animate-fade-up">
           Muay Thai · Felgueiras
         </p>
-        <h1 className="max-w-4xl font-heading text-5xl font-bold uppercase leading-[0.95] tracking-tight text-bone animate-fade-up sm:text-6xl lg:text-7xl">
+        <h1 className="max-w-4xl font-heading text-5xl uppercase leading-[0.95] tracking-tight text-bone animate-fade-up sm:text-6xl lg:text-7xl">
           Disciplina todos<br />os dias do ano.
         </h1>
         <p
           className="mt-6 max-w-xl text-lg leading-relaxed text-mist animate-fade-up sm:text-xl"
           style={{ animationDelay: "0.1s" }}
         >
-          Treino de Muay Thai a sério, num espaço pensado para quem quer
-          evoluir com disciplina — não apenas por fases. Instrutores
-          certificados, comunidade exigente, resultados reais.
+          Treino de Muay Thai e Treino Funcional a sério, num espaço pensado
+          para quem quer evoluir com disciplina — não apenas por fases.
+          Instrutor certificado, comunidade exigente, resultados reais.
         </p>
 
         <div
@@ -52,7 +52,7 @@ export function Hero() {
           {stats.map((stat) => (
             <div key={stat.label}>
               <dt className="sr-only">{stat.label}</dt>
-              <dd className="font-heading text-3xl font-bold text-bone sm:text-4xl">
+              <dd className="font-heading text-3xl text-bone sm:text-4xl">
                 {stat.value}
                 <span className="text-flame">{stat.suffix}</span>
               </dd>

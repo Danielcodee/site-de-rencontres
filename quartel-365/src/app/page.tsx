@@ -9,7 +9,7 @@ import { LocationSection } from "@/components/home/LocationSection";
 import { CtaNewsletter } from "@/components/home/CtaNewsletter";
 
 export const metadata: Metadata = {
-  title: "Academia de Muay Thai em Felgueiras",
+  title: "Muay Thai e Treino Funcional em Felgueiras",
   alternates: { canonical: "/" },
 };
 

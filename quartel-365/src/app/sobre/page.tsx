@@ -47,25 +47,25 @@ const timeline = [
     year: "2018",
     title: "Novas instalações",
     description:
-      "O crescimento da comunidade exige mais espaço. Mudança para as instalações atuais, com ringue de competição e sala de força dedicada.",
+      "O crescimento da comunidade exige mais espaço. Mudança para as instalações atuais, com ringue e sala de força dedicada.",
   },
   {
     year: "2021",
-    title: "Nasce a equipa de competição",
+    title: "Chega o Treino Funcional",
     description:
-      "Os primeiros alunos avançados começam a representar o Quartel 365 em competições amadoras regionais.",
+      "Resposta ao pedido de alunos que queriam complementar o Muay Thai com treino de força, resistência e mobilidade.",
   },
   {
     year: "2023",
-    title: "Quartel Kids",
+    title: "Renovação do espaço",
     description:
-      "Lançamento do programa dedicado a crianças, respondendo ao pedido de pais que já treinavam connosco.",
+      "Investimento em novo equipamento de treino funcional e manutenção completa do ringue e da sala de força.",
   },
   {
     year: "Hoje",
     title: "Mais de 450 alunos ativos",
     description:
-      "Uma comunidade sólida, seis instrutores certificados e uma grelha de mais de 35 aulas por semana.",
+      "Uma comunidade sólida, um instrutor certificado e uma grelha de mais de 35 aulas por semana.",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function SobrePage() {
       <PageHeader
         eyebrow="Sobre nós"
         title="Uma academia construída sobre disciplina."
-        description="O Quartel 365 nasceu em Felgueiras com um objetivo claro: dar aos praticantes de Muay Thai um espaço à altura da sua exigência."
+        description="O Quartel 365 nasceu em Felgueiras com um objetivo claro: dar a quem treina Muay Thai e Treino Funcional um espaço à altura da sua exigência."
       />
 
       <section className="border-b border-line bg-ink py-24 sm:py-32">
@@ -94,17 +94,17 @@ export default function SobrePage() {
                 equipamento, foi o que fez a comunidade crescer por recomendação, aula após aula.
               </p>
               <p>
-                Hoje, quase uma década depois, o Quartel 365 é uma referência local em Muay Thai:
-                instalações dedicadas, uma equipa técnica certificada e uma comunidade que vai da
-                iniciação absoluta à competição federada.
+                Hoje, quase uma década depois, o Quartel 365 é uma referência local em Muay Thai e
+                Treino Funcional: instalações dedicadas, um instrutor certificado e uma comunidade
+                que vai da iniciação absoluta à evolução técnica contínua.
               </p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-line">
               <Image
-                src="/images/illustrations/fighter-guard.svg"
-                alt="Ilustração de um lutador do Quartel 365 em posição de guarda"
+                src="/images/hero-fighter.jpg"
+                alt="Lutador do Quartel 365 em posição de combate"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
@@ -117,7 +117,7 @@ export default function SobrePage() {
       <section className="border-b border-line bg-charcoal py-24 sm:py-32">
         <div className="container-quartel grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <Reveal>
-            <p className="font-heading text-8xl font-bold leading-none text-outline sm:text-9xl">
+            <p className="font-heading text-8xl leading-none text-outline sm:text-9xl">
               365
             </p>
           </Reveal>
@@ -166,7 +166,7 @@ export default function SobrePage() {
                 <p className="font-heading text-sm font-semibold uppercase tracking-widest text-flame">
                   {item.year}
                 </p>
-                <h3 className="mt-1 font-heading text-xl font-bold uppercase tracking-wide text-bone">
+                <h3 className="mt-1 font-heading text-xl uppercase tracking-wide text-bone">
                   {item.title}
                 </h3>
                 <p className="mt-2 max-w-2xl text-sm leading-relaxed text-mist">{item.description}</p>

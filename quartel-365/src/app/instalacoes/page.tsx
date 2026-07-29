@@ -6,7 +6,7 @@ import { galleryImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Instalações",
   description:
-    "Conhece as instalações do Quartel 365 em Felgueiras: ringue de competição, zona de sacos, sala de força e balneários.",
+    "Conhece as instalações do Quartel 365 em Felgueiras: ringue, zona de sacos, sala de força e balneários.",
   alternates: { canonical: "/instalacoes" },
 };
 

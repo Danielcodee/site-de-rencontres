@@ -37,7 +37,7 @@ export function PageHeader({
         <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.3em] text-flame">
           {eyebrow}
         </p>
-        <h1 className="max-w-3xl font-heading text-4xl font-bold uppercase leading-tight tracking-tight text-bone sm:text-5xl lg:text-6xl">
+        <h1 className="max-w-3xl font-heading text-4xl uppercase leading-tight tracking-tight text-bone sm:text-5xl lg:text-6xl">
           {title}
         </h1>
         {description ? (

@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="border-t border-line bg-charcoal">
       <div className="container-quartel grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="font-heading text-xl font-bold uppercase tracking-tight text-bone">
+          <Link href="/" className="font-heading text-xl uppercase tracking-tight text-bone">
             Quartel <span className="text-flame">365</span>
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-mist">

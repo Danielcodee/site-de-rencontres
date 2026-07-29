@@ -10,7 +10,7 @@ export const siteConfig = {
   shortName: "Q365",
   tagline: "Disciplina todos os dias do ano.",
   description:
-    "Academia premium de Muay Thai em Felgueiras. Treino sério, comunidade forte e instrutores certificados — 365 dias por ano.",
+    "Academia premium de Muay Thai e Treino Funcional em Felgueiras. Treino sério, comunidade forte e instrutor certificado — 365 dias por ano.",
   url: "https://www.quartel365.pt", // PLACEHOLDER — domínio final
   locale: "pt_PT",
   founded: 2016,
@@ -53,7 +53,7 @@ export const navLinks = [
   { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre Nós" },
   { href: "/programas", label: "Programas" },
-  { href: "/instrutores", label: "Instrutores" },
+  { href: "/instrutores", label: "Instrutor" },
   { href: "/instalacoes", label: "Instalações" },
   { href: "/blog", label: "Blog" },
   { href: "/contactos", label: "Contactos" },
@@ -62,7 +62,7 @@ export const navLinks = [
 export const stats = [
   { value: "9", suffix: "+", label: "Anos de existência" },
   { value: "450", suffix: "+", label: "Alunos ativos" },
-  { value: "6", suffix: "", label: "Instrutores certificados" },
+  { value: "2", suffix: "", label: "Modalidades de treino" },
   { value: "35", suffix: "+", label: "Aulas por semana" },
 ];
 
@@ -75,33 +75,33 @@ export type Differentiator = {
 export const differentiators: Differentiator[] = [
   {
     icon: "shield",
-    title: "Instrutores certificados",
+    title: "Instrutor certificado",
     description:
-      "Equipa técnica com certificação nacional e internacional em Muay Thai, com percurso competitivo comprovado dentro e fora de Portugal.",
+      "Certificação nacional em Muay Thai e em treino funcional, com anos de prática e ensino — acompanhamento próximo em cada aula.",
   },
   {
     icon: "building",
     title: "Instalações premium",
     description:
-      "Ringue de competição, zona de sacos pesados, sala de força e balneários cuidados — um espaço pensado para treinar a sério, todos os dias.",
+      "Ringue, zona de sacos pesados, sala de força e balneários cuidados — um espaço pensado para treinar a sério, todos os dias.",
   },
   {
     icon: "users",
     title: "Comunidade Quartel",
     description:
-      "Aqui não é só um ginásio: é um grupo que se apoia e exige mutuamente. Iniciantes e competidores treinam lado a lado, com respeito.",
+      "Aqui não é só um ginásio: é um grupo que se apoia e exige mutuamente. Iniciantes e alunos mais avançados treinam lado a lado, com respeito.",
   },
   {
     icon: "flame",
-    title: "Metodologia progressiva",
+    title: "Duas modalidades, um objetivo",
     description:
-      "Planos de treino estruturados por nível, da iniciação à competição, com avaliações periódicas de evolução técnica e física.",
+      "Muay Thai para técnica e disciplina, Treino Funcional para força e resistência — combinadas, aceleram a tua evolução.",
   },
   {
     icon: "trophy",
     title: "Foco em resultados",
     description:
-      "Alunos do Quartel 365 já representaram o clube em competições regionais e nacionais, com apoio total da equipa técnica.",
+      "Sem promessas vazias: alunos que treinam há anos continuam a evoluir, tecnicamente e fisicamente, aula após aula.",
   },
   {
     icon: "calendar",
@@ -118,79 +118,37 @@ export type Program = {
   description: string;
   bullets: string[];
   image: string;
-  level: "Iniciante" | "Intermédio" | "Avançado" | "Todos os níveis" | "Crianças";
+  level: "Todos os níveis";
 };
 
 export const programs: Program[] = [
   {
-    slug: "iniciacao",
-    name: "Muay Thai — Iniciação",
-    audience: "Para quem começa do zero",
+    slug: "muay-thai",
+    name: "Muay Thai",
+    audience: "Para todos os níveis, do zero à evolução contínua",
     description:
-      "Base técnica sólida: guarda, deslocamentos, socos, cotoveladas, joelhadas e pontapés. Sem pressão de competir — só de aprender bem.",
+      "Aulas de Muay Thai para todas as idades e níveis — da primeira guarda às combinações mais avançadas, sempre com acompanhamento técnico próximo do instrutor.",
     bullets: [
-      "Turmas reduzidas para correção individual",
-      "Sem experiência prévia necessária",
-      "Foco em técnica, condição física e postura",
+      "Turmas para quem começa do zero e para quem já tem base técnica",
+      "Guarda, deslocamentos, socos, cotoveladas, joelhadas e pontapés",
+      "Sparring controlado e progressivo para quem já está preparado",
     ],
-    image: "/images/programs/iniciacao.svg",
-    level: "Iniciante",
-  },
-  {
-    slug: "avancado",
-    name: "Muay Thai — Avançado",
-    audience: "Para alunos com base técnica",
-    description:
-      "Combinações complexas, clinch, sparring técnico e preparação tática. Intensidade mais alta, exigência mais alta.",
-    bullets: [
-      "Sparring controlado e progressivo",
-      "Trabalho de clinch e defesa avançada",
-      "Preparação física orientada ao combate",
-    ],
-    image: "/images/programs/avancado.svg",
-    level: "Avançado",
-  },
-  {
-    slug: "cardio-kickboxing",
-    name: "Cardio Kickboxing / Fitness",
-    audience: "Para quem quer forma física com técnica de combate",
-    description:
-      "Treino de alta intensidade baseado em Muay Thai, sem contacto, para condição física, queima calórica e libertação de stress.",
-    bullets: [
-      "Sem contacto — foco em condição física",
-      "Ideal para complementar outros treinos",
-      "Aulas dinâmicas em grupo",
-    ],
-    image: "/images/programs/fitness.svg",
+    image: "/images/hero-fighter.jpg",
     level: "Todos os níveis",
   },
   {
-    slug: "competicao",
-    name: "Equipa de Competição",
-    audience: "Para atletas selecionados",
+    slug: "treino-funcional",
+    name: "Treino Funcional",
+    audience: "Para quem quer condição física completa",
     description:
-      "Preparação específica para competição amadora e profissional, com plano individualizado, acompanhamento próximo e presença em eventos.",
+      "Treino de alta intensidade que combina força, resistência e mobilidade — o complemento perfeito ao Muay Thai ou uma modalidade própria para quem procura forma física a sério.",
     bullets: [
-      "Acesso por convite/avaliação da equipa técnica",
-      "Planeamento de peso e performance",
-      "Acompanhamento em competições oficiais",
+      "Sessões em grupo, ritmo elevado",
+      "Trabalho de força, resistência cardiovascular e mobilidade",
+      "Ideal para complementar o Muay Thai ou treinar de forma independente",
     ],
-    image: "/images/programs/competicao.svg",
-    level: "Avançado",
-  },
-  {
-    slug: "quartel-kids",
-    name: "Quartel Kids",
-    audience: "Dos 6 aos 12 anos",
-    description:
-      "Introdução ao Muay Thai adaptada a crianças: disciplina, coordenação motora, respeito e confiança, num ambiente seguro e supervisionado.",
-    bullets: [
-      "Turmas separadas por faixa etária",
-      "Ênfase em disciplina e respeito",
-      "Sem sparring de contacto pleno",
-    ],
-    image: "/images/programs/kids.svg",
-    level: "Crianças",
+    image: "/images/hero-fighter.jpg",
+    level: "Todos os níveis",
   },
 ];
 
@@ -209,7 +167,7 @@ export const plans: Plan[] = [
     name: "Aula Experimental",
     price: "Grátis",
     period: "1 aula",
-    description: "Vem sentir o ambiente e conhecer a equipa, sem compromisso.",
+    description: "Vem sentir o ambiente e conhecer o instrutor, sem compromisso.",
     features: [
       "1 aula de Muay Thai à escolha",
       "Equipamento base emprestado",
@@ -224,7 +182,7 @@ export const plans: Plan[] = [
     description: "Para quem quer construir hábito com 2 treinos por semana.",
     features: [
       "2x aulas por semana",
-      "Acesso a Muay Thai ou Cardio Kickboxing",
+      "Acesso a Muay Thai ou Treino Funcional",
       "Acompanhamento de evolução técnica",
     ],
     cta: "Escolher plano Base",
@@ -236,23 +194,11 @@ export const plans: Plan[] = [
     description: "Acesso total à grelha de horários, sem limites de aulas.",
     features: [
       "Aulas ilimitadas todos os dias",
-      "Acesso a todas as modalidades",
+      "Acesso a Muay Thai e Treino Funcional",
       "Prioridade em workshops e eventos",
     ],
     highlighted: true,
     cta: "Escolher plano Ilimitado",
-  },
-  {
-    name: "Quartel Kids",
-    price: "29€", // PLACEHOLDER
-    period: "/mês",
-    description: "Plano dedicado a crianças dos 6 aos 12 anos.",
-    features: [
-      "2x aulas por semana",
-      "Turma exclusiva por faixa etária",
-      "Reunião trimestral com encarregados de educação",
-    ],
-    cta: "Inscrever criança",
   },
 ];
 
@@ -272,50 +218,45 @@ export const weeklySchedule: ScheduleDay[] = [
   {
     day: "Segunda",
     classes: [
-      { time: "07h00", name: "Muay Thai — Avançado", level: "Avançado" },
-      { time: "12h30", name: "Cardio Kickboxing", level: "Todos" },
-      { time: "18h30", name: "Muay Thai — Iniciação", level: "Iniciante" },
-      { time: "20h00", name: "Muay Thai — Avançado", level: "Avançado" },
+      { time: "07h00", name: "Treino Funcional", level: "Todos" },
+      { time: "18h30", name: "Muay Thai", level: "Todos" },
+      { time: "20h00", name: "Muay Thai", level: "Todos" },
     ],
   },
   {
     day: "Terça",
     classes: [
-      { time: "18h00", name: "Quartel Kids", level: "Crianças" },
-      { time: "19h00", name: "Cardio Kickboxing", level: "Todos" },
-      { time: "20h00", name: "Equipa de Competição", level: "Avançado" },
+      { time: "19h00", name: "Treino Funcional", level: "Todos" },
+      { time: "20h00", name: "Muay Thai", level: "Todos" },
     ],
   },
   {
     day: "Quarta",
     classes: [
-      { time: "07h00", name: "Muay Thai — Avançado", level: "Avançado" },
-      { time: "12h30", name: "Cardio Kickboxing", level: "Todos" },
-      { time: "18h30", name: "Muay Thai — Iniciação", level: "Iniciante" },
-      { time: "20h00", name: "Muay Thai — Avançado", level: "Avançado" },
+      { time: "07h00", name: "Treino Funcional", level: "Todos" },
+      { time: "18h30", name: "Muay Thai", level: "Todos" },
+      { time: "20h00", name: "Muay Thai", level: "Todos" },
     ],
   },
   {
     day: "Quinta",
     classes: [
-      { time: "18h00", name: "Quartel Kids", level: "Crianças" },
-      { time: "19h00", name: "Cardio Kickboxing", level: "Todos" },
-      { time: "20h00", name: "Equipa de Competição", level: "Avançado" },
+      { time: "19h00", name: "Treino Funcional", level: "Todos" },
+      { time: "20h00", name: "Muay Thai", level: "Todos" },
     ],
   },
   {
     day: "Sexta",
     classes: [
-      { time: "07h00", name: "Muay Thai — Avançado", level: "Avançado" },
-      { time: "18h30", name: "Muay Thai — Iniciação", level: "Iniciante" },
-      { time: "20h00", name: "Sparring livre", level: "Intermédio+" },
+      { time: "07h00", name: "Treino Funcional", level: "Todos" },
+      { time: "18h30", name: "Muay Thai", level: "Todos" },
     ],
   },
   {
     day: "Sábado",
     classes: [
-      { time: "10h00", name: "Muay Thai — Todos os níveis", level: "Todos" },
-      { time: "11h30", name: "Quartel Kids", level: "Crianças" },
+      { time: "10h00", name: "Muay Thai", level: "Todos" },
+      { time: "11h00", name: "Treino Funcional", level: "Todos" },
     ],
   },
 ];
@@ -336,47 +277,11 @@ export const instructors: Instructor[] = [
     role: "Head Coach & Fundador",
     credentials: [
       "Instrutor certificado — Federação Portuguesa de Kickboxing e Muay Thai",
-      "+15 anos de prática competitiva",
-      "Ex-competidor amador nacional",
-    ],
-    bio: "Fundou o Quartel 365 em 2016 com a ideia de trazer um ambiente de treino sério a Felgueiras — sem perder o lado humano. Lidera a metodologia técnica de toda a academia e acompanha de perto a equipa de competição.",
-    image: "/images/instructors/instrutor-01.svg",
-  },
-  {
-    slug: "rui-santos",
-    name: "Rui Santos",
-    role: "Instrutor Principal — Muay Thai Avançado",
-    credentials: [
-      "Certificação internacional em Muay Thai (Tailândia)",
-      "+10 anos de experiência a lecionar",
-      "Especialista em clinch e trabalho de curta distância",
-    ],
-    bio: "Formou-se diretamente com treinadores tailandeses e trouxe essa base técnica para o Quartel 365. Responsável pelas turmas avançadas e pela preparação tática pré-competição.",
-    image: "/images/instructors/instrutor-02.svg",
-  },
-  {
-    slug: "catarina-oliveira",
-    name: "Catarina Oliveira",
-    role: "Instrutora — Cardio Kickboxing & Iniciação",
-    credentials: [
       "Certificação em treino funcional e condição física",
-      "Instrutora de Muay Thai recreativo",
-      "Especialista em introdução técnica para adultos",
+      "+15 anos de prática e ensino de Muay Thai",
     ],
-    bio: "É o primeiro contacto de muitos alunos com o Muay Thai. A sua paciência e clareza pedagógica tornam a curva de aprendizagem inicial muito mais natural.",
-    image: "/images/instructors/instrutor-03.svg",
-  },
-  {
-    slug: "tiago-almeida",
-    name: "Tiago Almeida",
-    role: "Instrutor — Quartel Kids",
-    credentials: [
-      "Formação em desporto infantil e juvenil",
-      "Instrutor certificado de Muay Thai",
-      "5 anos dedicados a turmas de crianças",
-    ],
-    bio: "Especializou-se em ensinar Muay Thai a crianças, com foco em disciplina, respeito e desenvolvimento motor — sempre num ambiente seguro e positivo.",
-    image: "/images/instructors/instrutor-04.svg",
+    bio: "Fundou o Quartel 365 em 2016 com a ideia de trazer um ambiente de treino sério a Felgueiras — sem perder o lado humano. É responsável por todas as aulas de Muay Thai e Treino Funcional, acompanhando de perto a evolução técnica e física de cada aluno.",
+    image: "/images/hero-fighter.jpg",
   },
 ];
 
@@ -384,7 +289,6 @@ export type Testimonial = {
   name: string;
   since: string;
   quote: string;
-  avatar: string;
 };
 
 export const testimonials: Testimonial[] = [
@@ -392,29 +296,25 @@ export const testimonials: Testimonial[] = [
     name: "João Pinto",
     since: "Aluno desde 2019",
     quote:
-      "Entrei sem saber nada de Muay Thai e hoje treino 5x por semana. A exigência da equipa técnica fez toda a diferença — aqui ninguém finge que está a trabalhar.",
-    avatar: "/images/avatars/aluno-01.svg",
+      "Entrei sem saber nada de Muay Thai e hoje treino 5x por semana. A exigência do instrutor fez toda a diferença — aqui ninguém finge que está a trabalhar.",
   },
   {
     name: "Marta Silva",
     since: "Aluna desde 2021",
     quote:
       "O que mais valorizo é o ambiente: exigente no treino, mas acolhedor fora dele. Nunca me senti julgada por ser iniciante.",
-    avatar: "/images/avatars/aluno-02.svg",
   },
   {
     name: "André Costa",
     since: "Aluno desde 2017",
     quote:
-      "Já treinei em vários ginásios. O nível técnico dos instrutores do Quartel 365 está a outro patamar — nota-se a experiência internacional.",
-    avatar: "/images/avatars/aluno-03.svg",
+      "Já treinei em vários ginásios. O nível técnico do Quartel 365 está a outro patamar — nota-se a experiência do instrutor.",
   },
   {
-    name: "Rita Teixeira",
-    since: "Encarregada de educação",
+    name: "Sofia Ramos",
+    since: "Aluna desde 2022",
     quote:
-      "O meu filho mudou de atitude desde que começou no Quartel Kids. Mais confiante, mais focado e mais respeitador em casa também.",
-    avatar: "/images/avatars/aluno-04.svg",
+      "Comecei só pelo Treino Funcional e acabei também a fazer Muay Thai. As duas modalidades juntas fizeram-me evoluir muito mais depressa.",
   },
 ];
 
@@ -424,15 +324,16 @@ export type GalleryImage = {
   category: "Ringue" | "Ginásio" | "Balneários" | "Comunidade";
 };
 
+// PLACEHOLDER — a mesma foto está repetida em todas as entradas até
+// existirem fotos reais e distintas de cada zona da academia.
 export const galleryImages: GalleryImage[] = [
-  { src: "/images/gallery/ringue-01.svg", alt: "Ringue de competição do Quartel 365", category: "Ringue" },
-  { src: "/images/gallery/ringue-02.svg", alt: "Zona de sparring junto ao ringue principal", category: "Ringue" },
-  { src: "/images/gallery/sacos-01.svg", alt: "Zona de sacos pesados para treino técnico", category: "Ginásio" },
-  { src: "/images/gallery/musculacao-01.svg", alt: "Sala de força e condição física", category: "Ginásio" },
-  { src: "/images/gallery/balnearios-01.svg", alt: "Balneários do Quartel 365", category: "Balneários" },
-  { src: "/images/gallery/recepcao-01.svg", alt: "Receção e área de convívio", category: "Comunidade" },
-  { src: "/images/gallery/aula-grupo-01.svg", alt: "Aula em grupo de Muay Thai", category: "Comunidade" },
-  { src: "/images/gallery/kids-01.svg", alt: "Turma do Quartel Kids em treino", category: "Comunidade" },
+  { src: "/images/hero-fighter.jpg", alt: "Ringue do Quartel 365", category: "Ringue" },
+  { src: "/images/hero-fighter.jpg", alt: "Zona de treino junto ao ringue principal", category: "Ringue" },
+  { src: "/images/hero-fighter.jpg", alt: "Zona de sacos pesados para treino técnico", category: "Ginásio" },
+  { src: "/images/hero-fighter.jpg", alt: "Sala de força e condição física", category: "Ginásio" },
+  { src: "/images/hero-fighter.jpg", alt: "Balneários do Quartel 365", category: "Balneários" },
+  { src: "/images/hero-fighter.jpg", alt: "Receção e área de convívio", category: "Comunidade" },
+  { src: "/images/hero-fighter.jpg", alt: "Aula em grupo de Muay Thai", category: "Comunidade" },
 ];
 
 export type BlogPost = {
@@ -453,8 +354,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Antes de pensar em combinações vistosas, há uma base técnica que decide tudo o resto. Estes são os pontos que mais trabalhamos nas primeiras semanas de Iniciação.",
     date: "2026-06-12",
-    author: "Rui Santos",
-    cover: "/images/blog/post-01.svg",
+    author: "Nuno Ferreira",
+    cover: "/images/hero-fighter.jpg",
     tags: ["Técnica", "Iniciação"],
     content: [
       "Quando um aluno novo entra no tatame do Quartel 365, a tentação é sempre a mesma: querer aprender o pontapé mais espetacular ou a combinação que viu num vídeo. Mas a diferença entre um praticante sólido e um praticante frágil está quase sempre na base.",
@@ -472,32 +373,32 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Não precisas de ser atleta profissional para beneficiar de alguns ajustes simples na alimentação. Aqui ficam as prioridades que mais impacto têm no treino.",
     date: "2026-05-03",
-    author: "Catarina Oliveira",
-    cover: "/images/blog/post-02.svg",
+    author: "Nuno Ferreira",
+    cover: "/images/hero-fighter.jpg",
     tags: ["Nutrição", "Performance"],
     content: [
       "Muitos alunos perguntam-nos o que devem comer antes e depois do treino. A resposta curta: depende dos teus objetivos, mas há princípios que se aplicam a quase todos.",
       "Antes do treino, prioriza hidratos de absorção moderada 60 a 90 minutos antes — dão energia sem pesar. Evita treinar em jejum prolongado se o treino for de alta intensidade.",
       "Depois do treino, a janela seguinte é a mais importante para recuperação: proteína de qualidade e hidratos para repor glicogénio. Não precisa de ser complicado — ovos, arroz e vegetais fazem o trabalho.",
-      "Hidratação é frequentemente subestimada. Um aluno desidratado perde técnica muito antes de perder força — e é normalmente a primeira coisa que os instrutores notam num dia mais fraco.",
-      "Por fim, para quem está em fase de competição e precisa de gerir peso, recomendamos sempre acompanhamento próximo da equipa técnica — nunca cortes de peso feitos às cegas.",
+      "Hidratação é frequentemente subestimada. Um aluno desidratado perde técnica muito antes de perder força — e é normalmente a primeira coisa que se nota num dia mais fraco.",
+      "Por fim, se precisas de gerir peso ou tens objetivos específicos, fala sempre com o instrutor antes de fazer alterações drásticas — nunca cortes feitos às cegas.",
     ],
   },
   {
-    slug: "um-dia-na-vida-de-um-competidor",
-    title: "Um dia na vida de um competidor do Quartel 365",
+    slug: "muay-thai-e-treino-funcional",
+    title: "Porque é que Muay Thai e Treino Funcional se complementam tão bem",
     excerpt:
-      "Da preparação física à gestão mental antes de subir ao ringue — como é, na prática, o dia de treino de um atleta da nossa equipa de competição.",
+      "Um não substitui o outro — mas juntos aceleram resultados. Percebe porque recomendamos as duas modalidades a quem quer evoluir a sério.",
     date: "2026-03-22",
     author: "Nuno Ferreira",
-    cover: "/images/blog/post-03.svg",
-    tags: ["Competição", "Comunidade"],
+    cover: "/images/hero-fighter.jpg",
+    tags: ["Treino Funcional", "Muay Thai"],
     content: [
-      "A equipa de competição do Quartel 365 treina com uma rotina diferente da dos restantes alunos — mais volume, mais especificidade e mais acompanhamento individual.",
-      "O dia costuma começar cedo, com trabalho de condição física antes do horário normal de aulas. Segue-se trabalho técnico individualizado com foco nos pontos fracos identificados na semana anterior.",
-      "À noite, juntam-se às turmas avançadas para sparring controlado — sempre supervisionado, sempre com objetivo técnico definido, nunca só para \"bater\".",
-      "Nas semanas antes de uma competição, o acompanhamento intensifica-se: gestão de peso, ajustes técnicos finos e trabalho mental para gerir a pressão do dia do evento.",
-      "É um caminho exigente, mas é também o que dá à comunidade do Quartel 365 uma referência de exigência — mesmo para quem nunca vai competir, ver este trabalho de perto eleva o nível de todos.",
+      "É uma pergunta que ouço muitas vezes: \"só preciso de Muay Thai ou também devo fazer Treino Funcional?\" A resposta curta é que dependem um do outro mais do que parece.",
+      "O Muay Thai exige técnica, mas também força explosiva, resistência cardiovascular e mobilidade nas ancas e ombros. Sem essa base física, a técnica satura mais depressa — cansas-te antes de conseguires aplicar o que treinaste.",
+      "É aí que entra o Treino Funcional: sessões pensadas para construir força e resistência de forma directamente aplicável ao Muay Thai, sem o desgaste técnico de mais uma aula de sparring.",
+      "Ao mesmo tempo, o Treino Funcional sozinho também beneficia de alguma exposição ao Muay Thai — a coordenação, o trabalho de core rotacional e a disciplina mental que o Muay Thai exige tornam qualquer treino físico mais eficiente.",
+      "Por isso, sempre que um aluno pergunta qual das duas modalidades escolher, a resposta honesta costuma ser: começa por uma, mas experimenta as duas antes de decidir ficar só com uma.",
     ],
   },
 ];
@@ -514,9 +415,9 @@ export const faqs = [
       "Roupa confortável e água. Para a aula experimental, emprestamos ligaduras e luvas. Se decidires continuar, ajudamos-te a escolher o equipamento certo.",
   },
   {
-    question: "Qual a idade mínima para o Quartel Kids?",
+    question: "Qual a diferença entre Muay Thai e Treino Funcional?",
     answer:
-      "As turmas Quartel Kids recebem crianças dos 6 aos 12 anos, divididas por faixa etária e nível de desenvolvimento motor.",
+      "O Muay Thai foca-se em técnica de combate — socos, cotoveladas, joelhadas e pontapés. O Treino Funcional foca-se em força, resistência e mobilidade, sem componente técnica de combate. Podes escolher só uma ou combinar as duas.",
   },
   {
     question: "Posso experimentar antes de me inscrever?",

@@ -28,8 +28,8 @@
   --color-flame-dark: var(--color-flame-dark);
   --color-ember: var(--color-ember);
 
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-oswald);
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Anton", ui-sans-serif, system-ui, sans-serif;
 
   --animate-fade-up: fade-up 0.7s ease-out both;
 

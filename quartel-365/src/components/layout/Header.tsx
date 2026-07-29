@@ -37,7 +37,7 @@ export function Header() {
     >
       <div className="container-quartel flex h-16 items-center justify-between py-3 sm:h-20">
         <Link href="/" className="group flex items-center gap-2" aria-label={`${siteConfig.name} — Início`}>
-          <span className="font-heading text-xl font-bold uppercase tracking-tight text-bone sm:text-2xl">
+          <span className="font-heading text-xl uppercase tracking-tight text-bone sm:text-2xl">
             Quartel <span className="text-flame">365</span>
           </span>
         </Link>

@@ -1,52 +1,59 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BadgeCheck } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
-import { TiltCard } from "@/components/ui/TiltCard";
 import { instructors } from "@/lib/data";
 
 export function InstructorsPreview() {
+  const instructor = instructors[0];
+
   return (
     <section className="border-t border-line bg-ink py-24 sm:py-32">
-      <div className="container-quartel">
-        <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
+      <div className="container-quartel grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <Reveal>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-line">
+            <Image
+              src={instructor.image}
+              alt={`${instructor.name} — ${instructor.role}`}
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
           <SectionHeading
-            eyebrow="A equipa técnica"
-            title="Aprende com quem já competiu."
-            description="Instrutores certificados, com percurso competitivo e anos de experiência a formar novos praticantes."
+            eyebrow="O instrutor"
+            title="Aprende com quem lidera cada aula."
+            description="Um único instrutor, presente em todas as aulas de Muay Thai e Treino Funcional — sem delegar o acompanhamento a ninguém."
           />
-          <ButtonLink href="/instrutores" variant="outline" className="shrink-0">
-            Conhecer a equipa
+
+          <div className="mt-8">
+            <h3 className="font-heading text-2xl uppercase tracking-wide text-bone">
+              {instructor.name}
+            </h3>
+            <p className="mt-1 font-heading text-sm uppercase tracking-widest text-flame">
+              {instructor.role}
+            </p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-mist">{instructor.bio}</p>
+
+            <ul className="mt-5 space-y-2">
+              {instructor.credentials.map((credential) => (
+                <li key={credential} className="flex items-start gap-3 text-sm text-mist">
+                  <BadgeCheck className="mt-0.5 shrink-0 text-flame" size={17} aria-hidden />
+                  {credential}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <ButtonLink href="/instrutores" variant="outline" className="mt-8">
+            Conhecer o instrutor
             <ArrowRight size={16} aria-hidden />
           </ButtonLink>
-        </div>
-
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {instructors.map((instructor, index) => (
-            <Reveal key={instructor.slug} delay={index * 0.08} className="h-full">
-              <TiltCard>
-                <div className="group h-full overflow-hidden rounded-sm border border-line bg-charcoal">
-                  <div className="relative aspect-[4/5] overflow-hidden">
-                    <Image
-                      src={instructor.image}
-                      alt={`${instructor.name} — ${instructor.role}`}
-                      fill
-                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-heading text-lg font-bold uppercase tracking-wide text-bone">
-                      {instructor.name}
-                    </h3>
-                    <p className="mt-1 text-xs uppercase tracking-wider text-flame">{instructor.role}</p>
-                  </div>
-                </div>
-              </TiltCard>
-            </Reveal>
-          ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

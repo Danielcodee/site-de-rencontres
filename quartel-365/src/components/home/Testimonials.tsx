@@ -1,9 +1,18 @@
-import Image from "next/image";
 import { Quote } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { testimonials } from "@/lib/data";
+
+function initials(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
 
 export function Testimonials() {
   return (
@@ -26,14 +35,12 @@ export function Testimonials() {
                     &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-3">
-                    <Image
-                      src={testimonial.avatar}
-                      alt=""
+                    <span
                       aria-hidden
-                      width={44}
-                      height={44}
-                      className="rounded-full border border-line"
-                    />
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-charcoal font-heading text-sm font-semibold text-flame"
+                    >
+                      {initials(testimonial.name)}
+                    </span>
                     <div>
                       <p className="font-heading text-sm font-semibold uppercase tracking-wide text-bone">
                         {testimonial.name}

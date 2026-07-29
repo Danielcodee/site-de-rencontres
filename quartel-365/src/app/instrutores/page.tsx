@@ -6,9 +6,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { instructors } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Instrutores",
+  title: "Instrutor",
   description:
-    "Conhece a equipa técnica do Quartel 365: instrutores certificados de Muay Thai, com percurso competitivo e anos de experiência a ensinar em Felgueiras.",
+    "Conhece o instrutor do Quartel 365: certificado em Muay Thai e treino funcional, com anos de experiência a ensinar em Felgueiras.",
   alternates: { canonical: "/instrutores" },
 };
 
@@ -16,9 +16,9 @@ export default function InstrutoresPage() {
   return (
     <>
       <PageHeader
-        eyebrow="A equipa técnica"
-        title="Quem lidera o treino no Quartel 365."
-        description="Cada instrutor traz um percurso próprio — competitivo, técnico ou pedagógico — mas todos partilham a mesma exigência."
+        eyebrow="O instrutor"
+        title="Quem lidera cada aula no Quartel 365."
+        description="Um único instrutor, presente em todas as aulas de Muay Thai e Treino Funcional — sem delegar o acompanhamento a ninguém."
       />
 
       <section className="bg-ink py-24 sm:py-32">
@@ -40,7 +40,7 @@ export default function InstrutoresPage() {
                   />
                 </div>
                 <div>
-                  <h2 className="font-heading text-3xl font-bold uppercase tracking-tight text-bone">
+                  <h2 className="font-heading text-3xl uppercase tracking-tight text-bone">
                     {instructor.name}
                   </h2>
                   <p className="mt-1 font-heading text-sm uppercase tracking-widest text-flame">

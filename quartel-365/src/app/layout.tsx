@@ -1,34 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Oswald } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/lib/data";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
+// Carregadas via <link> (em vez de next/font/google) — o self-hosting do
+// next/font produziu, neste ambiente, um subset da fonte com o glifo "Ú"
+// em falta (afetava palavras como "único"). O <link> direto para a Google
+// Fonts CDN não tem esse problema.
+const GOOGLE_FONTS_HREF =
+  "https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700&display=swap";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Academia de Muay Thai em Felgueiras`,
+    default: `${siteConfig.name} — Muay Thai e Treino Funcional em Felgueiras`,
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
     "Muay Thai Felgueiras",
     "academia de Muay Thai",
-    "kickboxing Felgueiras",
+    "treino funcional Felgueiras",
     "aulas de Muay Thai",
     "ginásio de combate Felgueiras",
     "Quartel 365",
@@ -40,15 +33,15 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Academia de Muay Thai em Felgueiras`,
+    title: `${siteConfig.name} — Muay Thai e Treino Funcional em Felgueiras`,
     description: siteConfig.description,
-    images: [{ url: "/images/og-cover.svg", width: 1200, height: 630, alt: siteConfig.name }],
+    images: [{ url: "/images/hero-fighter.jpg", width: 2048, height: 1152, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Academia de Muay Thai em Felgueiras`,
+    title: `${siteConfig.name} — Muay Thai e Treino Funcional em Felgueiras`,
     description: siteConfig.description,
-    images: ["/images/og-cover.svg"],
+    images: ["/images/hero-fighter.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -69,7 +62,7 @@ const jsonLd = {
   telephone: siteConfig.contact.phoneDisplay,
   email: siteConfig.contact.email,
   priceRange: "€€",
-  image: `${siteConfig.url}/images/og-cover.svg`,
+  image: `${siteConfig.url}/images/hero-fighter.jpg`,
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.contact.addressLine1,
@@ -101,7 +94,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-PT" className={`${inter.variable} ${oswald.variable} h-full`}>
+    <html lang="pt-PT" className="h-full">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href={GOOGLE_FONTS_HREF} />
+      </head>
       <body className="flex min-h-full flex-col bg-ink font-sans text-bone antialiased">
         <script
           type="application/ld+json"

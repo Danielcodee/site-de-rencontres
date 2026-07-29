@@ -35,7 +35,7 @@ src/
     page.tsx            # homepage
     sobre/               # Sobre nós
     programas/           # Programas + planos + horário
-    instrutores/         # Equipa técnica
+    instrutores/         # O instrutor
     instalacoes/         # Galeria de instalações
     contactos/           # Formulário + morada + mapa
     blog/                # Listagem + posts (blog/[slug])
@@ -50,39 +50,30 @@ src/
   lib/
     data.ts              # TODO o conteúdo do site (textos, preços, morada, etc.)
     utils.ts             # helper cn()
-scripts/
-  generate-placeholders.mjs  # gera as imagens SVG placeholder em public/images
 ```
 
 Praticamente todo o conteúdo de "negócio" (textos, preços, morada, horários,
-redes sociais, instrutores, testemunhos, posts do blog) está centralizado em
+redes sociais, instrutor, testemunhos, posts do blog) está centralizado em
 **`src/lib/data.ts`** — não é preciso mexer nos componentes para atualizar
 informação.
 
-## Substituir as imagens placeholder
+## Imagens (`public/images/hero-fighter.jpg`)
 
-Todas as imagens em `public/images/` são placeholders SVG gerados por
-`scripts/generate-placeholders.mjs` (fundo escuro + nome da imagem). Para
-usar fotos reais:
-
-1. Substitui os ficheiros em `public/images/...` por fotografias reais
-   (mantém os mesmos nomes de ficheiro, ou atualiza os caminhos em
-   `src/lib/data.ts`).
-2. Usa `.jpg`/`.webp` para fotografias reais (melhor otimização via
-   `next/image` do que SVG).
-3. Depois de teres fotos reais, podes remover a opção `images.dangerouslyAllowSVG`
-   em `next.config.ts` — só é necessária para os placeholders SVG.
-
-### Foto do hero (`public/images/hero-fighter.jpg`)
-
-Esta é uma fotografia **gerada por IA** (Artlist/Seedream), usada como imagem
-de fundo do hero na homepage. Não é uma foto real da academia nem dos
-instrutores. Antes de publicar:
+Por pedido explícito, o site usa **uma única fotografia** em todas as
+páginas (hero, sobre, programas, instrutor, galeria, blog) em vez de imagens
+distintas por secção. É uma fotografia **gerada por IA** (Artlist/Seedream),
+não uma foto real da academia. Antes de publicar:
 
 - Confirma que o teu plano Artlist cobre o uso comercial de imagens geradas
   por IA (os termos variam entre plano gratuito e subscrições pagas).
-- O ideal, a prazo, é substituir por uma fotografia real do espaço/alunos do
-  Quartel 365 — mais autêntica do que uma imagem gerada.
+- **Recomendado**: substitui por fotos reais e distintas por secção — é
+  especialmente importante na galeria de instalações
+  (`src/lib/data.ts` → `galleryImages`), onde as 7 entradas apontam
+  atualmente para a mesma imagem (não faz sentido um visitante ver a mesma
+  foto repetida 7 vezes numa galeria).
+- Para trocar a imagem: substitui o ficheiro `public/images/hero-fighter.jpg`
+  mantendo o nome, ou atualiza os caminhos em `src/lib/data.ts` (procura por
+  `/images/hero-fighter.jpg`) para apontar para ficheiros novos.
 
 ## Formulário de contacto / newsletter
 

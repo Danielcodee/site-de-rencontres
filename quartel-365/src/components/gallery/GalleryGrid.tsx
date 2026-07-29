@@ -32,7 +32,7 @@ export function GalleryGrid({ images }: { images: GalleryImage[] }) {
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {images.map((image, index) => (
           <button
-            key={image.src}
+            key={image.alt}
             type="button"
             onClick={() => setActiveIndex(index)}
             className="group relative aspect-square overflow-hidden rounded-sm border border-line text-left"
