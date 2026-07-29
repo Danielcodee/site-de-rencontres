@@ -43,7 +43,7 @@ export const siteConfig = {
   },
 
   social: {
-    instagram: "https://www.instagram.com/quartel365/", // PLACEHOLDER
+    instagram: "https://www.instagram.com/qartel365/",
     facebook: "https://www.facebook.com/quartel365/", // PLACEHOLDER
     youtube: "https://www.youtube.com/@quartel365", // PLACEHOLDER
     tiktok: "https://www.tiktok.com/@quartel365", // PLACEHOLDER
