@@ -42,7 +42,7 @@ export function NewsletterForm({ className }: { className?: string }) {
 
   if (status === "success") {
     return (
-      <p className={cn("text-sm font-medium text-flame", className)} role="status">
+      <p className={cn("text-sm font-medium text-oxblood", className)} role="status">
         Subscrição confirmada. Bem-vindo ao Quartel 365.
       </p>
     );
@@ -59,7 +59,7 @@ export function NewsletterForm({ className }: { className?: string }) {
         type="email"
         required
         placeholder="o-teu-email@exemplo.pt"
-        className="w-full flex-1 rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist focus-visible:border-flame"
+        className="w-full flex-1 rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist focus-visible:border-oxblood"
       />
       {/* Honeypot anti-spam — mantido fora da vista, nunca preenchido por humanos */}
       <input
@@ -73,13 +73,13 @@ export function NewsletterForm({ className }: { className?: string }) {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-flame px-6 py-3 font-heading text-sm font-semibold uppercase tracking-widest text-bone transition-colors hover:bg-flame-dark disabled:opacity-60"
+        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-oxblood px-6 py-3 font-sans text-sm font-semibold uppercase tracking-widest text-bone transition-colors hover:bg-oxblood-dark disabled:opacity-60"
       >
         {status === "loading" ? <Loader2 className="animate-spin" size={16} /> : <Send size={16} />}
         Subscrever
       </button>
       {status === "error" && errorMessage ? (
-        <p className="text-sm text-flame sm:basis-full" role="alert">
+        <p className="text-sm text-oxblood sm:basis-full" role="alert">
           {errorMessage}
         </p>
       ) : null}

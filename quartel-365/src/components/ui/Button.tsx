@@ -11,13 +11,13 @@ const TILT_SPRING = { stiffness: 300, damping: 22, mass: 0.4 };
 const TILT_STRENGTH = 14;
 
 const base =
-  "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-sm px-6 py-3 font-heading text-sm font-semibold uppercase tracking-widest transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2";
+  "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-sm px-6 py-3 font-sans text-sm font-semibold uppercase tracking-widest transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2";
 
 const variants = {
   primary:
-    "bg-flame text-bone shadow-[0_0_0_rgba(230,58,31,0)] transition-[background-color,box-shadow] hover:bg-flame-dark hover:shadow-[0_12px_30px_-10px_rgba(230,58,31,0.65)]",
-  outline: "border border-line text-bone hover:border-flame hover:text-flame",
-  ghost: "text-bone hover:text-flame",
+    "bg-oxblood text-bone shadow-[0_0_0_rgba(122,31,43,0)] transition-[background-color,box-shadow] hover:bg-oxblood-dark hover:shadow-[0_12px_30px_-10px_rgba(122,31,43,0.65)]",
+  outline: "border border-line text-bone hover:border-gold hover:text-gold",
+  ghost: "text-bone hover:text-gold",
 };
 
 type ButtonVariant = keyof typeof variants;

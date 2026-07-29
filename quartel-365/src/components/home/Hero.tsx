@@ -1,50 +1,51 @@
-import Image from "next/image";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight, CalendarCheck } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
+import { TiltImage } from "@/components/ui/TiltImage";
 import { stats } from "@/lib/data";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-ink">
-      <Image
+      <TiltImage
         src="/images/hero-fighter.jpg"
         alt="Lutador de Muay Thai em posição de combate, ambiente do Quartel 365"
-        fill
+        className="absolute inset-0"
         priority
-        sizes="100vw"
-        className="object-cover object-[70%_center]"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/40 via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-grid opacity-20" />
+        tiltStrength={3}
+        parallaxRange={50}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-grid opacity-20" />
+      </TiltImage>
 
       <div className="container-quartel relative z-10 pb-16 pt-40 sm:pb-24">
-        <p className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.35em] text-flame animate-fade-up">
+        <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.35em] text-gold animate-fade-up">
           Muay Thai · Felgueiras
         </p>
-        <h1 className="max-w-4xl font-heading text-5xl uppercase leading-[0.95] tracking-tight text-bone animate-fade-up sm:text-6xl lg:text-7xl">
-          Disciplina todos<br />os dias do ano.
+        <h1 className="max-w-4xl font-heading text-5xl leading-[1.05] tracking-tight text-bone animate-fade-up sm:text-6xl lg:text-7xl">
+          Disciplina <em className="italic">todos os dias</em> do ano.
         </h1>
         <p
           className="mt-6 max-w-xl text-lg leading-relaxed text-mist animate-fade-up sm:text-xl"
           style={{ animationDelay: "0.1s" }}
         >
-          Treino de Muay Thai e Treino Funcional a sério, num espaço pensado
-          para quem quer evoluir com disciplina — não apenas por fases.
-          Instrutor certificado, comunidade exigente, resultados reais.
+          Técnica tailandesa autêntica e treino funcional a sério, com Daniel
+          Coelho e Maria Miranda. Um espaço pensado para quem quer evoluir com
+          disciplina — não apenas por fases.
         </p>
 
         <div
           className="mt-10 flex flex-col gap-4 animate-fade-up sm:flex-row sm:items-center"
           style={{ animationDelay: "0.2s" }}
         >
-          <ButtonLink href="/contactos">
-            Marca a tua aula experimental
-            <ArrowRight size={16} aria-hidden />
+          <ButtonLink href="/reservar">
+            <CalendarCheck size={16} aria-hidden />
+            Reservar a tua aula
           </ButtonLink>
-          <ButtonLink href="/programas" variant="outline">
-            <PlayCircle size={16} aria-hidden />
-            Ver programas
+          <ButtonLink href="/modalidades" variant="outline">
+            Ver modalidades
+            <ArrowRight size={16} aria-hidden />
           </ButtonLink>
         </div>
 
@@ -54,7 +55,7 @@ export function Hero() {
               <dt className="sr-only">{stat.label}</dt>
               <dd className="font-heading text-3xl text-bone sm:text-4xl">
                 {stat.value}
-                <span className="text-flame">{stat.suffix}</span>
+                <span className="text-oxblood">{stat.suffix}</span>
               </dd>
               <p className="mt-1 text-xs uppercase tracking-wider text-mist sm:text-sm">
                 {stat.label}

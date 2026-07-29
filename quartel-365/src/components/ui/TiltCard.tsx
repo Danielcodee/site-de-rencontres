@@ -9,7 +9,7 @@ const TILT_SPRING = { stiffness: 260, damping: 20, mass: 0.5 };
 /**
  * Cartão com inclinação 3D subtil que segue o rato, mais um brilho radial
  * que acompanha o cursor. Pensado para grelhas de cards (programas,
- * instrutores, planos) — o filho deve preencher 100% da altura.
+ * treinadores, planos) — o filho deve preencher 100% da altura.
  */
 export function TiltCard({
   children,

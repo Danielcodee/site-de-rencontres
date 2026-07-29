@@ -17,9 +17,9 @@ export function LocationSection() {
 
           <ul className="mt-8 space-y-5">
             <li className="flex gap-4">
-              <MapPin className="mt-1 shrink-0 text-flame" size={22} aria-hidden />
+              <MapPin className="mt-1 shrink-0 text-oxblood" size={22} aria-hidden />
               <div>
-                <p className="font-heading text-sm font-semibold uppercase tracking-wide text-bone">
+                <p className="font-sans text-xs font-semibold uppercase tracking-wide text-bone">
                   Morada
                 </p>
                 <p className="mt-1 text-sm text-mist">
@@ -30,9 +30,9 @@ export function LocationSection() {
               </div>
             </li>
             <li className="flex gap-4">
-              <Clock className="mt-1 shrink-0 text-flame" size={22} aria-hidden />
+              <Clock className="mt-1 shrink-0 text-oxblood" size={22} aria-hidden />
               <div>
-                <p className="font-heading text-sm font-semibold uppercase tracking-wide text-bone">
+                <p className="font-sans text-xs font-semibold uppercase tracking-wide text-bone">
                   Horário
                 </p>
                 <div className="mt-1 space-y-0.5 text-sm text-mist">
@@ -45,12 +45,12 @@ export function LocationSection() {
               </div>
             </li>
             <li className="flex gap-4">
-              <Phone className="mt-1 shrink-0 text-flame" size={22} aria-hidden />
+              <Phone className="mt-1 shrink-0 text-oxblood" size={22} aria-hidden />
               <div>
-                <p className="font-heading text-sm font-semibold uppercase tracking-wide text-bone">
+                <p className="font-sans text-xs font-semibold uppercase tracking-wide text-bone">
                   Contacto
                 </p>
-                <a href={`tel:${siteConfig.contact.phoneHref}`} className="mt-1 block text-sm text-mist hover:text-flame">
+                <a href={`tel:${siteConfig.contact.phoneHref}`} className="mt-1 block text-sm text-mist hover:text-oxblood">
                   {siteConfig.contact.phoneDisplay}
                 </a>
               </div>

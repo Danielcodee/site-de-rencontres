@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# base de dados local de reservas (gerada/semeada automaticamente)
+/data/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

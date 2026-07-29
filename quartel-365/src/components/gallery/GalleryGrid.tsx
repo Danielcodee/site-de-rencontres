@@ -68,7 +68,7 @@ export function GalleryGrid({ images }: { images: GalleryImage[] }) {
               type="button"
               onClick={close}
               aria-label="Fechar imagem"
-              className="absolute right-5 top-5 text-bone hover:text-flame"
+              className="absolute right-5 top-5 text-bone hover:text-oxblood"
             >
               <X size={32} />
             </button>
@@ -80,7 +80,7 @@ export function GalleryGrid({ images }: { images: GalleryImage[] }) {
                 showPrev();
               }}
               aria-label="Imagem anterior"
-              className="absolute left-3 text-bone hover:text-flame sm:left-6"
+              className="absolute left-3 text-bone hover:text-oxblood sm:left-6"
             >
               <ChevronLeft size={36} />
             </button>
@@ -107,7 +107,7 @@ export function GalleryGrid({ images }: { images: GalleryImage[] }) {
                 showNext();
               }}
               aria-label="Imagem seguinte"
-              className="absolute right-3 text-bone hover:text-flame sm:right-6"
+              className="absolute right-3 text-bone hover:text-oxblood sm:right-6"
             >
               <ChevronRight size={36} />
             </button>

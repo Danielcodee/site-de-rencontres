@@ -11,26 +11,26 @@ export function CtaNewsletter() {
 
       <div className="container-quartel relative z-10 grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
         <Reveal className="text-center lg:text-left">
-          <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.3em] text-flame">
+          <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-gold">
             O próximo passo é teu
           </p>
-          <h2 className="mx-auto max-w-3xl font-heading text-4xl uppercase leading-tight tracking-tight text-bone sm:text-5xl lg:mx-0">
+          <h2 className="mx-auto max-w-3xl font-heading text-4xl leading-tight tracking-tight text-bone sm:text-5xl lg:mx-0">
             A disciplina começa com uma aula.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base text-mist sm:text-lg lg:mx-0">
-            Marca a tua aula experimental gratuita e vem sentir o ambiente do
+            Reserva a tua aula experimental gratuita e vem sentir o ambiente do
             Quartel 365. Sem compromisso, sem desculpas.
           </p>
 
           <div className="mt-8 flex justify-center lg:justify-start">
-            <ButtonLink href="/contactos">
-              Marca a tua aula experimental
+            <ButtonLink href="/reservar">
+              Reservar a tua aula
               <ArrowRight size={16} aria-hidden />
             </ButtonLink>
           </div>
 
           <div className="mx-auto mt-14 max-w-md border-t border-line pt-10 lg:mx-0">
-            <p className="font-heading text-sm font-semibold uppercase tracking-widest text-bone">
+            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-bone">
               Recebe dicas de treino e novidades
             </p>
             <p className="mt-2 text-sm text-mist">

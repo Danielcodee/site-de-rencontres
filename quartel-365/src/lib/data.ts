@@ -3,14 +3,14 @@
 // mexer nos componentes, basta atualizar os valores abaixo.
 //
 // Os campos marcados com "PLACEHOLDER" têm de ser confirmados/substituídos
-// antes de publicar o site (morada exata, telefone, preços, fotos, etc.).
+// antes de publicar o site (morada exata, preços, fotos dos treinadores, etc.).
 
 export const siteConfig = {
   name: "Quartel 365",
   shortName: "Q365",
   tagline: "Disciplina todos os dias do ano.",
   description:
-    "Academia premium de Muay Thai e Treino Funcional em Felgueiras. Treino sério, comunidade forte e instrutor certificado — 365 dias por ano.",
+    "Academia premium de Muay Thai e Treino Funcional em Felgueiras. Técnica tailandesa autêntica, comunidade séria, treinadores certificados — 365 dias por ano.",
   url: "https://www.quartel365.pt", // PLACEHOLDER — domínio final
   locale: "pt_PT",
   founded: 2016,
@@ -23,13 +23,16 @@ export const siteConfig = {
     region: "Porto",
     postalCode: "4610-156",
     country: "PT",
-    // PLACEHOLDER — número de telefone
-    phoneDisplay: "+351 255 123 456",
-    phoneHref: "+351255123456",
-    // PLACEHOLDER — telemóvel/WhatsApp
-    whatsappDisplay: "+351 912 345 678",
-    whatsappHref: "351912345678",
+    phoneDisplay: "933 796 669",
+    phoneHref: "+351933796669",
+    // Reutiliza-se o mesmo número para WhatsApp — confirmar se é o desejado.
+    whatsappDisplay: "933 796 669",
+    whatsappHref: "351933796669",
     email: "geral@quartel365.pt", // PLACEHOLDER
+    mbway: {
+      // Número usado para receber pagamentos via MB WAY.
+      number: "933 796 669",
+    },
     mapsEmbedSrc:
       "https://www.google.com/maps?q=Felgueiras,Portugal&output=embed",
     mapsLinkHref: "https://www.google.com/maps/search/?api=1&query=Felgueiras+Portugal",
@@ -52,8 +55,8 @@ export const siteConfig = {
 export const navLinks = [
   { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre Nós" },
-  { href: "/programas", label: "Programas" },
-  { href: "/instrutores", label: "Instrutor" },
+  { href: "/modalidades", label: "Modalidades" },
+  { href: "/treinadores", label: "Treinadores" },
   { href: "/instalacoes", label: "Instalações" },
   { href: "/blog", label: "Blog" },
   { href: "/contactos", label: "Contactos" },
@@ -62,7 +65,7 @@ export const navLinks = [
 export const stats = [
   { value: "9", suffix: "+", label: "Anos de existência" },
   { value: "450", suffix: "+", label: "Alunos ativos" },
-  { value: "2", suffix: "", label: "Modalidades de treino" },
+  { value: "2", suffix: "", label: "Treinadores certificados" },
   { value: "35", suffix: "+", label: "Aulas por semana" },
 ];
 
@@ -75,9 +78,9 @@ export type Differentiator = {
 export const differentiators: Differentiator[] = [
   {
     icon: "shield",
-    title: "Instrutor certificado",
+    title: "Treinadores certificados",
     description:
-      "Certificação nacional em Muay Thai e em treino funcional, com anos de prática e ensino — acompanhamento próximo em cada aula.",
+      "Daniel Coelho e Maria Miranda acompanham de perto cada aluno, com certificação em Muay Thai e em treino funcional.",
   },
   {
     icon: "building",
@@ -95,7 +98,7 @@ export const differentiators: Differentiator[] = [
     icon: "flame",
     title: "Duas modalidades, um objetivo",
     description:
-      "Muay Thai para técnica e disciplina, Treino Funcional para força e resistência — combinadas, aceleram a tua evolução.",
+      "Muay Thai para técnica tailandesa autêntica, Treino Funcional para força e resistência — combinadas, aceleram a tua evolução.",
   },
   {
     icon: "trophy",
@@ -111,29 +114,31 @@ export const differentiators: Differentiator[] = [
   },
 ];
 
-export type Program = {
+export type Modality = {
   slug: string;
   name: string;
   audience: string;
   description: string;
   bullets: string[];
   image: string;
+  trainer: string;
   level: "Todos os níveis";
 };
 
-export const programs: Program[] = [
+export const modalities: Modality[] = [
   {
     slug: "muay-thai",
     name: "Muay Thai",
     audience: "Para todos os níveis, do zero à evolução contínua",
     description:
-      "Aulas de Muay Thai para todas as idades e níveis — da primeira guarda às combinações mais avançadas, sempre com acompanhamento técnico próximo do instrutor.",
+      "Técnica tailandesa autêntica — da primeira guarda às combinações mais avançadas, sempre com acompanhamento técnico próximo do treinador.",
     bullets: [
       "Turmas para quem começa do zero e para quem já tem base técnica",
       "Guarda, deslocamentos, socos, cotoveladas, joelhadas e pontapés",
       "Sparring controlado e progressivo para quem já está preparado",
     ],
     image: "/images/hero-fighter.jpg",
+    trainer: "Daniel Coelho",
     level: "Todos os níveis",
   },
   {
@@ -148,6 +153,7 @@ export const programs: Program[] = [
       "Ideal para complementar o Muay Thai ou treinar de forma independente",
     ],
     image: "/images/hero-fighter.jpg",
+    trainer: "Maria Miranda",
     level: "Todos os níveis",
   },
 ];
@@ -167,11 +173,11 @@ export const plans: Plan[] = [
     name: "Aula Experimental",
     price: "Grátis",
     period: "1 aula",
-    description: "Vem sentir o ambiente e conhecer o instrutor, sem compromisso.",
+    description: "Vem sentir o ambiente e conhecer os treinadores, sem compromisso.",
     features: [
       "1 aula de Muay Thai à escolha",
       "Equipamento base emprestado",
-      "Avaliação inicial com instrutor",
+      "Avaliação inicial com o treinador",
     ],
     cta: "Marcar aula experimental",
   },
@@ -202,86 +208,43 @@ export const plans: Plan[] = [
   },
 ];
 
-export type ScheduleClass = {
-  time: string;
-  name: string;
-  level: string;
-};
-
-export type ScheduleDay = {
-  day: string;
-  classes: ScheduleClass[];
-};
-
-// PLACEHOLDER — grelha de horários ilustrativa, confirmar horário real
-export const weeklySchedule: ScheduleDay[] = [
-  {
-    day: "Segunda",
-    classes: [
-      { time: "07h00", name: "Treino Funcional", level: "Todos" },
-      { time: "18h30", name: "Muay Thai", level: "Todos" },
-      { time: "20h00", name: "Muay Thai", level: "Todos" },
-    ],
-  },
-  {
-    day: "Terça",
-    classes: [
-      { time: "19h00", name: "Treino Funcional", level: "Todos" },
-      { time: "20h00", name: "Muay Thai", level: "Todos" },
-    ],
-  },
-  {
-    day: "Quarta",
-    classes: [
-      { time: "07h00", name: "Treino Funcional", level: "Todos" },
-      { time: "18h30", name: "Muay Thai", level: "Todos" },
-      { time: "20h00", name: "Muay Thai", level: "Todos" },
-    ],
-  },
-  {
-    day: "Quinta",
-    classes: [
-      { time: "19h00", name: "Treino Funcional", level: "Todos" },
-      { time: "20h00", name: "Muay Thai", level: "Todos" },
-    ],
-  },
-  {
-    day: "Sexta",
-    classes: [
-      { time: "07h00", name: "Treino Funcional", level: "Todos" },
-      { time: "18h30", name: "Muay Thai", level: "Todos" },
-    ],
-  },
-  {
-    day: "Sábado",
-    classes: [
-      { time: "10h00", name: "Muay Thai", level: "Todos" },
-      { time: "11h00", name: "Treino Funcional", level: "Todos" },
-    ],
-  },
-];
-
-export type Instructor = {
+export type Trainer = {
   slug: string;
   name: string;
   role: string;
+  specialty: "Muay Thai" | "Treino Funcional";
   credentials: string[];
   bio: string;
-  image: string;
+  // PLACEHOLDER — sem foto real ainda. Quando existir, define aqui o
+  // caminho (ex: "/images/trainers/daniel-coelho.jpg") e os cartões passam
+  // a mostrar a foto automaticamente em vez do placeholder com iniciais.
+  photo?: string;
 };
 
-export const instructors: Instructor[] = [
+export const trainers: Trainer[] = [
   {
-    slug: "nuno-ferreira",
-    name: "Nuno Ferreira",
-    role: "Head Coach & Fundador",
+    slug: "daniel-coelho",
+    name: "Daniel Coelho",
+    role: "Cofundador & Head Coach de Muay Thai",
+    specialty: "Muay Thai",
     credentials: [
       "Instrutor certificado — Federação Portuguesa de Kickboxing e Muay Thai",
-      "Certificação em treino funcional e condição física",
+      "Formação técnica na Tailândia, em campos de Muay Thai tradicionais",
       "+15 anos de prática e ensino de Muay Thai",
     ],
-    bio: "Fundou o Quartel 365 em 2016 com a ideia de trazer um ambiente de treino sério a Felgueiras — sem perder o lado humano. É responsável por todas as aulas de Muay Thai e Treino Funcional, acompanhando de perto a evolução técnica e física de cada aluno.",
-    image: "/images/hero-fighter.jpg",
+    bio: "Cofundou o Quartel 365 em 2016 com a ideia de trazer a Felgueiras um Muay Thai técnico e autêntico, sem atalhos. Lidera todas as aulas de Muay Thai, do primeiro dia de um iniciante ao sparring mais exigente.",
+  },
+  {
+    slug: "maria-miranda",
+    name: "Maria Miranda",
+    role: "Cofundadora & Treinadora de Treino Funcional",
+    specialty: "Treino Funcional",
+    credentials: [
+      "Certificação em treino funcional e condição física",
+      "Especialização em prevenção de lesões e mobilidade aplicada ao combate",
+      "+10 anos de experiência em preparação física",
+    ],
+    bio: "Cofundou o Quartel 365 ao lado do Daniel, trazendo a componente de força e condição física que complementa o Muay Thai. Desenha e lidera todas as sessões de Treino Funcional da academia.",
   },
 ];
 
@@ -296,7 +259,7 @@ export const testimonials: Testimonial[] = [
     name: "João Pinto",
     since: "Aluno desde 2019",
     quote:
-      "Entrei sem saber nada de Muay Thai e hoje treino 5x por semana. A exigência do instrutor fez toda a diferença — aqui ninguém finge que está a trabalhar.",
+      "Entrei sem saber nada de Muay Thai e hoje treino 5x por semana. A exigência do Daniel fez toda a diferença — aqui ninguém finge que está a trabalhar.",
   },
   {
     name: "Marta Silva",
@@ -308,13 +271,13 @@ export const testimonials: Testimonial[] = [
     name: "André Costa",
     since: "Aluno desde 2017",
     quote:
-      "Já treinei em vários ginásios. O nível técnico do Quartel 365 está a outro patamar — nota-se a experiência do instrutor.",
+      "Já treinei em vários ginásios. O nível técnico do Quartel 365 está a outro patamar — nota-se a formação do Daniel diretamente na Tailândia.",
   },
   {
     name: "Sofia Ramos",
     since: "Aluna desde 2022",
     quote:
-      "Comecei só pelo Treino Funcional e acabei também a fazer Muay Thai. As duas modalidades juntas fizeram-me evoluir muito mais depressa.",
+      "Comecei só pelo Treino Funcional com a Maria e acabei também a fazer Muay Thai. As duas modalidades juntas fizeram-me evoluir muito mais depressa.",
   },
 ];
 
@@ -352,11 +315,11 @@ export const blogPosts: BlogPost[] = [
     slug: "fundamentos-tecnica-de-base",
     title: "5 fundamentos técnicos que todo o iniciante devia dominar primeiro",
     excerpt:
-      "Antes de pensar em combinações vistosas, há uma base técnica que decide tudo o resto. Estes são os pontos que mais trabalhamos nas primeiras semanas de Iniciação.",
+      "Antes de pensar em combinações vistosas, há uma base técnica que decide tudo o resto. Estes são os pontos que mais trabalhamos nas primeiras semanas de Muay Thai.",
     date: "2026-06-12",
-    author: "Nuno Ferreira",
+    author: "Daniel Coelho",
     cover: "/images/hero-fighter.jpg",
-    tags: ["Técnica", "Iniciação"],
+    tags: ["Técnica", "Muay Thai"],
     content: [
       "Quando um aluno novo entra no tatame do Quartel 365, a tentação é sempre a mesma: querer aprender o pontapé mais espetacular ou a combinação que viu num vídeo. Mas a diferença entre um praticante sólido e um praticante frágil está quase sempre na base.",
       "1. Guarda — a tua guarda é a tua primeira linha de defesa e o ponto de partida de qualquer ataque. Trabalhamos a posição das mãos, dos cotovelos e do queixo antes de qualquer coisa.",
@@ -364,7 +327,7 @@ export const blogPosts: BlogPost[] = [
       "3. Soco reto — parece simples, mas é a técnica que revela mais rapidamente erros de rotação de anca e de equilíbrio.",
       "4. Joelhada frontal — uma das armas mais eficazes do Muay Thai e também uma das mais mal executadas quando a base não está trabalhada.",
       "5. Respiração e ritmo — controlar a respiração durante o esforço é o que separa quem aguenta 3 minutos de round de quem se apaga ao segundo.",
-      "Nas primeiras semanas de Iniciação, o foco está sempre aqui. É repetitivo, sim — mas é essa repetição que constrói a confiança para tudo o que vem a seguir.",
+      "Nas primeiras semanas, o foco está sempre aqui. É repetitivo, sim — mas é essa repetição que constrói a confiança para tudo o que vem a seguir.",
     ],
   },
   {
@@ -373,7 +336,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Não precisas de ser atleta profissional para beneficiar de alguns ajustes simples na alimentação. Aqui ficam as prioridades que mais impacto têm no treino.",
     date: "2026-05-03",
-    author: "Nuno Ferreira",
+    author: "Maria Miranda",
     cover: "/images/hero-fighter.jpg",
     tags: ["Nutrição", "Performance"],
     content: [
@@ -381,22 +344,22 @@ export const blogPosts: BlogPost[] = [
       "Antes do treino, prioriza hidratos de absorção moderada 60 a 90 minutos antes — dão energia sem pesar. Evita treinar em jejum prolongado se o treino for de alta intensidade.",
       "Depois do treino, a janela seguinte é a mais importante para recuperação: proteína de qualidade e hidratos para repor glicogénio. Não precisa de ser complicado — ovos, arroz e vegetais fazem o trabalho.",
       "Hidratação é frequentemente subestimada. Um aluno desidratado perde técnica muito antes de perder força — e é normalmente a primeira coisa que se nota num dia mais fraco.",
-      "Por fim, se precisas de gerir peso ou tens objetivos específicos, fala sempre com o instrutor antes de fazer alterações drásticas — nunca cortes feitos às cegas.",
+      "Por fim, se precisas de gerir peso ou tens objetivos específicos, fala sempre com os treinadores antes de fazer alterações drásticas — nunca cortes feitos às cegas.",
     ],
   },
   {
     slug: "muay-thai-e-treino-funcional",
     title: "Porque é que Muay Thai e Treino Funcional se complementam tão bem",
     excerpt:
-      "Um não substitui o outro — mas juntos aceleram resultados. Percebe porque recomendamos as duas modalidades a quem quer evoluir a sério.",
+      "Um não substitui o outro — mas juntos aceleram resultados. Percebe porque o Daniel e a Maria recomendam as duas modalidades a quem quer evoluir a sério.",
     date: "2026-03-22",
-    author: "Nuno Ferreira",
+    author: "Daniel Coelho",
     cover: "/images/hero-fighter.jpg",
     tags: ["Treino Funcional", "Muay Thai"],
     content: [
       "É uma pergunta que ouço muitas vezes: \"só preciso de Muay Thai ou também devo fazer Treino Funcional?\" A resposta curta é que dependem um do outro mais do que parece.",
       "O Muay Thai exige técnica, mas também força explosiva, resistência cardiovascular e mobilidade nas ancas e ombros. Sem essa base física, a técnica satura mais depressa — cansas-te antes de conseguires aplicar o que treinaste.",
-      "É aí que entra o Treino Funcional: sessões pensadas para construir força e resistência de forma directamente aplicável ao Muay Thai, sem o desgaste técnico de mais uma aula de sparring.",
+      "É aí que entra o Treino Funcional da Maria: sessões pensadas para construir força e resistência de forma directamente aplicável ao Muay Thai, sem o desgaste técnico de mais uma aula de sparring.",
       "Ao mesmo tempo, o Treino Funcional sozinho também beneficia de alguma exposição ao Muay Thai — a coordenação, o trabalho de core rotacional e a disciplina mental que o Muay Thai exige tornam qualquer treino físico mais eficiente.",
       "Por isso, sempre que um aluno pergunta qual das duas modalidades escolher, a resposta honesta costuma ser: começa por uma, mas experimenta as duas antes de decidir ficar só com uma.",
     ],
@@ -407,7 +370,7 @@ export const faqs = [
   {
     question: "Preciso de experiência prévia para começar?",
     answer:
-      "Não. A maioria dos nossos alunos começou do zero. Temos turmas de Iniciação pensadas exatamente para isso, com progressão gradual e segura.",
+      "Não. A maioria dos nossos alunos começou do zero. As turmas têm progressão gradual e segura, com acompanhamento próximo do treinador.",
   },
   {
     question: "Que equipamento preciso para a primeira aula?",
@@ -417,11 +380,21 @@ export const faqs = [
   {
     question: "Qual a diferença entre Muay Thai e Treino Funcional?",
     answer:
-      "O Muay Thai foca-se em técnica de combate — socos, cotoveladas, joelhadas e pontapés. O Treino Funcional foca-se em força, resistência e mobilidade, sem componente técnica de combate. Podes escolher só uma ou combinar as duas.",
+      "O Muay Thai foca-se em técnica de combate — socos, cotoveladas, joelhadas e pontapés, com o Daniel. O Treino Funcional foca-se em força, resistência e mobilidade, com a Maria. Podes escolher só uma ou combinar as duas.",
+  },
+  {
+    question: "Como faço para reservar uma aula?",
+    answer:
+      "Na página \"Reservar aula\" escolhes a turma (dia e hora), vês as vagas disponíveis em tempo real e preenches o formulário. Cada turma tem um limite de 15 alunos — quando esgota, fica marcada como completa.",
+  },
+  {
+    question: "Como posso pagar a mensalidade?",
+    answer:
+      `Aceitamos pagamento via MB WAY para o número ${siteConfig.contact.mbway.number}. Também podes pagar diretamente na receção.`,
   },
   {
     question: "Posso experimentar antes de me inscrever?",
     answer:
-      "Sim — a aula experimental é gratuita e sem compromisso. Basta marcares através do formulário de contacto ou por telefone.",
+      "Sim — a aula experimental é gratuita e sem compromisso. Basta reservares através da página de reservas ou por telefone.",
   },
 ];

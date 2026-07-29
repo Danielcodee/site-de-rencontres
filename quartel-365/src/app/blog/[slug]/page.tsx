@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
 
           <Link
             href="/blog"
-            className="mt-12 inline-flex items-center gap-2 font-heading text-sm font-semibold uppercase tracking-wider text-flame hover:underline"
+            className="mt-12 inline-flex items-center gap-2 font-sans text-sm font-semibold uppercase tracking-wider text-gold hover:underline"
           >
             <ArrowLeft size={16} aria-hidden />
             Voltar ao blog

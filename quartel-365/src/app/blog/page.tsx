@@ -8,7 +8,7 @@ import { blogPosts } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Artigos sobre Muay Thai, Treino Funcional e nutrição, escritos pelo instrutor do Quartel 365.",
+    "Artigos sobre Muay Thai, Treino Funcional e nutrição, escritos pelos treinadores do Quartel 365.",
   alternates: { canonical: "/blog" },
 };
 
@@ -21,7 +21,7 @@ export default function BlogPage() {
     <>
       <PageHeader
         eyebrow="Blog"
-        title="Notas do instrutor."
+        title="Notas dos treinadores."
         description="Técnica, nutrição e histórias de quem treina no Quartel 365 — escrito por quem ensina todos os dias."
       />
 
@@ -41,10 +41,10 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <p className="text-xs uppercase tracking-widest text-flame">
+                  <p className="text-xs uppercase tracking-widest text-gold">
                     {formatDate(post.date)} · {post.author}
                   </p>
-                  <h2 className="mt-3 font-heading text-xl uppercase leading-snug tracking-wide text-bone group-hover:text-flame">
+                  <h2 className="mt-3 font-heading text-xl leading-snug text-bone group-hover:text-gold">
                     {post.title}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-mist">{post.excerpt}</p>

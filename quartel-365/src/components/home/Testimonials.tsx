@@ -30,19 +30,19 @@ export function Testimonials() {
             <Reveal key={testimonial.name} delay={index * 0.08} className="h-full">
               <TiltCard strength={5}>
                 <figure className="h-full rounded-sm border border-line bg-ink p-8">
-                  <Quote className="text-flame" size={28} aria-hidden />
-                  <blockquote className="mt-4 text-base leading-relaxed text-bone sm:text-lg">
+                  <Quote className="text-gold" size={28} aria-hidden />
+                  <blockquote className="mt-4 font-heading text-lg leading-relaxed text-bone sm:text-xl">
                     &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-3">
                     <span
                       aria-hidden
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-charcoal font-heading text-sm font-semibold text-flame"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-charcoal font-sans text-sm font-semibold text-gold"
                     >
                       {initials(testimonial.name)}
                     </span>
                     <div>
-                      <p className="font-heading text-sm font-semibold uppercase tracking-wide text-bone">
+                      <p className="font-sans text-sm font-semibold uppercase tracking-wide text-bone">
                         {testimonial.name}
                       </p>
                       <p className="text-xs text-mist">{testimonial.since}</p>

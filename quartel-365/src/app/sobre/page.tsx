@@ -22,7 +22,7 @@ const values = [
   {
     icon: Handshake,
     title: "Respeito",
-    description: "Pelo instrutor, pelo colega de treino e pela arte marcial. Sem exceções.",
+    description: "Pelos treinadores, pelo colega de treino e pela arte marcial. Sem exceções.",
   },
   {
     icon: Compass,
@@ -41,7 +41,7 @@ const timeline = [
     year: "2016",
     title: "Fundação do Quartel 365",
     description:
-      "Nuno Ferreira abre as portas de um pequeno espaço em Felgueiras, com uma ideia simples: treino de Muay Thai a sério, sem atalhos.",
+      "Daniel Coelho e Maria Miranda abrem as portas de um pequeno espaço em Felgueiras, com uma ideia simples: treino de Muay Thai a sério, sem atalhos.",
   },
   {
     year: "2018",
@@ -65,7 +65,7 @@ const timeline = [
     year: "Hoje",
     title: "Mais de 450 alunos ativos",
     description:
-      "Uma comunidade sólida, um instrutor certificado e uma grelha de mais de 35 aulas por semana.",
+      "Uma comunidade sólida, dois treinadores certificados e uma grelha de mais de 35 aulas por semana.",
   },
 ];
 
@@ -95,8 +95,8 @@ export default function SobrePage() {
               </p>
               <p>
                 Hoje, quase uma década depois, o Quartel 365 é uma referência local em Muay Thai e
-                Treino Funcional: instalações dedicadas, um instrutor certificado e uma comunidade
-                que vai da iniciação absoluta à evolução técnica contínua.
+                Treino Funcional: instalações dedicadas, dois treinadores certificados e uma
+                comunidade que vai da iniciação absoluta à evolução técnica contínua.
               </p>
             </div>
           </Reveal>
@@ -145,8 +145,8 @@ export default function SobrePage() {
           <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value, index) => (
               <Reveal as="li" key={value.title} delay={index * 0.06} className="rounded-sm border border-line bg-charcoal p-7 text-center">
-                <value.icon className="mx-auto text-flame" size={28} aria-hidden />
-                <h3 className="mt-4 font-heading text-base font-semibold uppercase tracking-wide text-bone">
+                <value.icon className="mx-auto text-oxblood" size={28} aria-hidden />
+                <h3 className="mt-4 font-sans text-sm font-semibold uppercase tracking-wide text-bone">
                   {value.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-mist">{value.description}</p>
@@ -162,11 +162,11 @@ export default function SobrePage() {
           <ol className="mt-14 space-y-10 border-l border-line pl-8">
             {timeline.map((item, index) => (
               <Reveal as="li" key={item.year} delay={index * 0.06} className="relative">
-                <span className="absolute -left-[calc(2rem+5px)] top-1 h-2.5 w-2.5 rounded-full bg-flame" aria-hidden />
-                <p className="font-heading text-sm font-semibold uppercase tracking-widest text-flame">
+                <span className="absolute -left-[calc(2rem+5px)] top-1 h-2.5 w-2.5 rounded-full bg-oxblood" aria-hidden />
+                <p className="font-sans text-xs font-semibold uppercase tracking-widest text-gold">
                   {item.year}
                 </p>
-                <h3 className="mt-1 font-heading text-xl uppercase tracking-wide text-bone">
+                <h3 className="mt-1 font-heading text-xl text-bone">
                   {item.title}
                 </h3>
                 <p className="mt-2 max-w-2xl text-sm leading-relaxed text-mist">{item.description}</p>

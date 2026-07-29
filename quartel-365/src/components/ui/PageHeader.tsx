@@ -34,10 +34,10 @@ export function PageHeader({
         </div>
       ) : null}
       <div className="container-quartel relative z-10">
-        <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.3em] text-flame">
+        <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-gold">
           {eyebrow}
         </p>
-        <h1 className="max-w-3xl font-heading text-4xl uppercase leading-tight tracking-tight text-bone sm:text-5xl lg:text-6xl">
+        <h1 className="max-w-3xl font-heading text-4xl leading-[1.05] tracking-tight text-bone sm:text-5xl lg:text-6xl">
           {title}
         </h1>
         {description ? (

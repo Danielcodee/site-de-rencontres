@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 /*
- * Paleta "Quartel 365": preto operacional, cinza-carvão e um vermelho-laranja
- * de combate como cor de destaque única. Mantém-se sóbria de propósito —
- * evitar cores extra para preservar a sensação premium/disciplinada.
+ * Paleta "Quartel 365": preto/carvão de fundo, vermelho-oxblood como cor de
+ * destaque única e dourado envelhecido como acento secundário. Sóbria de
+ * propósito — evitar cores extra para preservar a sensação premium.
  */
 :root {
-  --color-ink: #08090a;
-  --color-charcoal: #131416;
-  --color-charcoal-2: #1c1e21;
-  --color-line: #2a2c30;
-  --color-bone: #f3f1ea;
-  --color-mist: #9a9c9f;
-  --color-flame: #e63a1f;
-  --color-flame-dark: #b32c17;
-  --color-ember: #ff7a33;
+  --color-ink: #0b0a08;
+  --color-charcoal: #16130f;
+  --color-charcoal-2: #201c16;
+  --color-line: #322c22;
+  --color-bone: #f2ece0;
+  --color-mist: #a39a8c;
+  --color-oxblood: #7a1f2b;
+  --color-oxblood-dark: #591620;
+  --color-gold: #b8934f;
+  --color-gold-dark: #8c6f3c;
 }
 
 @theme inline {
@@ -24,12 +25,13 @@
   --color-line: var(--color-line);
   --color-bone: var(--color-bone);
   --color-mist: var(--color-mist);
-  --color-flame: var(--color-flame);
-  --color-flame-dark: var(--color-flame-dark);
-  --color-ember: var(--color-ember);
+  --color-oxblood: var(--color-oxblood);
+  --color-oxblood-dark: var(--color-oxblood-dark);
+  --color-gold: var(--color-gold);
+  --color-gold-dark: var(--color-gold-dark);
 
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Anton", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Fraunces", ui-serif, Georgia, serif;
 
   --animate-fade-up: fade-up 0.7s ease-out both;
 
@@ -57,7 +59,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-flame);
+  background: var(--color-oxblood);
   color: var(--color-bone);
 }
 
@@ -88,6 +90,20 @@ body {
 
 /* Acessibilidade: foco visível e consistente em toda a navegação por teclado */
 :focus-visible {
-  outline: 2px solid var(--color-flame);
+  outline: 2px solid var(--color-oxblood);
   outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

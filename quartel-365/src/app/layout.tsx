@@ -5,11 +5,11 @@ import { siteConfig } from "@/lib/data";
 import "./globals.css";
 
 // Carregadas via <link> (em vez de next/font/google) — o self-hosting do
-// next/font produziu, neste ambiente, um subset da fonte com o glifo "Ú"
-// em falta (afetava palavras como "único"). O <link> direto para a Google
-// Fonts CDN não tem esse problema.
+// next/font já produziu, neste ambiente, subsets de fontes com glifos
+// acentuados em falta (afetava palavras como "único"). O <link> direto
+// para a Google Fonts CDN não tem esse problema.
 const GOOGLE_FONTS_HREF =
-  "https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700&display=swap";
+  "https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#08090a",
+  themeColor: "#0b0a08",
 };
 
 const jsonLd = {

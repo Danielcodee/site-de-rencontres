@@ -38,7 +38,7 @@ export function Header() {
       <div className="container-quartel flex h-16 items-center justify-between py-3 sm:h-20">
         <Link href="/" className="group flex items-center gap-2" aria-label={`${siteConfig.name} — Início`}>
           <span className="font-heading text-xl uppercase tracking-tight text-bone sm:text-2xl">
-            Quartel <span className="text-flame">365</span>
+            Quartel <span className="text-oxblood">365</span>
           </span>
         </Link>
 
@@ -51,8 +51,8 @@ export function Header() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "font-heading text-sm font-medium uppercase tracking-wider transition-colors hover:text-flame",
-                  active ? "text-flame" : "text-bone",
+                  "font-sans text-sm font-medium uppercase tracking-wider transition-colors hover:text-gold",
+                  active ? "text-gold" : "text-bone",
                 )}
               >
                 {link.label}
@@ -62,8 +62,8 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <ButtonLink href="/contactos" className="text-xs">
-            Marca aula experimental
+          <ButtonLink href="/reservar" className="text-xs">
+            Reservar aula
           </ButtonLink>
         </div>
 
@@ -99,16 +99,16 @@ export function Header() {
                     onClick={() => setOpen(false)}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "rounded-sm px-2 py-3 font-heading text-base font-medium uppercase tracking-wider",
-                      active ? "text-flame" : "text-bone hover:text-flame",
+                      "rounded-sm px-2 py-3 font-sans text-base font-medium uppercase tracking-wider",
+                      active ? "text-gold" : "text-bone hover:text-gold",
                     )}
                   >
                     {link.label}
                   </Link>
                 );
               })}
-              <ButtonLink href="/contactos" onClick={() => setOpen(false)} className="mt-3 justify-center">
-                Marca aula experimental
+              <ButtonLink href="/reservar" onClick={() => setOpen(false)} className="mt-3 justify-center">
+                Reservar aula
               </ButtonLink>
             </nav>
           </motion.div>

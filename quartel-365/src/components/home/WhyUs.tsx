@@ -19,7 +19,7 @@ export function WhyUs() {
         <SectionHeading
           eyebrow="Porquê o Quartel 365"
           title="Não é mais um ginásio de bairro."
-          description="Construímos o Quartel 365 para quem quer treinar Muay Thai e Treino Funcional com seriedade — com a estrutura, o instrutor e a comunidade certos para isso."
+          description="Construímos o Quartel 365 para quem quer treinar Muay Thai e Treino Funcional com seriedade — com a estrutura, os treinadores e a comunidade certos para isso."
         />
 
         <ul className="mt-16 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
@@ -32,13 +32,13 @@ export function WhyUs() {
                 delay={index * 0.05}
                 className="group relative bg-charcoal p-8 transition-colors duration-300 hover:bg-charcoal-2"
               >
-                <span className="absolute left-8 top-8 h-10 w-10 rounded-full bg-flame/0 blur-xl transition-colors duration-300 group-hover:bg-flame/25" />
+                <span className="absolute left-8 top-8 h-10 w-10 rounded-full bg-oxblood/0 blur-xl transition-colors duration-300 group-hover:bg-oxblood/25" />
                 <Icon
-                  className="relative text-flame transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110"
+                  className="relative text-oxblood transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110"
                   size={28}
                   aria-hidden
                 />
-                <h3 className="relative mt-5 font-heading text-lg font-semibold uppercase tracking-wide text-bone">
+                <h3 className="relative mt-5 font-sans text-base font-semibold uppercase tracking-wide text-bone">
                   {item.title}
                 </h3>
                 <p className="relative mt-3 text-sm leading-relaxed text-mist">{item.description}</p>

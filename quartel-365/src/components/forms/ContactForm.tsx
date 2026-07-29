@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 import { Loader2, Send } from "lucide-react";
-import { programs } from "@/lib/data";
+import { modalities } from "@/lib/data";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -51,8 +51,8 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-sm border border-flame/40 bg-charcoal p-8 text-center" role="status">
-        <p className="font-heading text-lg font-semibold uppercase tracking-wide text-bone">
+      <div className="rounded-sm border border-oxblood/40 bg-charcoal p-8 text-center" role="status">
+        <p className="font-heading text-lg text-bone">
           Mensagem enviada!
         </p>
         <p className="mt-2 text-sm text-mist">
@@ -76,7 +76,7 @@ export function ContactForm() {
             required
             minLength={2}
             autoComplete="name"
-            className="w-full rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist/60 focus-visible:border-flame"
+            className="w-full rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist/60 focus-visible:border-oxblood"
             placeholder="O teu nome"
           />
         </div>
@@ -90,7 +90,7 @@ export function ContactForm() {
             type="email"
             required
             autoComplete="email"
-            className="w-full rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist/60 focus-visible:border-flame"
+            className="w-full rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist/60 focus-visible:border-oxblood"
             placeholder="email@exemplo.pt"
           />
         </div>
@@ -106,7 +106,7 @@ export function ContactForm() {
             name="phone"
             type="tel"
             autoComplete="tel"
-            className="w-full rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist/60 focus-visible:border-flame"
+            className="w-full rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist/60 focus-visible:border-oxblood"
             placeholder="+351 9xx xxx xxx"
           />
         </div>
@@ -118,10 +118,10 @@ export function ContactForm() {
             id={`${formId}-program`}
             name="program"
             defaultValue=""
-            className="w-full rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone focus-visible:border-flame"
+            className="w-full rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone focus-visible:border-oxblood"
           >
             <option value="">Aula experimental gratuita</option>
-            {programs.map((program) => (
+            {modalities.map((program) => (
               <option key={program.slug} value={program.name}>
                 {program.name}
               </option>
@@ -140,7 +140,7 @@ export function ContactForm() {
           required
           minLength={10}
           rows={5}
-          className="w-full resize-none rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist/60 focus-visible:border-flame"
+          className="w-full resize-none rounded-sm border border-line bg-charcoal px-4 py-3 text-sm text-bone placeholder:text-mist/60 focus-visible:border-oxblood"
           placeholder="Conta-nos um pouco sobre ti e o que procuras."
         />
       </div>
@@ -151,14 +151,14 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-flame px-6 py-3.5 font-heading text-sm font-semibold uppercase tracking-widest text-bone transition-colors hover:bg-flame-dark disabled:opacity-60 sm:w-auto"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-oxblood px-6 py-3.5 font-sans text-sm font-semibold uppercase tracking-widest text-bone transition-colors hover:bg-oxblood-dark disabled:opacity-60 sm:w-auto"
       >
         {status === "loading" ? <Loader2 className="animate-spin" size={16} /> : <Send size={16} />}
         Enviar mensagem
       </button>
 
       {status === "error" && errorMessage ? (
-        <p className="text-sm text-flame" role="alert">
+        <p className="text-sm text-oxblood" role="alert">
           {errorMessage}
         </p>
       ) : null}
