@@ -83,13 +83,14 @@ automaticamente na primeira execução) em vez de Supabase:
 - **Zero configuração externa**: não é preciso criar conta, projeto nem
   copiar chaves de API para o site funcionar — importante para uma academia
   pequena que não quer gerir credenciais de terceiros.
-- **Limite de 15 alunos garantido pela própria base de dados**: a tabela
-  `bookings` tem uma *trigger* SQL (`enforce_class_capacity` em
-  `src/lib/db.ts`) que recusa a inserção assim que uma turma atinge a
-  capacidade. Isto é mais robusto do que validar apenas em código
-  JavaScript — mesmo com pedidos em simultâneo, é impossível ultrapassar o
-  limite (testado com 16 pedidos em paralelo à mesma turma: exatamente 15
-  são aceites, o 16.º recebe sempre erro).
+- **Limite de alunos garantido pela própria base de dados** (15 no Muay
+  Thai, 5 no Treino Funcional): a tabela `bookings` tem uma *trigger* SQL
+  (`enforce_class_capacity` em `src/lib/db.ts`) que recusa a inserção assim
+  que uma turma atinge a capacidade definida em `CLASS_SEED`. Isto é mais
+  robusto do que validar apenas em código JavaScript — mesmo com pedidos em
+  simultâneo, é impossível ultrapassar o limite (testado com 16 pedidos em
+  paralelo à mesma turma de 15 lugares: exatamente 15 são aceites, o 16.º
+  recebe sempre erro).
 - **Suficiente para o volume real de uma academia**: não há razão para a
   complexidade de um servidor de base de dados externo para gerir algumas
   dezenas de turmas e algumas centenas de reservas por semana.
@@ -146,7 +147,7 @@ na primeira vez que a aplicação corre.
 
 ## Tipografia
 
-Fraunces (títulos, editorial/serifada) + Inter (texto corrido e elementos de
+Archivo Black (títulos, grotesk bold) + Inter (texto corrido e elementos de
 interface), carregadas via `<link>` direto à Google Fonts no `layout.tsx`
 (em vez de `next/font/google`, cujo self-hosting já produziu, neste
 ambiente, subsets de fontes com glifos acentuados em falta).

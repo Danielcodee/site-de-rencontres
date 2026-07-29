@@ -32,7 +32,7 @@ export const siteConfig = {
     // Reutiliza-se o mesmo número para WhatsApp — confirmar se é o desejado.
     whatsappDisplay: "933 796 669",
     whatsappHref: "351933796669",
-    email: "geral@quartel365.pt", // PLACEHOLDER
+    email: "teamcoelhomuaythai@gmail.com",
     mbway: {
       // Número usado para receber pagamentos via MB WAY.
       number: "933 796 669",
@@ -49,12 +49,19 @@ export const siteConfig = {
     tiktok: "https://www.tiktok.com/@quartel365", // PLACEHOLDER
   },
 
+  // PLACEHOLDER — horas exatas das aulas (fora do intervalo 12h00–13h30 de
+  // Muay Thai, que já foi confirmado) ainda por confirmar com o Daniel.
   hours: [
-    { day: "Segunda a Sexta", hours: "07h00 – 22h00" },
-    { day: "Sábado", hours: "09h00 – 14h00" },
-    { day: "Domingo", hours: "Encerrado" },
+    { day: "Terça e Quinta", hours: "06h00 – 21h30" },
+    { day: "Sábado", hours: "14h00 – 19h00" },
+    { day: "Segunda, Quarta, Sexta e Domingo", hours: "Open mat (sem professor)" },
   ],
 };
+
+// Dias sem aula marcada com professor — acesso livre ao espaço para treino
+// autónomo. Não fazem parte do sistema de reservas (não há turma/capacidade
+// associada), mas são mostrados como informação na grelha de horários.
+export const openMatDays = ["Segunda", "Quarta", "Sexta", "Domingo"];
 
 export const navLinks = [
   { href: "/", label: "Início" },
@@ -68,8 +75,8 @@ export const navLinks = [
 export const stats = [
   { value: "2026", suffix: "", label: "Ano de abertura" },
   { value: "2", suffix: "", label: "Fundadores" },
-  { value: "2", suffix: "", label: "Modalidades" },
-  { value: "15", suffix: "", label: "Vagas por turma" },
+  { value: "15", suffix: "", label: "Vagas Muay Thai" },
+  { value: "5", suffix: "", label: "Vagas Treino Funcional" },
 ];
 
 export type Differentiator = {
@@ -89,13 +96,13 @@ export const differentiators: Differentiator[] = [
     icon: "building",
     title: "Instalações premium",
     description:
-      "Ringue, zona de sacos pesados, sala de força e balneários — o espaço está a ser preparado agora, para abrir em outubro de 2026 já pronto para treinar a sério.",
+      "Tatami, zona de sparring e zona de treino funcional — o espaço está a ser preparado agora, para abrir em outubro de 2026 já pronto para treinar a sério.",
   },
   {
     icon: "users",
     title: "Comunidade Quartel",
     description:
-      "Não queremos ser só mais um ginásio: queremos um grupo que se apoia e exige mutuamente, desde o primeiro dia. Sê um dos primeiros a fazer parte.",
+      "Queremos um grupo que se apoia e exige mutuamente, desde o primeiro dia. Sê um dos primeiros a fazer parte.",
   },
   {
     icon: "flame",
@@ -105,15 +112,15 @@ export const differentiators: Differentiator[] = [
   },
   {
     icon: "trophy",
-    title: "Foco em resultados desde o primeiro dia",
+    title: "Acesso 24/7 com Face ID",
     description:
-      "Sem promessas vazias: a estrutura, o método e o acompanhamento estão pensados para te fazerem evoluir desde a primeira aula, em outubro de 2026.",
+      "Com o plano Completo, entras na academia a qualquer hora, todos os dias, com reconhecimento facial — sem depender do horário das aulas.",
   },
   {
     icon: "calendar",
     title: "365 dias de disciplina",
     description:
-      "O nome não é por acaso: acreditamos em constância, não em picos de motivação. Horários alargados para caber na tua rotina real, a partir da abertura.",
+      "O nome não é por acaso: acreditamos em constância, não em picos de motivação. Open mat livre em Segunda, Quarta, Sexta e Domingo para quem quer treinar por conta própria.",
   },
 ];
 
@@ -136,7 +143,7 @@ export const modalities: Modality[] = [
     description:
       "Técnica tailandesa autêntica — da primeira guarda às combinações mais avançadas, sempre com acompanhamento técnico próximo do treinador.",
     bullets: [
-      "Turmas para quem começa do zero e para quem já tem base técnica",
+      "Turmas até 15 alunos, às terças, quintas e sábados",
       "Guarda, deslocamentos, socos, cotoveladas, joelhadas e pontapés",
       "Sparring controlado e progressivo para quem já está preparado",
     ],
@@ -151,7 +158,7 @@ export const modalities: Modality[] = [
     description:
       "Treino de alta intensidade que combina força, resistência e mobilidade — o complemento perfeito ao Muay Thai ou uma modalidade própria para quem procura forma física a sério.",
     bullets: [
-      "Sessões em grupo, ritmo elevado",
+      "Turmas em grupo reduzido, até 5 alunos, às terças e quintas de manhã",
       "Trabalho de força, resistência cardiovascular e mobilidade",
       "Ideal para complementar o Muay Thai ou treinar de forma independente",
     ],
@@ -163,7 +170,7 @@ export const modalities: Modality[] = [
 
 export type Plan = {
   name: string;
-  price: string; // PLACEHOLDER — confirmar preçário final
+  price: string;
   period: string;
   description: string;
   features: string[];
@@ -174,40 +181,52 @@ export type Plan = {
 export const plans: Plan[] = [
   {
     name: "Aula Experimental",
-    price: "Grátis",
+    price: "5€",
     period: "1 aula",
     description: "Vem sentir o ambiente e conhecer o treinador, assim que abrirmos portas.",
     features: [
-      "1 aula de Muay Thai à escolha",
+      "1 aula à escolha (Muay Thai ou Treino Funcional)",
       "Equipamento base emprestado",
-      "Avaliação inicial com o treinador",
+      "Sem compromisso",
     ],
     cta: "Marcar aula experimental",
   },
   {
-    name: "Base",
-    price: "39€", // PLACEHOLDER
+    name: "Muay Thai",
+    price: "40€",
     period: "/mês",
-    description: "Para quem quer construir hábito com 2 treinos por semana.",
+    description: "Aulas de Muay Thai às terças, quintas e sábados.",
     features: [
-      "2x aulas por semana",
-      "Acesso a Muay Thai ou Treino Funcional",
-      "Acompanhamento de evolução técnica",
+      "Terças, quintas e sábados",
+      "Turmas até 15 alunos",
+      "Open mat livre à segunda, quarta, sexta e domingo",
     ],
-    cta: "Escolher plano Base",
+    cta: "Escolher plano Muay Thai",
   },
   {
-    name: "Ilimitado",
-    price: "59€", // PLACEHOLDER
+    name: "Treino Funcional",
+    price: "40€",
     period: "/mês",
-    description: "Acesso total à grelha de horários, sem limites de aulas.",
+    description: "Treino funcional em grupo reduzido, às terças e quintas de manhã.",
     features: [
-      "Aulas ilimitadas todos os dias",
-      "Acesso a Muay Thai e Treino Funcional",
-      "Prioridade em workshops e eventos",
+      "Terças e quintas de manhã",
+      "Turmas até 5 alunos",
+      "Open mat livre à segunda, quarta, sexta e domingo",
+    ],
+    cta: "Escolher plano Treino Funcional",
+  },
+  {
+    name: "Completo",
+    price: "65€",
+    period: "/mês",
+    description: "Muay Thai, Treino Funcional e acesso 24/7 à academia.",
+    features: [
+      "Muay Thai e Treino Funcional",
+      "Acesso 24/7 com Face ID",
+      "Open mat livre sempre disponível",
     ],
     highlighted: true,
-    cta: "Escolher plano Ilimitado",
+    cta: "Escolher plano Completo",
   },
 ];
 
@@ -237,7 +256,6 @@ export const trainers: Trainer[] = [
       "Instrutor certificado — Federação Portuguesa de Kickboxing e Muay Thai",
       "Certificação em treino funcional e condição física",
       "Formação técnica na Tailândia, em campos de Muay Thai tradicionais",
-      "+15 anos de prática e ensino de Muay Thai",
     ],
     bio: "Está a fundar o Quartel 365, com abertura prevista para outubro de 2026, com a ideia de trazer a Felgueiras um Muay Thai técnico e autêntico, sem atalhos. Vai ser o único treinador da academia — responsável por todas as aulas, tanto de Muay Thai como de Treino Funcional, do primeiro dia de um iniciante ao sparring mais exigente.",
   },
@@ -259,7 +277,7 @@ export const cofounders: Cofounder[] = [
     slug: "maria-miranda",
     name: "Maria Miranda",
     role: "Cofundadora",
-    bio: "Está a fundar o Quartel 365 ao lado do Daniel, com abertura prevista para outubro de 2026. Não vai dar aulas — é responsável pela gestão da academia, do acompanhamento aos alunos fora do tatame à organização do dia a dia.",
+    bio: "Está a fundar o Quartel 365 ao lado do Daniel, com abertura prevista para outubro de 2026. Não vai dar aulas — é responsável pela gestão da academia, do acompanhamento aos alunos fora do tatami à organização do dia a dia.",
   },
 ];
 
@@ -270,17 +288,18 @@ export const cofounders: Cofounder[] = [
 export type GalleryImage = {
   src: string;
   alt: string;
-  category: "Ringue" | "Ginásio" | "Balneários" | "Comunidade";
+  category: "Tatami" | "Sparring" | "Treino Funcional" | "Comunidade";
 };
 
 // PLACEHOLDER — a mesma foto está repetida em todas as entradas até
-// existirem fotos reais e distintas de cada zona da academia.
+// existirem fotos reais e distintas de cada zona da academia. Não há
+// balneários no espaço (entra e sai já equipado).
 export const galleryImages: GalleryImage[] = [
-  { src: "/images/hero-fighter.jpg", alt: "Ringue do Quartel 365", category: "Ringue" },
-  { src: "/images/hero-fighter.jpg", alt: "Zona de treino junto ao ringue principal", category: "Ringue" },
-  { src: "/images/hero-fighter.jpg", alt: "Zona de sacos pesados para treino técnico", category: "Ginásio" },
-  { src: "/images/hero-fighter.jpg", alt: "Sala de força e condição física", category: "Ginásio" },
-  { src: "/images/hero-fighter.jpg", alt: "Balneários do Quartel 365", category: "Balneários" },
+  { src: "/images/hero-fighter.jpg", alt: "Tatami do Quartel 365", category: "Tatami" },
+  { src: "/images/hero-fighter.jpg", alt: "Zona de treino no tatami", category: "Tatami" },
+  { src: "/images/hero-fighter.jpg", alt: "Zona de sparring", category: "Sparring" },
+  { src: "/images/hero-fighter.jpg", alt: "Zona de sacos pesados para treino técnico", category: "Sparring" },
+  { src: "/images/hero-fighter.jpg", alt: "Zona de treino funcional", category: "Treino Funcional" },
   { src: "/images/hero-fighter.jpg", alt: "Receção e área de convívio", category: "Comunidade" },
   { src: "/images/hero-fighter.jpg", alt: "Zona de aulas em grupo", category: "Comunidade" },
 ];
@@ -302,7 +321,7 @@ export const faqs = [
   {
     question: "Que equipamento preciso para a primeira aula?",
     answer:
-      "Roupa confortável e água. Para a aula experimental, emprestamos ligaduras e luvas. Se decidires continuar, ajudamos-te a escolher o equipamento certo.",
+      "Roupa confortável e água — não temos balneários, por isso vem já equipado de casa. Para a aula experimental, emprestamos ligaduras e luvas. Se decidires continuar, ajudamos-te a escolher o equipamento certo.",
   },
   {
     question: "Qual a diferença entre Muay Thai e Treino Funcional?",
@@ -312,7 +331,7 @@ export const faqs = [
   {
     question: "Como faço para reservar uma aula?",
     answer:
-      "Na página \"Reservar aula\" escolhes a turma (dia e hora), vês as vagas disponíveis em tempo real e preenches o formulário. Cada turma tem um limite de 15 alunos — garante o teu lugar antes da abertura, em outubro de 2026.",
+      "Na página \"Reservar aula\" escolhes a turma (dia e hora), vês as vagas disponíveis em tempo real e preenches o formulário. As turmas de Muay Thai têm um limite de 15 alunos e as de Treino Funcional um limite de 5 — garante o teu lugar antes da abertura, em outubro de 2026.",
   },
   {
     question: "Como posso pagar a mensalidade?",
@@ -320,8 +339,13 @@ export const faqs = [
       `Aceitamos pagamento via MB WAY para o número ${siteConfig.contact.mbway.number}. Também podes pagar diretamente na receção, depois da abertura.`,
   },
   {
+    question: "O que é o open mat?",
+    answer:
+      "É acesso livre ao espaço para treinares por conta própria, sem professor — disponível à segunda, quarta, sexta e domingo. Com o plano Completo, tens ainda acesso 24/7 à academia com Face ID.",
+  },
+  {
     question: "Posso experimentar antes de me inscrever?",
     answer:
-      "Sim — a aula experimental é gratuita e sem compromisso. Basta reservares através da página de reservas ou por telefone.",
+      "Sim — a aula experimental custa 5€ e não tem compromisso. Basta reservares através da página de reservas ou por telefone.",
   },
 ];

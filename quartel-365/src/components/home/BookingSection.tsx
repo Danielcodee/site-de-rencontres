@@ -11,7 +11,7 @@ export function BookingSection() {
           <SectionHeading
             eyebrow="Reservar aula"
             title="Escolhe a tua turma. As vagas são limitadas."
-            description={`Cada turma tem no máximo 15 alunos. Escolhe o dia e a hora e garante já o teu lugar antes da abertura, em ${siteConfig.openingDisplay}.`}
+            description={`Até 15 alunos por turma no Muay Thai, até 5 no Treino Funcional. Escolhe o dia e a hora e garante já o teu lugar antes da abertura, em ${siteConfig.openingDisplay}.`}
           />
         </Reveal>
         <div className="mt-14">

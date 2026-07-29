@@ -6,11 +6,11 @@ import { galleryImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Instalações",
   description:
-    "Conhece as instalações do Quartel 365 em Felgueiras, a serem preparadas para a abertura: ringue, zona de sacos, sala de força e balneários.",
+    "Conhece as instalações do Quartel 365 em Felgueiras, a serem preparadas para a abertura: tatami, zona de sparring e zona de treino funcional.",
   alternates: { canonical: "/instalacoes" },
 };
 
-const categories = ["Todas", "Ringue", "Ginásio", "Balneários", "Comunidade"] as const;
+const categories = ["Todas", "Tatami", "Sparring", "Treino Funcional", "Comunidade"] as const;
 
 export default function InstalacoesPage() {
   return (
@@ -18,7 +18,7 @@ export default function InstalacoesPage() {
       <PageHeader
         eyebrow="Instalações"
         title="Um espaço à altura do treino."
-        description="Da receção ao ringue — cada zona do Quartel 365 está a ser preparada, pensada para o teu treino e recuperação desde a abertura."
+        description="Da receção ao tatami — cada zona do Quartel 365 está a ser preparada, pensada para o teu treino desde a abertura."
       />
 
       <section className="bg-ink py-24 sm:py-32">

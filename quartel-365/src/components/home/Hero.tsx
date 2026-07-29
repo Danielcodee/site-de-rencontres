@@ -24,7 +24,7 @@ export function Hero() {
           Abre em {siteConfig.openingDisplay} · Felgueiras
         </p>
         <h1 className="max-w-4xl font-heading text-5xl leading-[1.05] tracking-tight text-bone animate-fade-up sm:text-6xl lg:text-7xl">
-          Disciplina <em className="italic">todos os dias</em> do ano.
+          Disciplina <span className="text-gold">todos os dias</span> do ano.
         </h1>
         <p
           className="mt-6 max-w-xl text-lg leading-relaxed text-mist animate-fade-up sm:text-xl"

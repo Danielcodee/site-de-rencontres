@@ -8,7 +8,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { TiltImage } from "@/components/ui/TiltImage";
 import { cn } from "@/lib/utils";
-import { plans, modalities } from "@/lib/data";
+import { openMatDays, plans, modalities } from "@/lib/data";
 import { getClassesWithAvailability } from "@/lib/db";
 
 // A grelha de horários reflete reservas em tempo real, por isso a página
@@ -34,8 +34,8 @@ export default function ModalidadesPage() {
     <>
       <PageHeader
         eyebrow="Modalidades"
-        title="Duas modalidades. Dois treinadores."
-        description="Muay Thai e Treino Funcional — escolhe uma ou combina as duas, cada uma com o seu treinador dedicado."
+        title="Duas modalidades. Um treinador."
+        description="Muay Thai e Treino Funcional — escolhe uma ou combina as duas, sempre com o Daniel Coelho a acompanhar-te."
         illustration={{
           src: "/images/hero-fighter.jpg",
           alt: "Lutador de Muay Thai em posição de combate",
@@ -156,32 +156,40 @@ export default function ModalidadesPage() {
             </ButtonLink>
           </div>
 
-          <div className="mt-12 -mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-            <div className="grid min-w-[820px] grid-cols-6 gap-3 sm:min-w-0">
-              {days.map(({ day, classes: dayClasses }) => (
-                <div key={day} className="rounded-sm border border-line bg-charcoal p-4">
-                  <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-gold">
-                    {day}
-                  </h3>
-                  <ul className="mt-3 space-y-3">
-                    {dayClasses.map((klass) => (
-                      <li key={klass.id}>
-                        <Link
-                          href={`/reservar#${klass.id}`}
-                          className="block text-xs leading-snug transition-colors hover:text-oxblood"
-                        >
-                          <p className="font-heading text-base text-bone">{klass.time}</p>
-                          <p className="text-mist">{klass.name}</p>
-                          <p className={cn("mt-0.5", klass.full ? "text-oxblood" : "text-mist")}>
-                            {klass.full ? "Completa" : `${klass.booked}/${klass.capacity} vagas`}
-                          </p>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+          <div className="mt-12 grid gap-3 sm:grid-cols-3">
+            {days.map(({ day, classes: dayClasses }) => (
+              <div key={day} className="rounded-sm border border-line bg-charcoal p-4">
+                <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-gold">
+                  {day}
+                </h3>
+                <ul className="mt-3 space-y-3">
+                  {dayClasses.map((klass) => (
+                    <li key={klass.id}>
+                      <Link
+                        href={`/reservar#${klass.id}`}
+                        className="block text-xs leading-snug transition-colors hover:text-oxblood"
+                      >
+                        <p className="font-heading text-base text-bone">{klass.time}</p>
+                        <p className="text-mist">{klass.name}</p>
+                        <p className={cn("mt-0.5", klass.full ? "text-oxblood" : "text-mist")}>
+                          {klass.full ? "Completa" : `${klass.booked}/${klass.capacity} vagas`}
+                        </p>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-sm border border-line bg-charcoal p-4">
+            <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-gold">
+              Open mat (sem professor)
+            </h3>
+            <p className="mt-2 text-sm text-mist">
+              {openMatDays.join(", ")} — acesso livre ao espaço para treinares por conta própria.
+              Com o plano Completo, tens ainda acesso 24/7 com Face ID.
+            </p>
           </div>
         </div>
       </section>

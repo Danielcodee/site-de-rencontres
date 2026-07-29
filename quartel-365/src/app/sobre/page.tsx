@@ -49,13 +49,13 @@ const timeline = [
     year: "Verão de 2026",
     title: "Preparação do espaço",
     description:
-      "Escolha e montagem do ringue, da zona de sacos, da sala de treino funcional e dos balneários — tudo pensado antes de a porta abrir.",
+      "Escolha e montagem do tatami, da zona de sparring e da zona de treino funcional — tudo pensado antes de a porta abrir.",
   },
   {
     year: "Antes da abertura",
     title: "Pré-reservas abertas",
     description:
-      "A grelha semanal fica definida e as turmas abrem para reserva, com vagas limitadas a 15 alunos cada, antes mesmo do primeiro dia.",
+      "A grelha semanal fica definida e as turmas abrem para reserva, com vagas limitadas por turma, antes mesmo do primeiro dia.",
   },
   {
     year: "Outubro de 2026",
@@ -77,18 +77,17 @@ export default function SobrePage() {
       <section className="border-b border-line bg-ink py-24 sm:py-32">
         <div className="container-quartel grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <SectionHeading eyebrow="A nossa história" title="Do primeiro tatame a Quartel 365." />
+            <SectionHeading eyebrow="A nossa história" title="Do primeiro tatami a Quartel 365." />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-mist">
               <p>
-                O Quartel 365 está a nascer em Felgueiras de uma frustração comum a muitos
-                praticantes: a dificuldade em encontrar, na região, um espaço que leve o Muay
-                Thai tão a sério quanto quem o pratica.
+                O Quartel 365 nasce da vontade do Daniel Coelho de criar, em Felgueiras, um
+                espaço totalmente dedicado ao Muay Thai técnico e autêntico — sem atalhos, sem
+                meios-termos.
               </p>
               <p>
-                Não vamos começar com atalhos — mesmo antes de abrir portas, a prioridade é uma
-                metodologia técnica rigorosa desde a primeira aula. Essa exigência, mais do que
-                qualquer equipamento, é o que queremos que defina o Quartel 365 desde o primeiro
-                dia.
+                Mesmo antes de abrir portas, a prioridade é uma metodologia técnica rigorosa
+                desde a primeira aula. Essa exigência, mais do que qualquer equipamento, é o que
+                queremos que defina o Quartel 365 desde o primeiro dia.
               </p>
               <p>
                 Abrimos em {siteConfig.openingDisplay}: instalações dedicadas, um treinador

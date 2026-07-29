@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Reservar Aula",
   description:
-    "Garante já o teu lugar numa turma de Muay Thai ou Treino Funcional no Quartel 365, antes da abertura em outubro de 2026. Vagas limitadas a 15 alunos por turma.",
+    "Garante já o teu lugar numa turma de Muay Thai ou Treino Funcional no Quartel 365, antes da abertura em outubro de 2026. Vagas limitadas por turma.",
   alternates: { canonical: "/reservar" },
 };
 
@@ -16,7 +16,7 @@ export default function ReservarPage() {
       <PageHeader
         eyebrow="Reservar aula"
         title="Escolhe a tua turma. As vagas são limitadas."
-        description={`Cada turma tem no máximo 15 alunos. Escolhe o dia e a hora, confirma os teus dados e garante já o teu lugar antes da abertura, em ${siteConfig.openingDisplay}.`}
+        description={`Até 15 alunos por turma no Muay Thai, até 5 no Treino Funcional. Escolhe o dia e a hora, confirma os teus dados e garante já o teu lugar antes da abertura, em ${siteConfig.openingDisplay}.`}
       />
 
       <section className="bg-ink py-24 sm:py-32">

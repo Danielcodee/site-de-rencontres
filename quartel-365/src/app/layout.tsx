@@ -9,7 +9,7 @@ import "./globals.css";
 // acentuados em falta (afetava palavras como "único"). O <link> direto
 // para a Google Fonts CDN não tem esse problema.
 const GOOGLE_FONTS_HREF =
-  "https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap";
+  "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

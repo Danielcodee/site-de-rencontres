@@ -18,7 +18,7 @@ export function WhyUs() {
       <div className="container-quartel">
         <SectionHeading
           eyebrow="Porquê o Quartel 365"
-          title="Não é mais um ginásio de bairro."
+          title="Uma academia pensada ao pormenor."
           description="Estamos a construir o Quartel 365 para quem quer treinar Muay Thai e Treino Funcional com seriedade — com a estrutura, o treinador e a comunidade certos para isso."
         />
 

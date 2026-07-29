@@ -8,16 +8,18 @@ import { cn } from "@/lib/utils";
 const MotionLink = motion.create(Link);
 
 const TILT_SPRING = { stiffness: 260, damping: 32, mass: 0.4 };
-const TILT_STRENGTH = 6;
+const TILT_STRENGTH = 9;
+const HOVER_SPRING = { stiffness: 320, damping: 20, mass: 0.5 };
 
 const base =
   "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-sm px-6 py-3 font-sans text-sm font-semibold uppercase tracking-widest transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2";
 
 const variants = {
   primary:
-    "bg-oxblood text-bone shadow-[0_0_0_rgba(122,31,43,0)] transition-[background-color,box-shadow] hover:bg-oxblood-dark hover:shadow-[0_12px_30px_-10px_rgba(122,31,43,0.65)]",
-  outline: "border border-line text-bone hover:border-gold hover:text-gold",
-  ghost: "text-bone hover:text-gold",
+    "bg-oxblood text-bone shadow-[0_0_0_rgba(122,31,43,0)] transition-[background-color,box-shadow] duration-300 hover:bg-oxblood-dark hover:shadow-[0_16px_36px_-8px_rgba(122,31,43,0.75)]",
+  outline:
+    "border border-line text-bone transition-[background-color,border-color,color] duration-300 hover:border-gold hover:bg-gold/10 hover:text-gold",
+  ghost: "text-bone transition-colors duration-300 hover:text-gold",
 };
 
 type ButtonVariant = keyof typeof variants;
@@ -75,7 +77,9 @@ export function ButtonLink({ variant = "primary", className, children, ...props 
         style={{ rotateX: tilt.rotateX, rotateY: tilt.rotateY, transformStyle: "preserve-3d" }}
         onMouseMove={tilt.onMouseMove}
         onMouseLeave={tilt.onMouseLeave}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.045 }}
+        whileTap={{ scale: 0.94 }}
+        transition={HOVER_SPRING}
         className={cn(base, variants[variant], className)}
         {...props}
       >
@@ -98,7 +102,9 @@ export function Button({ variant = "primary", className, children, ...props }: B
         style={{ rotateX: tilt.rotateX, rotateY: tilt.rotateY, transformStyle: "preserve-3d" }}
         onMouseMove={tilt.onMouseMove}
         onMouseLeave={tilt.onMouseLeave}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.045 }}
+        whileTap={{ scale: 0.94 }}
+        transition={HOVER_SPRING}
         className={cn(base, variants[variant], className)}
         {...props}
       >

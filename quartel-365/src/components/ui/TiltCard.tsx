@@ -14,7 +14,7 @@ const TILT_SPRING = { stiffness: 220, damping: 30, mass: 0.5 };
 export function TiltCard({
   children,
   className,
-  strength = 4,
+  strength = 6,
 }: {
   children: ReactNode;
   className?: string;
@@ -51,7 +51,7 @@ export function TiltCard({
       <motion.div
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        whileHover={{ scale: 1.02 }}
+        whileHover={{ scale: 1.03 }}
         transition={TILT_SPRING}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         className="relative h-full"

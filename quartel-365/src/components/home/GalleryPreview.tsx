@@ -15,7 +15,7 @@ export function GalleryPreview() {
           <SectionHeading
             eyebrow="Instalações"
             title="Um espaço a ser preparado para treinar a sério."
-            description="Ringue, zona de sacos, sala de força e balneários — tudo a ser pensado para o teu treino diário, a partir da abertura."
+            description="Tatami, zona de sparring e zona de treino funcional — tudo a ser pensado para o teu treino diário, a partir da abertura."
           />
           <ButtonLink href="/instalacoes" variant="outline" className="shrink-0">
             Ver galeria completa
