@@ -43,18 +43,42 @@ export type BookableClass = {
 // isso não entram aqui. Capacidade: Muay Thai até 15 alunos, Treino
 // Funcional até 5.
 //
-// PLACEHOLDER — só a aula de Muay Thai das 12h00 (terça/quinta) está
-// confirmada. As restantes horas (Treino Funcional de manhã, Muay Thai
-// a meio/fim da tarde, e a aula de sábado) são provisórias até o Daniel
-// confirmar os horários exatos.
+// Confirmado pelo Daniel: à terça/quinta, Treino Funcional são aulas de
+// 45min back-to-back das 07h00 às 11h00; a partir das 12h00 (aula já
+// confirmada, 12h00-13h30) são sempre aulas de Muay Thai de 1h30
+// back-to-back até às 21h30.
+//
+// PLACEHOLDER — a aula de sábado segue o mesmo padrão de 1h30 do Muay
+// Thai por coerência, mas ainda não foi confirmada pelo Daniel.
 const CLASS_SEED: BookableClass[] = [
+  // Terça
   { id: "terca-0700", name: "Treino Funcional", day: "Terça", dayOrder: 2, time: "07h00", trainer: "Daniel Coelho", capacity: 5 },
+  { id: "terca-0745", name: "Treino Funcional", day: "Terça", dayOrder: 2, time: "07h45", trainer: "Daniel Coelho", capacity: 5 },
+  { id: "terca-0830", name: "Treino Funcional", day: "Terça", dayOrder: 2, time: "08h30", trainer: "Daniel Coelho", capacity: 5 },
+  { id: "terca-0915", name: "Treino Funcional", day: "Terça", dayOrder: 2, time: "09h15", trainer: "Daniel Coelho", capacity: 5 },
+  { id: "terca-1000", name: "Treino Funcional", day: "Terça", dayOrder: 2, time: "10h00", trainer: "Daniel Coelho", capacity: 5 },
   { id: "terca-1200", name: "Muay Thai", day: "Terça", dayOrder: 2, time: "12h00", trainer: "Daniel Coelho", capacity: 15 },
-  { id: "terca-1900", name: "Muay Thai", day: "Terça", dayOrder: 2, time: "19h00", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "terca-1330", name: "Muay Thai", day: "Terça", dayOrder: 2, time: "13h30", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "terca-1500", name: "Muay Thai", day: "Terça", dayOrder: 2, time: "15h00", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "terca-1630", name: "Muay Thai", day: "Terça", dayOrder: 2, time: "16h30", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "terca-1800", name: "Muay Thai", day: "Terça", dayOrder: 2, time: "18h00", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "terca-1930", name: "Muay Thai", day: "Terça", dayOrder: 2, time: "19h30", trainer: "Daniel Coelho", capacity: 15 },
+  // Quinta (mesmo horário da terça)
   { id: "quinta-0700", name: "Treino Funcional", day: "Quinta", dayOrder: 4, time: "07h00", trainer: "Daniel Coelho", capacity: 5 },
+  { id: "quinta-0745", name: "Treino Funcional", day: "Quinta", dayOrder: 4, time: "07h45", trainer: "Daniel Coelho", capacity: 5 },
+  { id: "quinta-0830", name: "Treino Funcional", day: "Quinta", dayOrder: 4, time: "08h30", trainer: "Daniel Coelho", capacity: 5 },
+  { id: "quinta-0915", name: "Treino Funcional", day: "Quinta", dayOrder: 4, time: "09h15", trainer: "Daniel Coelho", capacity: 5 },
+  { id: "quinta-1000", name: "Treino Funcional", day: "Quinta", dayOrder: 4, time: "10h00", trainer: "Daniel Coelho", capacity: 5 },
   { id: "quinta-1200", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "12h00", trainer: "Daniel Coelho", capacity: 15 },
-  { id: "quinta-1900", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "19h00", trainer: "Daniel Coelho", capacity: 15 },
-  { id: "sabado-1500", name: "Muay Thai", day: "Sábado", dayOrder: 6, time: "15h00", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "quinta-1330", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "13h30", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "quinta-1500", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "15h00", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "quinta-1630", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "16h30", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "quinta-1800", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "18h00", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "quinta-1930", name: "Muay Thai", day: "Quinta", dayOrder: 4, time: "19h30", trainer: "Daniel Coelho", capacity: 15 },
+  // Sábado — PLACEHOLDER, ver nota acima
+  { id: "sabado-1400", name: "Muay Thai", day: "Sábado", dayOrder: 6, time: "14h00", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "sabado-1530", name: "Muay Thai", day: "Sábado", dayOrder: 6, time: "15h30", trainer: "Daniel Coelho", capacity: 15 },
+  { id: "sabado-1700", name: "Muay Thai", day: "Sábado", dayOrder: 6, time: "17h00", trainer: "Daniel Coelho", capacity: 15 },
 ];
 
 export class ClassFullError extends Error {

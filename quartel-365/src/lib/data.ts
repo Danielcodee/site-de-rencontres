@@ -49,8 +49,8 @@ export const siteConfig = {
     tiktok: "https://www.tiktok.com/@quartel365", // PLACEHOLDER
   },
 
-  // PLACEHOLDER — horas exatas das aulas (fora do intervalo 12h00–13h30 de
-  // Muay Thai, que já foi confirmado) ainda por confirmar com o Daniel.
+  // Horário de terça/quinta confirmado pelo Daniel. A aula de sábado ainda
+  // é PLACEHOLDER (ver CLASS_SEED em src/lib/db.ts).
   hours: [
     { day: "Terça e Quinta", hours: "06h00 – 21h30" },
     { day: "Sábado", hours: "14h00 – 19h00" },
