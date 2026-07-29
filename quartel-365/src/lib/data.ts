@@ -46,7 +46,7 @@ export const siteConfig = {
   social: {
     instagram: "https://www.instagram.com/qartel365/",
     youtube: "https://www.youtube.com/@quartel365", // PLACEHOLDER
-    tiktok: "https://www.tiktok.com/@quartel365", // PLACEHOLDER
+    tiktok: "https://www.tiktok.com/@quartel.3.6.5",
   },
 
   // Horário de terça/quinta confirmado pelo Daniel. A aula de sábado ainda
