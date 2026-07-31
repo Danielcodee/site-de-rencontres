@@ -4,7 +4,7 @@ import { Compass, Handshake, ShieldCheck, TrendingUp } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { siteConfig } from "@/lib/data";
+import { aboutImage, siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Sobre Nós",
@@ -99,8 +99,8 @@ export default function SobrePage() {
           <Reveal delay={0.1}>
             <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-line">
               <Image
-                src="/images/hero-fighter.jpg"
-                alt="Lutador do Quartel 365 em posição de combate"
+                src={aboutImage}
+                alt="Lutador de Muay Thai em posição de combate"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"

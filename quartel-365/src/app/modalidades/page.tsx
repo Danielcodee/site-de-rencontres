@@ -8,7 +8,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { TiltImage } from "@/components/ui/TiltImage";
 import { cn } from "@/lib/utils";
-import { openMatDays, plans, modalities } from "@/lib/data";
+import { modalitiesHeaderImage, openMatDays, plans, modalities } from "@/lib/data";
 import { getClassesWithAvailability } from "@/lib/db";
 
 // A grelha de horários reflete reservas em tempo real, por isso a página
@@ -37,7 +37,7 @@ export default function ModalidadesPage() {
         title="Duas modalidades. Um treinador."
         description="Muay Thai e Treino Funcional — escolhe uma ou combina as duas, sempre com o Daniel Coelho a acompanhar-te."
         illustration={{
-          src: "/images/hero-fighter.jpg",
+          src: modalitiesHeaderImage,
           alt: "Lutador de Muay Thai em posição de combate",
         }}
       />
