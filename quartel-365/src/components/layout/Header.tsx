@@ -31,14 +31,14 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-ink/60 backdrop-blur-xl backdrop-saturate-150 transition-shadow duration-300",
-        scrolled || open ? "shadow-lg shadow-black/50" : "border-b-transparent",
+        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        scrolled || open ? "bg-ink/95 shadow-lg shadow-black/40 backdrop-blur" : "bg-transparent",
       )}
     >
       <div className="container-quartel flex h-16 items-center justify-between py-3 sm:h-20">
         <Link href="/" className="group flex items-center gap-2" aria-label={`${siteConfig.name} — Início`}>
           <span className="font-heading text-xl uppercase tracking-tight text-bone sm:text-2xl">
-            Quartel <span className="text-oxblood [text-shadow:0_0_18px_rgba(255,30,39,0.55)]">365</span>
+            Quartel <span className="text-oxblood">365</span>
           </span>
         </Link>
 
@@ -51,18 +51,11 @@ export function Header() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative font-sans text-sm font-medium uppercase tracking-wider transition-colors hover:text-gold",
+                  "font-sans text-sm font-medium uppercase tracking-wider transition-colors hover:text-gold",
                   active ? "text-gold" : "text-bone",
                 )}
               >
                 {link.label}
-                <span
-                  aria-hidden
-                  className={cn(
-                    "absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-gold shadow-[0_0_8px_rgba(204,255,0,0.8)] transition-transform duration-300",
-                    active && "scale-x-100",
-                  )}
-                />
               </Link>
             );
           })}

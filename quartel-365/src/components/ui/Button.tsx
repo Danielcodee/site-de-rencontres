@@ -16,9 +16,9 @@ const base =
 
 const variants = {
   primary:
-    "bg-oxblood text-bone shadow-[0_0_0_rgba(255,30,39,0)] transition-[background-color,box-shadow] duration-300 hover:bg-oxblood-dark hover:shadow-[0_0_42px_-4px_rgba(255,30,39,0.85)]",
+    "bg-oxblood text-bone shadow-[0_0_0_rgba(122,31,43,0)] transition-[background-color,box-shadow] duration-300 hover:bg-oxblood-dark hover:shadow-[0_16px_36px_-8px_rgba(122,31,43,0.75)]",
   outline:
-    "border border-line text-bone shadow-[0_0_0_rgba(204,255,0,0)] transition-[background-color,border-color,color,box-shadow] duration-300 hover:border-gold hover:bg-gold/10 hover:text-gold hover:shadow-[0_0_30px_-6px_rgba(204,255,0,0.55)]",
+    "border border-line text-bone transition-[background-color,border-color,color] duration-300 hover:border-gold hover:bg-gold/10 hover:text-gold",
   ghost: "text-bone transition-colors duration-300 hover:text-gold",
 };
 

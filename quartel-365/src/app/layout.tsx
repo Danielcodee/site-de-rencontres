@@ -2,10 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/lib/data";
-
-// Mesma foto do Hero, recortada nas dimensões recomendadas para Open Graph.
-const ogImage =
-  "https://images.unsplash.com/photo-1525680996651-0222228be6f0?auto=format&fit=crop&w=2048&h=1152&q=80";
 import "./globals.css";
 
 // Carregadas via <link> (em vez de next/font/google) — o self-hosting do
@@ -39,13 +35,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} — Muay Thai e Treino Funcional em Felgueiras`,
     description: siteConfig.description,
-    images: [{ url: ogImage, width: 2048, height: 1152, alt: siteConfig.name }],
+    images: [{ url: "/images/hero-fighter.jpg", width: 2048, height: 1152, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} — Muay Thai e Treino Funcional em Felgueiras`,
     description: siteConfig.description,
-    images: [ogImage],
+    images: ["/images/hero-fighter.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -66,7 +62,7 @@ const jsonLd = {
   telephone: siteConfig.contact.phoneDisplay,
   email: siteConfig.contact.email,
   priceRange: "€€",
-  image: ogImage,
+  image: `${siteConfig.url}/images/hero-fighter.jpg`,
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.contact.addressLine1,

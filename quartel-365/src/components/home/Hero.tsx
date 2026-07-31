@@ -1,13 +1,13 @@
 import { ArrowRight, CalendarCheck } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { TiltImage } from "@/components/ui/TiltImage";
-import { heroImage, siteConfig, stats } from "@/lib/data";
+import { siteConfig, stats } from "@/lib/data";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-ink">
       <TiltImage
-        src={heroImage}
+        src="/images/hero-fighter.jpg"
         alt="Lutador de Muay Thai em posição de combate, ambiente do Quartel 365"
         className="absolute inset-0"
         priority

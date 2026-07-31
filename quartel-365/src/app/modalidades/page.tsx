@@ -8,7 +8,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { TiltImage } from "@/components/ui/TiltImage";
 import { cn } from "@/lib/utils";
-import { modalitiesHeaderImage, openMatDays, plans, modalities } from "@/lib/data";
+import { openMatDays, plans, modalities } from "@/lib/data";
 import { getClassesWithAvailability } from "@/lib/db";
 
 // A grelha de horários reflete reservas em tempo real, por isso a página
@@ -37,7 +37,7 @@ export default function ModalidadesPage() {
         title="Duas modalidades. Um treinador."
         description="Muay Thai e Treino Funcional — escolhe uma ou combina as duas, sempre com o Daniel Coelho a acompanhar-te."
         illustration={{
-          src: modalitiesHeaderImage,
+          src: "/images/hero-fighter.jpg",
           alt: "Lutador de Muay Thai em posição de combate",
         }}
       />
@@ -106,10 +106,8 @@ export default function ModalidadesPage() {
               <TiltCard key={plan.name} strength={4}>
                 <div
                   className={cn(
-                    "flex h-full flex-col rounded-sm border p-7 transition-shadow duration-300",
-                    plan.highlighted
-                      ? "animate-glow-pulse border-gold bg-ink"
-                      : "border-line bg-ink hover:border-oxblood/50 hover:shadow-[0_24px_60px_-20px_rgba(255,30,39,0.35)]",
+                    "flex h-full flex-col rounded-sm border p-7",
+                    plan.highlighted ? "border-gold bg-ink" : "border-line bg-ink",
                   )}
                 >
                   {plan.highlighted ? (

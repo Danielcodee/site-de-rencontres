@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
-import { ctaImage, siteConfig } from "@/lib/data";
+import { siteConfig } from "@/lib/data";
 
 export function CtaNewsletter() {
   return (
@@ -44,8 +44,8 @@ export function CtaNewsletter() {
         <Reveal delay={0.1} className="hidden lg:block">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-sm border border-line">
             <Image
-              src={ctaImage}
-              alt="Lutador de Muay Thai em posição de combate"
+              src="/images/hero-fighter.jpg"
+              alt="Lutador do Quartel 365 em posição de combate"
               fill
               sizes="400px"
               className="object-cover"
