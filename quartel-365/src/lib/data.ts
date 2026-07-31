@@ -12,7 +12,7 @@ function unsplash(id: string, params: string) {
   return `https://images.unsplash.com/${id}?auto=format&fit=crop&${params}`;
 }
 
-export const heroImage = unsplash("photo-1525680996651-0222228be6f0", "w=1920&q=80");
+export const heroImage = unsplash("photo-1633394782368-6e7260566004", "w=1920&q=80");
 export const aboutImage = unsplash("photo-1637974013743-82656f7c3f49", "w=1200&q=80");
 export const ctaImage = unsplash("photo-1680022546558-550eaf22351e", "w=900&q=80");
 export const modalitiesHeaderImage = unsplash("photo-1607702713064-0143212236ae", "w=1200&q=80");
@@ -159,7 +159,7 @@ export const modalities: Modality[] = [
       "Guarda, deslocamentos, socos, cotoveladas, joelhadas e pontapés",
       "Sparring controlado e progressivo para quem já está preparado",
     ],
-    image: unsplash("photo-1729673517080-44353fa68fe0", "w=1200&q=80"),
+    image: unsplash("photo-1731572005637-ce0bd30a02b2", "w=1200&q=80"),
     trainer: "Daniel Coelho",
     level: "Todos os níveis",
   },
@@ -174,7 +174,7 @@ export const modalities: Modality[] = [
       "Trabalho de força, resistência cardiovascular e mobilidade",
       "Ideal para complementar o Muay Thai ou treinar de forma independente",
     ],
-    image: unsplash("photo-1758875569517-559a631fb44d", "w=1200&q=80"),
+    image: unsplash("photo-1637430308606-86576d8fef3c", "w=1200&q=80"),
     trainer: "Daniel Coelho",
     level: "Todos os níveis",
   },
@@ -309,10 +309,10 @@ export type GalleryImage = {
 export const galleryImages: GalleryImage[] = [
   { src: unsplash("photo-1515025617920-e1e674b5033c", "w=1200&q=80"), alt: "Turma de grappling no tatami", category: "Tatami" },
   { src: unsplash("photo-1681923445357-0679553160da", "w=1200&q=80"), alt: "Trabalho de solo no tatami", category: "Tatami" },
-  { src: unsplash("photo-1601588462060-470011bd9a18", "w=1200&q=80"), alt: "Zona de sparring de Muay Thai", category: "Sparring" },
+  { src: unsplash("photo-1618517048289-4646902edaf5", "w=1200&q=80"), alt: "Zona de sparring de Muay Thai", category: "Sparring" },
   { src: unsplash("photo-1611816153165-fed23698666d", "w=1200&q=80"), alt: "Trabalho técnico nos aparadores", category: "Sparring" },
-  { src: unsplash("photo-1758875569612-94d5e0f1a35f", "w=1200&q=80"), alt: "Zona de treino funcional", category: "Treino Funcional" },
-  { src: unsplash("photo-1778828494354-9b717d36dc99", "w=1200&q=80"), alt: "Ambiente da academia", category: "Comunidade" },
+  { src: unsplash("photo-1614367674345-f414b2be3e5b", "w=1200&q=80"), alt: "Zona de treino funcional", category: "Treino Funcional" },
+  { src: unsplash("photo-1716307043003-dbe6a5cc496e", "w=1200&q=80"), alt: "Ambiente da academia", category: "Comunidade" },
   { src: unsplash("photo-1601039834076-c41cf1766d4b", "w=1200&q=80"), alt: "Espírito de equipa e conquista", category: "Comunidade" },
 ];
 

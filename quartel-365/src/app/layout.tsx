@@ -6,7 +6,7 @@ import "./globals.css";
 
 // Mesma foto do Hero, recortada nas dimensões recomendadas para Open Graph.
 const ogImage =
-  "https://images.unsplash.com/photo-1525680996651-0222228be6f0?auto=format&fit=crop&w=2048&h=1152&q=80";
+  "https://images.unsplash.com/photo-1633394782368-6e7260566004?auto=format&fit=crop&w=2048&h=1152&q=80";
 
 // Carregadas via <link> (em vez de next/font/google) — o self-hosting do
 // next/font já produziu, neste ambiente, subsets de fontes com glifos
