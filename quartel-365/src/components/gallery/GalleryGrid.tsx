@@ -4,7 +4,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 import type { GalleryImage } from "@/lib/data";
+
+// Padrão de bento grid repetido a cada 6 imagens (grid-flow-dense preenche
+// os espaços restantes). Classes completas e literais — ver nota em
+// GalleryPreview.tsx sobre concatenação dinâmica de prefixos Tailwind.
+const BENTO_PATTERN = [
+  "sm:col-span-2 sm:row-span-2",
+  "sm:col-span-1 sm:row-span-1",
+  "sm:col-span-1 sm:row-span-2",
+  "sm:col-span-1 sm:row-span-1",
+  "sm:col-span-1 sm:row-span-1",
+  "sm:col-span-2 sm:row-span-1",
+];
 
 export function GalleryGrid({ images }: { images: GalleryImage[] }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -29,13 +42,16 @@ export function GalleryGrid({ images }: { images: GalleryImage[] }) {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-flow-dense grid-cols-2 auto-rows-[150px] gap-4 sm:grid-cols-4 sm:auto-rows-[170px]">
         {images.map((image, index) => (
           <button
             key={image.alt}
             type="button"
             onClick={() => setActiveIndex(index)}
-            className="group relative aspect-square overflow-hidden rounded-sm border border-line text-left"
+            className={cn(
+              "group relative overflow-hidden rounded-sm border border-line text-left transition-[border-color,box-shadow] duration-300 hover:border-gold/50 hover:shadow-[0_20px_50px_-16px_rgba(204,255,0,0.3)]",
+              BENTO_PATTERN[index % BENTO_PATTERN.length],
+            )}
             aria-label={`Ampliar imagem: ${image.alt}`}
           >
             <Image
@@ -43,9 +59,10 @@ export function GalleryGrid({ images }: { images: GalleryImage[] }) {
               alt={image.alt}
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />
-            <span className="absolute bottom-0 left-0 right-0 bg-ink/80 px-3 py-2 text-xs uppercase tracking-wide text-mist opacity-0 transition-opacity group-hover:opacity-100">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <span className="glass pointer-events-none absolute bottom-2 left-2 rounded-sm px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-bone opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               {image.category}
             </span>
           </button>

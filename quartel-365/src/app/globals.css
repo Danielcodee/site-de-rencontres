@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 /*
- * Paleta "Quartel 365": preto/carvão de fundo, vermelho-oxblood como cor de
- * destaque única e dourado envelhecido como acento secundário. Sóbria de
- * propósito — evitar cores extra para preservar a sensação premium.
+ * Paleta "Quartel 365" v2 — dark premium: fundo quase preto puro, vermelho
+ * crimson agressivo como acento primário e amarelo néon elétrico como
+ * acento secundário/glow. Nomes de variável mantidos (--color-oxblood,
+ * --color-gold) para não obrigar a reescrever todas as classes Tailwind
+ * já usadas nos componentes — só o valor por trás mudou de propósito.
  */
 :root {
-  --color-ink: #0b0a08;
-  --color-charcoal: #16130f;
-  --color-charcoal-2: #201c16;
-  --color-line: #322c22;
-  --color-bone: #f2ece0;
-  --color-mist: #a39a8c;
-  --color-oxblood: #7a1f2b;
-  --color-oxblood-dark: #591620;
-  --color-gold: #b8934f;
-  --color-gold-dark: #8c6f3c;
+  --color-ink: #09090b;
+  --color-charcoal: #121215;
+  --color-charcoal-2: #1a1a1f;
+  --color-line: #29292f;
+  --color-bone: #f5f5f7;
+  --color-mist: #9a9aa4;
+  --color-oxblood: #ff1e27;
+  --color-oxblood-dark: #c9121a;
+  --color-gold: #ccff00;
+  --color-gold-dark: #9fcc00;
 }
 
 @theme inline {
@@ -34,6 +36,8 @@
   --font-heading: "Archivo Black", ui-sans-serif, system-ui, sans-serif;
 
   --animate-fade-up: fade-up 0.7s ease-out both;
+  --animate-glow-pulse: glow-pulse 2.4s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
 
   @keyframes fade-up {
     from {
@@ -43,6 +47,26 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 rgba(204, 255, 0, 0);
+    }
+    50% {
+      box-shadow: 0 0 32px 4px rgba(204, 255, 0, 0.35);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
     }
   }
 }
@@ -88,9 +112,25 @@ body {
   background-size: 44px 44px;
 }
 
+/* Glassmorphism reutilizável — menus, cards flutuantes, badges. */
+.glass {
+  background: color-mix(in srgb, var(--color-charcoal) 55%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in srgb, white 8%, transparent);
+}
+
+/* Texto com gradiente crimson -> néon, para destaques pontuais em títulos. */
+.text-gradient-electric {
+  background: linear-gradient(90deg, var(--color-oxblood) 0%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Acessibilidade: foco visível e consistente em toda a navegação por teclado */
 :focus-visible {
-  outline: 2px solid var(--color-oxblood);
+  outline: 2px solid var(--color-gold);
   outline-offset: 3px;
 }
 

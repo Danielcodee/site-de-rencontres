@@ -5,6 +5,19 @@
 // Os campos marcados com "PLACEHOLDER" têm de ser confirmados/substituídos
 // antes de publicar o site (morada exata, preços, foto do treinador, etc.).
 
+// Fotografia de stock (Unsplash, licença livre) usada como placeholder visual
+// de alto impacto até existirem fotos reais do espaço e das aulas — Muay
+// Thai/kickboxing, treino funcional e grappling em tatami, sempre com estética
+// "dark premium". Substituir por fotografia própria assim que o espaço abrir.
+function unsplash(id: string, params: string) {
+  return `https://images.unsplash.com/${id}?auto=format&fit=crop&${params}`;
+}
+
+export const heroImage = unsplash("photo-1525680996651-0222228be6f0", "w=1920&q=80");
+export const aboutImage = unsplash("photo-1637974013743-82656f7c3f49", "w=1200&q=80");
+export const ctaImage = unsplash("photo-1680022546558-550eaf22351e", "w=900&q=80");
+export const modalitiesHeaderImage = unsplash("photo-1607702713064-0143212236ae", "w=1200&q=80");
+
 export const siteConfig = {
   name: "Quartel 365",
   shortName: "Q365",
@@ -147,7 +160,7 @@ export const modalities: Modality[] = [
       "Guarda, deslocamentos, socos, cotoveladas, joelhadas e pontapés",
       "Sparring controlado e progressivo para quem já está preparado",
     ],
-    image: "/images/hero-fighter.jpg",
+    image: unsplash("photo-1729673517080-44353fa68fe0", "w=1200&q=80"),
     trainer: "Daniel Coelho",
     level: "Todos os níveis",
   },
@@ -162,7 +175,7 @@ export const modalities: Modality[] = [
       "Trabalho de força, resistência cardiovascular e mobilidade",
       "Ideal para complementar o Muay Thai ou treinar de forma independente",
     ],
-    image: "/images/hero-fighter.jpg",
+    image: unsplash("photo-1758875569517-559a631fb44d", "w=1200&q=80"),
     trainer: "Daniel Coelho",
     level: "Todos os níveis",
   },
@@ -291,17 +304,17 @@ export type GalleryImage = {
   category: "Tatami" | "Sparring" | "Treino Funcional" | "Comunidade";
 };
 
-// PLACEHOLDER — a mesma foto está repetida em todas as entradas até
-// existirem fotos reais e distintas de cada zona da academia. Não há
-// balneários no espaço (entra e sai já equipado).
+// PLACEHOLDER — fotografia de stock (Unsplash) representativa de cada zona,
+// até existirem fotos reais e distintas do espaço. Não há balneários no
+// espaço (entra e sai já equipado).
 export const galleryImages: GalleryImage[] = [
-  { src: "/images/hero-fighter.jpg", alt: "Tatami do Quartel 365", category: "Tatami" },
-  { src: "/images/hero-fighter.jpg", alt: "Zona de treino no tatami", category: "Tatami" },
-  { src: "/images/hero-fighter.jpg", alt: "Zona de sparring", category: "Sparring" },
-  { src: "/images/hero-fighter.jpg", alt: "Zona de sacos pesados para treino técnico", category: "Sparring" },
-  { src: "/images/hero-fighter.jpg", alt: "Zona de treino funcional", category: "Treino Funcional" },
-  { src: "/images/hero-fighter.jpg", alt: "Receção e área de convívio", category: "Comunidade" },
-  { src: "/images/hero-fighter.jpg", alt: "Zona de aulas em grupo", category: "Comunidade" },
+  { src: unsplash("photo-1515025617920-e1e674b5033c", "w=1200&q=80"), alt: "Turma de grappling no tatami", category: "Tatami" },
+  { src: unsplash("photo-1681923445357-0679553160da", "w=1200&q=80"), alt: "Trabalho de solo no tatami", category: "Tatami" },
+  { src: unsplash("photo-1601588462060-470011bd9a18", "w=1200&q=80"), alt: "Zona de sparring de Muay Thai", category: "Sparring" },
+  { src: unsplash("photo-1611816153165-fed23698666d", "w=1200&q=80"), alt: "Trabalho técnico nos aparadores", category: "Sparring" },
+  { src: unsplash("photo-1758875569612-94d5e0f1a35f", "w=1200&q=80"), alt: "Zona de treino funcional", category: "Treino Funcional" },
+  { src: unsplash("photo-1778828494354-9b717d36dc99", "w=1200&q=80"), alt: "Ambiente da academia", category: "Comunidade" },
+  { src: unsplash("photo-1601039834076-c41cf1766d4b", "w=1200&q=80"), alt: "Espírito de equipa e conquista", category: "Comunidade" },
 ];
 
 // Nota: sem blog — o Quartel 365 ainda não abriu portas, por isso ainda não
